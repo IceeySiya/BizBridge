@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "DBLOb2TOfSTiMF93h3I6dSSjcb0RjsV5fmAw2tElnOU=",
+  "Source": "BizBridge.Api",
+  "BasePath": "_content/BizBridge.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
