@@ -17,6 +17,7 @@ builder.Services.AddDbContext<BizBridgeDbContext>(options =>
 
 builder.Services.AddScoped<PasswordService>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<BizBridge.Api.Services.Business.BusinessService>();
 
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException(
@@ -54,6 +55,21 @@ builder.Services
         };
     });
 
+// Allow the local BizBridge frontend to call the API.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BizBridgeFrontend", policy =>
+    {
+        policy
+            .WithOrigins(
+                "http://127.0.0.1:5500",
+                "http://localhost:5500"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
@@ -66,6 +82,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+// Handle browser CORS preflight requests.
+app.UseCors("BizBridgeFrontend");
+
 app.UseAuthentication();
 app.UseAuthorization();
 

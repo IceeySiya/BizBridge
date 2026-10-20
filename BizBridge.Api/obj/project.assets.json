@@ -3154,19 +3154,19 @@
     ]
   },
   "packageFolders": {
-    "/home/wtc/.nuget/packages/": {}
+    "C:\\Users\\Siyanda Mokoena\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wtc/mySideProjects/BizBridge/BizBridge.Api/BizBridge.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
       "projectName": "BizBridge.Api",
-      "projectPath": "/home/wtc/mySideProjects/BizBridge/BizBridge.Api/BizBridge.Api.csproj",
-      "packagesPath": "/home/wtc/.nuget/packages/",
-      "outputPath": "/home/wtc/mySideProjects/BizBridge/BizBridge.Api/obj/",
+      "projectPath": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
+      "packagesPath": "C:\\Users\\Siyanda Mokoena\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/wtc/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Siyanda Mokoena\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3190,7 +3190,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -3234,7 +3234,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.316/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

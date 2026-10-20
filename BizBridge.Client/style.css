@@ -1,0 +1,123 @@
+:root {
+    --bizbridge-green: #198754;
+    --bizbridge-light: #f4f8f5;
+    --bizbridge-text: #202923;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bizbridge-text);
+    margin: 0;
+}
+
+.hero-section {
+    background:
+        radial-gradient(circle at 85% 20%, #d8f3e2 0, transparent 35%),
+        linear-gradient(135deg, #ffffff, var(--bizbridge-light));
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.growth-card {
+    background: #ffffff;
+    border: 1px solid #e6eee8;
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.growth-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #e2f5e9;
+    color: var(--bizbridge-green);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.feature-mini {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px 0;
+}
+
+.mini-icon,
+.feature-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #e2f5e9;
+    color: var(--bizbridge-green);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.feature-card {
+    padding: 25px;
+    border: 1px solid #e8eee9;
+    border-radius: 16px;
+    background: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(20, 60, 35, 0.08);
+}
+
+.about-section {
+    background: var(--bizbridge-light);
+}
+
+.about-text {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .growth-card {
+        padding: 20px;
+    }
+}
+
+/* Authentication pages */
+.auth-page {
+    min-height: 100vh;
+    background: #f4f8f5;
+}
+
+.auth-card {
+    background: #ffffff;
+    border: 1px solid #e6eee8;
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.auth-card .form-control {
+    padding: 12px 14px;
+    border-radius: 9px;
+}
+
+.auth-card .form-control:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 24px;
+    }
+}
+
