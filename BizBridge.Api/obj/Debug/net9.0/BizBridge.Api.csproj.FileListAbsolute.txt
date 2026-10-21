@@ -260,7 +260,6 @@ C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\BizBridge.Api.
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\BizBridge.Api.csproj.CoreCompileInputs.cache
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\BizBridge.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\BizBridge.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\BizBridge.Api.sourcelink.json
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
