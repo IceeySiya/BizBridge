@@ -1,6 +1,11 @@
 "use strict";
 
+<<<<<<< Updated upstream
 const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
+=======
+// Your running ASP.NET Core API
+const API_BASE_URL = "https://localhost:7142/api";
+>>>>>>> Stashed changes
 
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registerForm");

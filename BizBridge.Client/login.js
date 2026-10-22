@@ -1,6 +1,10 @@
 "use strict";
 
+<<<<<<< Updated upstream
 const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
+=======
+const API_BASE_URL = "https://localhost:7142/api";
+>>>>>>> Stashed changes
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
