@@ -121,3 +121,10 @@ body {
     }
 }
 
+.summary-box {
+    background: #f9fbfa;
+    border: 1px solid #e7efe9;
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+

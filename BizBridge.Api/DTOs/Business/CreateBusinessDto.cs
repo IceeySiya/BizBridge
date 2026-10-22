@@ -20,7 +20,7 @@ public class CreateBusinessDto
     [StringLength(150)]
     public string? Location { get; set; }
 
-    [StringLength(2000)]
+    [StringLength(1000)]
     public string? Description { get; set; }
 
     public DateTimeOffset? Established { get; set; }
