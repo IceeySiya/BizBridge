@@ -101,6 +101,9 @@ namespace BizBridge.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CategoryID"));
 
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -118,7 +121,7 @@ namespace BizBridge.Api.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.HasIndex("Name", "TransactionType")
+                    b.HasIndex("BusinessID", "Name", "TransactionType")
                         .IsUnique();
 
                     b.ToTable("Categories", t =>
@@ -400,6 +403,17 @@ namespace BizBridge.Api.Migrations
                     b.Navigation("Business");
 
                     b.Navigation("Check");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.Category", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", "Business")
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Business");
                 });
 
             modelBuilder.Entity("BizBridge.Api.Models.Opportunity", b =>

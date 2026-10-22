@@ -104,14 +104,23 @@ public class BizBridgeDbContext : DbContext
             entity.Property(c => c.IsActive)
                 .HasDefaultValue(true);
 
+            // A category belongs to a specific business.
+            entity.HasOne(c => c.Business)
+                .WithMany()
+                .HasForeignKey(c => c.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Prevent duplicate names for the same business
+            // and transaction type.
             entity.HasIndex(c => new
-                { c.Name, c.TransactionType })
+                { c.BusinessID, c.Name, c.TransactionType })
                 .IsUnique();
 
             entity.ToTable(t => t.HasCheckConstraint(
                 "CK_Categories_TransactionType",
                 "\"TransactionType\" IN ('Income', 'Expense')"));
         });
+
 
         // TRANSACTION
         modelBuilder.Entity<BizBridge.Api.Models.Transaction>(entity =>

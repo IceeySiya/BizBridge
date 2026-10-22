@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Profile | BizBridge</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                BizBridge
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="business-profile.html">
+                            Business Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button
+                            type="button"
+                            id="logoutButton"
+                            class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+
+                <div class="mb-4">
+                    <span class="badge text-bg-success mb-3">
+                        Your Business
+                    </span>
+
+                    <h1 class="h2 fw-bold">
+                        Business Profile
+                    </h1>
+
+                    <p class="text-secondary">
+                        Tell us about your business so BizBridge can help
+                        you manage and grow it.
+                    </p>
+                </div>
+
+                <div
+                    id="businessMessage"
+                    class="alert d-none"
+                    role="alert"
+                    aria-live="polite">
+                </div>
+
+                <section class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="mb-4">
+                            <h2 class="h5 fw-bold">
+                                Business information
+                            </h2>
+
+                            <p class="text-secondary small mb-0">
+                                Fields marked with * are required.
+                            </p>
+                        </div>
+
+                        <form id="businessForm">
+
+                            <div class="mb-3">
+                                <label for="businessName"
+                                       class="form-label">
+                                    Business name *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="businessName"
+                                    name="businessName"
+                                    maxlength="150"
+                                    autocomplete="organization"
+                                    placeholder="e.g. Siyanda's Digital Services"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="industry" class="form-label">
+                                    Industry *
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="industry"
+                                    name="industry"
+                                    required>
+                                    <option value="">Select an industry</option>
+                                    <option value="Agriculture">Agriculture</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Food and Beverage">Food and Beverage</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Retail">Retail</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Transport and Logistics">Transport and Logistics</option>
+                                    <option value="Professional Services">Professional Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="location" class="form-label">
+                                    Business location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="location"
+                                    name="location"
+                                    maxlength="200"
+                                    placeholder="e.g. Soweto, Gauteng">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">
+                                    Business description
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="description"
+                                    name="description"
+                                    rows="4"
+                                    maxlength="1000"
+                                    placeholder="What does your business do?"></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="established" class="form-label">
+                                    Date established
+                                </label>
+
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="established"
+                                    name="established">
+                            </div>
+
+                            <div class="d-flex flex-column flex-sm-row gap-2">
+                                <button
+                                    type="submit"
+                                    id="saveBusinessButton"
+                                    class="btn btn-success btn-lg">
+                                    Create Business Profile
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="resetBusinessButton"
+                                    class="btn btn-outline-secondary btn-lg">
+                                    Clear Form
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="business-profile.js"></script>
+</body>
+</html>

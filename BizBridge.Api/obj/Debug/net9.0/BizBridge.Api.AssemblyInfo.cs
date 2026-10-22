@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BizBridge.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a51acb2f87d6362b39673480c6b89b25447e98fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5964b054a3d1c72cfb2e001db413e2658bad34f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BizBridge.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BizBridge.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
