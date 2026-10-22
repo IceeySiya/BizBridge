@@ -9,7 +9,24 @@ From the `BizBridge` solution folder, run:
 dotnet test .\BizBridge.sln
 ```
 
-The API integration tests use an isolated in-memory SQLite database and test-only JWT settings, so they do not require the development PostgreSQL database or Docker. They cover registration and login, authentication, business profile creation and updates, validation, duplicate profiles, and owner-only access.
+The API integration tests use an isolated in-memory SQLite database and test-only JWT settings, so they do not require the development PostgreSQL database or Docker. They cover authentication, business profiles, transactions, monthly totals, readiness progress, duplicate-reference alerts, and published opportunities.
+
+## Business dashboard
+
+The authenticated dashboard uses the API for its data; it does not display sample financial figures.
+
+Start the API with the HTTPS launch profile (`dotnet run --launch-profile https` from `BizBridge.Api`) and serve `BizBridge.Client` on `http://localhost:5500` (for example, with VS Code Live Server). All frontend pages read their API URL from `BizBridge.Client/api-config.js`, which defaults to `https://localhost:7142/api`. If the API uses a different address, set `window.BIZBRIDGE_API_BASE_URL` before loading `api-config.js`.
+
+If the dashboard reports HTTP 404 for the finance, readiness, alert, or opportunity routes, the API process is likely still running an older build. Stop that API process from its terminal, then restart it from the solution folder with `dotnet run --project .\BizBridge.Api\BizBridge.Api.csproj --launch-profile https`. Do not change the frontend URL unless the API is intentionally configured to use a different address.
+
+- `GET /api/transactions/summary` returns this UTC calendar month's income, expenses, and net cash flow for the signed-in owner's business.
+- `GET /api/transactions?limit=10` lists that business's latest transactions.
+- `POST /api/transactions` records `Income` or `Expense` with a category, positive amount, optional description/reference, and optional date. Categories are created as needed.
+- `GET /api/readiness/mine` reports progress for the business profile and financial-record steps. This is a record-based checklist, not document verification, a credit score, or an eligibility decision.
+- `GET /api/payment-alerts/mine` lists alerts for the signed-in owner's transactions. Reused payment references create an open review alert; the alert does not establish that fraud occurred.
+- `GET /api/opportunities` shows published opportunities whose deadline has not passed. The list is empty until opportunity managers publish records.
+
+All finance, readiness, alert, and opportunity endpoints require the user's bearer token. The API resolves the business from the authenticated user's identity rather than accepting a business or user ID from the browser.
 
 
 

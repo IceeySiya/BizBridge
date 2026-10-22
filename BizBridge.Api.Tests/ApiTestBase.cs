@@ -50,6 +50,32 @@ public abstract class ApiTestBase : IDisposable
                 "The login response did not contain an access token.");
     }
 
+    protected async Task CreateBusinessAsync(
+        string token,
+        string businessName = "Thandi's Catering")
+    {
+        using var response = await SendAuthorizedJsonAsync(
+            HttpMethod.Post,
+            "/api/businesses",
+            token,
+            new
+            {
+                businessName,
+                industry = "Food Services",
+                location = "Soweto"
+            });
+
+        Xunit.Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    protected Task SeedOpportunityAsync(
+        string title,
+        string status,
+        DateTimeOffset deadline)
+    {
+        return _factory.SeedOpportunityAsync(title, status, deadline);
+    }
+
     protected HttpRequestMessage CreateAuthorizedRequest(
         HttpMethod method,
         string uri,
@@ -124,6 +150,37 @@ internal sealed class TestApiFactory : WebApplicationFactory<Program>
         var context = scope.ServiceProvider
             .GetRequiredService<BizBridgeDbContext>();
         context.Database.EnsureCreated();
+    }
+
+    public async Task SeedOpportunityAsync(
+        string title,
+        string status,
+        DateTimeOffset deadline)
+    {
+        using var scope = Services.CreateScope();
+        var context = scope.ServiceProvider
+            .GetRequiredService<BizBridgeDbContext>();
+        var manager = new BizBridge.Api.Models.User
+        {
+            FullName = "Test Opportunity Manager",
+            Email = $"manager-{Guid.NewGuid():N}@example.test",
+            PasswordHash = "test-only-hash",
+            Role = "OpportunityManager"
+        };
+        context.Users.Add(manager);
+        await context.SaveChangesAsync();
+
+        context.Opportunities.Add(new BizBridge.Api.Models.Opportunity
+        {
+            ManagedByUserID = manager.UserID,
+            Title = title,
+            Organisation = "Test Organisation",
+            Description = "Opportunity used by an isolated integration test.",
+            Deadline = deadline,
+            Status = status,
+            CreatedAt = DateTimeOffset.UtcNow
+        });
+        await context.SaveChangesAsync();
     }
 
     protected override void Dispose(bool disposing)

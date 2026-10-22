@@ -1,6 +1,7 @@
 
 using BizBridge.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BizBridge.Api.Data;
 
@@ -287,5 +288,23 @@ public class BizBridgeDbContext : DbContext
                 { a.BusinessID, a.OpportunityID })
                 .IsUnique();
         });
+
+        if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+        {
+            var dateTimeOffsetConverter =
+                new DateTimeOffsetToBinaryConverter();
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var property in entityType.GetProperties().Where(
+                             property =>
+                                 property.ClrType == typeof(DateTimeOffset) ||
+                                 property.ClrType == typeof(DateTimeOffset?)))
+                {
+                    modelBuilder.Entity(entityType.ClrType)
+                        .Property(property.Name)
+                        .HasConversion(dateTimeOffsetConverter);
+                }
+            }
+        }
     }
 }

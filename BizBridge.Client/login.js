@@ -1,6 +1,6 @@
 "use strict";
 
-const API_BASE_URL = "https://localhost:7142/api";
+const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
