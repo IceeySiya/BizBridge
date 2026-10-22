@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizBridge.Api", "BizBridge.Api\BizBridge.Api.csproj", "{27EFE4B5-218E-8ECC-560E-190DE35A73B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizBridge.Api.Tests", "BizBridge.Api.Tests\BizBridge.Api.Tests.csproj", "{526E358D-1836-4FE2-B2A0-3FD6025AB3D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{27EFE4B5-218E-8ECC-560E-190DE35A73B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27EFE4B5-218E-8ECC-560E-190DE35A73B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27EFE4B5-218E-8ECC-560E-190DE35A73B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526E358D-1836-4FE2-B2A0-3FD6025AB3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526E358D-1836-4FE2-B2A0-3FD6025AB3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526E358D-1836-4FE2-B2A0-3FD6025AB3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526E358D-1836-4FE2-B2A0-3FD6025AB3D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

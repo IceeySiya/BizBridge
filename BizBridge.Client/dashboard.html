@@ -1,170 +1,112 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dashboard | BizBridge</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="auth-page">
-
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="dashboard.html">
-                BizBridge
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">
-                            Dashboard
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="business-profile.html">
-                            Business Profile
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <button
-                            type="button"
-                            id="logoutButton"
-                            class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">
-                            Logout
-                        </button>
-                    </li>
-                </ul>
+            <a class="navbar-brand fw-bold" href="index.html">BizBridge</a>
+            <div class="navbar-nav ms-auto d-flex align-items-center gap-3">
+                <a class="nav-link" href="index.html">Home</a>
+                <button id="logoutButton" class="btn btn-outline-light btn-sm" type="button">Log out</button>
             </div>
         </div>
     </nav>
 
-    <!-- Dashboard content -->
     <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div id="dashboardMessage" class="alert d-none" role="alert" aria-live="polite"></div>
 
-        <div id="dashboardMessage"
-             class="alert d-none"
-             role="alert"
-             aria-live="polite"></div>
+                <section id="businessSummary" class="auth-card shadow-sm d-none">
+                    <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                        <div>
+                            <span class="badge text-bg-success mb-3">Business profile</span>
+                            <h1 id="businessName" class="h2 fw-bold mb-1"></h1>
+                            <p id="businessMeta" class="text-secondary mb-0"></p>
+                        </div>
+                        <div class="text-end">
+                            <p class="small text-secondary mb-1">Readiness status</p>
+                            <span class="badge text-bg-light border">Ready to start</span>
+                            <div>
+                                <button id="editBusinessButton" class="btn btn-outline-success btn-sm mt-3" type="button">Edit profile</button>
+                            </div>
+                        </div>
+                    </div>
 
-        <section class="mb-5">
-            <span class="badge text-bg-success mb-3">
-                BizBridge Dashboard
-            </span>
+                    <div class="row mt-4 g-4">
+                        <div class="col-md-6">
+                            <div class="summary-box">
+                                <p class="text-secondary mb-1">Industry</p>
+                                <h6 id="businessIndustry" class="mb-0"></h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="summary-box">
+                                <p class="text-secondary mb-1">Location</p>
+                                <h6 id="businessLocation" class="mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
 
-            <h1 class="display-6 fw-bold">
-                Welcome, <span id="userFullName">...</span>!
-            </h1>
+                    <div class="summary-box mt-4">
+                        <p class="text-secondary mb-2">Description</p>
+                        <p id="businessDescription" class="mb-0"></p>
+                    </div>
+                    <p class="small text-secondary mt-3 mb-0">
+                        <span class="fw-semibold">Established:</span>
+                        <span id="businessEstablished">Not provided</span>
+                    </p>
+                </section>
 
-            <p class="text-secondary">
-                Manage your business, track your finances, and discover
-                opportunities to grow.
-            </p>
-        </section>
+                <section id="businessFormSection" class="auth-card shadow-sm d-none">
+                    <div class="mb-4">
+                        <span class="badge text-bg-success mb-3">Set up your business</span>
+                        <h2 id="profileFormTitle" class="h3 fw-bold mb-1">Create your BizBridge profile</h2>
+                        <p class="text-secondary mb-0">Add the basics that will help you track readiness and opportunities.</p>
+                    </div>
 
-        <!-- Account details -->
-        <section class="card shadow-sm border-0 mb-4">
-            <div class="card-body p-4">
-                <h2 class="h5 fw-bold mb-3">Your account</h2>
+                    <form id="businessForm">
+                        <div class="mb-3">
+                            <label for="businessNameInput" class="form-label">Business name</label>
+                            <input id="businessNameInput" name="businessName" type="text" class="form-control" required minlength="2" maxlength="150">
+                        </div>
 
-                <p class="mb-2">
-                    <strong>Full name:</strong>
-                    <span id="profileName">Loading...</span>
-                </p>
+                        <div class="mb-3">
+                            <label for="industryInput" class="form-label">Industry</label>
+                            <input id="industryInput" name="industry" type="text" class="form-control" required minlength="2" maxlength="100">
+                        </div>
 
-                <p class="mb-2">
-                    <strong>Email:</strong>
-                    <span id="profileEmail">Loading...</span>
-                </p>
+                        <div class="mb-3">
+                            <label for="locationInput" class="form-label">Location</label>
+                            <input id="locationInput" name="location" type="text" class="form-control" maxlength="150">
+                        </div>
 
-                <p class="mb-0">
-                    <strong>Role:</strong>
-                    <span id="profileRole">Loading...</span>
-                </p>
+                        <div class="mb-3">
+                            <label for="establishedInput" class="form-label">Established</label>
+                            <input id="establishedInput" name="established" type="date" class="form-control">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="descriptionInput" class="form-label">Business description</label>
+                            <textarea id="descriptionInput" name="description" class="form-control" rows="4" maxlength="2000"></textarea>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button id="saveBusinessButton" type="submit" class="btn btn-success btn-lg flex-grow-1">Save business profile</button>
+                            <button id="cancelEditButton" type="button" class="btn btn-outline-secondary btn-lg d-none">Cancel</button>
+                        </div>
+                    </form>
+                </section>
             </div>
-        </section>
-
-        <!-- Feature cards -->
-        <section>
-            <h2 class="h4 fw-bold mb-3">Your business workspace</h2>
-
-            <div class="row g-4">
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body p-4">
-                            <h3 class="h5 fw-bold">Business Profile</h3>
-                            <p class="text-secondary">
-                                Create and manage your business information.
-                            </p>
-                            <a href="business-profile.html"
-                               class="btn btn-success">
-                                Manage Business
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body p-4">
-                            <h3 class="h5 fw-bold">Income & Expenses</h3>
-                            <p class="text-secondary">
-                                Keep track of business transactions and
-                                understand your cash flow.
-                            </p>
-                            <button class="btn btn-outline-success" disabled>
-                                Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body p-4">
-                            <h3 class="h5 fw-bold">Business Opportunities</h3>
-                            <p class="text-secondary">
-                                Find opportunities to help your business grow.
-                            </p>
-                            <button class="btn btn-outline-success" disabled>
-                                Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-    <script src="dashboard.js"></script>
+    <script src="business-profile.js"></script>
 </body>
 </html>

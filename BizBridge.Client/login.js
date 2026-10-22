@@ -1,71 +1,71 @@
-
 "use strict";
 
-const API_BASE_URL = "http://localhost:5214/api";
+const API_BASE_URL = "https://localhost:7142/api";
 
-const loginForm = document.getElementById("loginForm");
-const loginButton = document.getElementById("loginButton");
-const loginMessage = document.getElementById("loginMessage");
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("loginForm");
+    const loginMessage = document.getElementById("loginMessage");
+    const loginButton = document.getElementById("loginButton");
 
-function showMessage(message, type) {
-    loginMessage.textContent = message;
-    loginMessage.className = `alert alert-${type}`;
-}
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        showMessage("", "");
+        loginButton.disabled = true;
+        loginButton.textContent = "Logging in...";
 
-loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+        try {
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: document.getElementById("email").value.trim(),
+                    password: document.getElementById("password").value
+                })
+            });
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+            const result = await response.json().catch(() => ({}));
 
-    loginButton.disabled = true;
-    loginButton.textContent = "Logging in...";
-    loginMessage.className = "alert d-none";
+            if (!response.ok) {
+                showMessage(
+                    result.message ||
+                        result.title ||
+                        "Login failed. Check your email and password.",
+                    "danger"
+                );
+                return;
+            }
 
-    try {
-        const response = await fetch(`${API_BASE_URL}/auth/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+            if (!result.accessToken) {
+                throw new Error("The API did not return an access token.");
+            }
 
-        const data = await response.json().catch(() => ({}));
-
-        if (!response.ok) {
+            sessionStorage.setItem("bizBridgeAccessToken", result.accessToken);
             showMessage(
-                data.message || data.title || "Invalid email or password.",
+                `Welcome back, ${result.user.fullName}. Redirecting to your dashboard...`,
+                "success"
+            );
+            loginForm.reset();
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 750);
+        } catch (error) {
+            console.error("Login request failed:", error);
+            showMessage(
+                "Could not connect securely to BizBridge. Check that the HTTPS API is running and its development certificate is trusted.",
                 "danger"
             );
-            return;
+        } finally {
+            loginButton.disabled = false;
+            loginButton.textContent = "Log In";
         }
+    });
 
-        if (!data.accessToken) {
-            showMessage(
-                "Login response did not contain an access token.",
-                "danger"
-            );
-            return;
-        }
-
-        localStorage.setItem("token", data.accessToken);
-
-        showMessage("Login successful! Redirecting...", "success");
-
-        setTimeout(() => {
-            window.location.href = "dashboard.html";
-        }, 1000);
-
-    } catch (error) {
-        console.error("Login error:", error);
-
-        showMessage(
-            "Unable to connect to BizBridge. Check the API and CORS settings.",
-            "danger"
-        );
-    } finally {
-        loginButton.disabled = false;
-        loginButton.textContent = "Login";
+    function showMessage(message, type) {
+        loginMessage.textContent = message;
+        loginMessage.className = type
+            ? `alert alert-${type}`
+            : "alert d-none";
     }
 });

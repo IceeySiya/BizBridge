@@ -1,7 +1,7 @@
 "use strict";
 
 // Your running ASP.NET Core API
-const API_BASE_URL = "http://localhost:5214/api";
+const API_BASE_URL = "https://localhost:7142/api";
 
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registerForm");
