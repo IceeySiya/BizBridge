@@ -3,4 +3,4 @@
 
 window.BIZBRIDGE_API_BASE_URL =
     window.BIZBRIDGE_API_BASE_URL ||
-    "https://bizbridge-api.onrender.com/api";
+    "https://bizbridge-api.onrender.com";
