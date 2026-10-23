@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,10 +113,7 @@
                     and viewing your business financial overview.
                 </p>
 
-                <a
-                    href="business-profile.html"
-                    class="btn btn-success"
-                >
+                <a href="business-profile.html" class="btn btn-success">
                     Create Business Profile
                 </a>
             </div>
@@ -137,10 +135,7 @@
                             YOUR BUSINESS
                         </p>
 
-                        <h2
-                            id="businessName"
-                            class="h3 fw-bold mb-2"
-                        >
+                        <h2 id="businessName" class="h3 fw-bold mb-2">
                             Business name
                         </h2>
 
@@ -214,7 +209,31 @@
             </div>
 
             <div class="row g-3">
-                <div class="col-12 col-sm-6 col-xl-3">
+                <!-- Current balance: opening balance plus all-time transactions -->
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                Current Balance
+                            </p>
+
+                            <p
+                                id="currentBalance"
+                                class="h3 fw-bold mb-2"
+                            >
+                                —
+                            </p>
+
+                            <p class="text-secondary small mb-0">
+                                Opening balance plus all recorded income,
+                                minus all recorded expenses.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Monthly income -->
+                <div class="col-12 col-sm-6 col-xl-4">
                     <article class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <p class="text-secondary small mb-2">
@@ -229,13 +248,14 @@
                             </p>
 
                             <p class="text-secondary small mb-0">
-                                Money received by your business
+                                Money received this month
                             </p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-sm-6 col-xl-3">
+                <!-- Monthly expenses -->
+                <div class="col-12 col-sm-6 col-xl-4">
                     <article class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <p class="text-secondary small mb-2">
@@ -250,13 +270,14 @@
                             </p>
 
                             <p class="text-secondary small mb-0">
-                                Money spent by your business
+                                Money spent this month
                             </p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-sm-6 col-xl-3">
+                <!-- Monthly net cash flow -->
+                <div class="col-12 col-sm-6 col-xl-4">
                     <article class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <p class="text-secondary small mb-2">
@@ -271,13 +292,14 @@
                             </p>
 
                             <p class="text-secondary small mb-0">
-                                Income minus expenses
+                                This month's income minus expenses
                             </p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-sm-6 col-xl-3">
+                <!-- Monthly transaction count -->
+                <div class="col-12 col-sm-6 col-xl-4">
                     <article class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <p class="text-secondary small mb-2">
@@ -546,6 +568,7 @@
         </p>
     </footer>
 
+    <!-- Load shared API configuration before dashboard logic -->
     <script src="api-config.js"></script>
     <script src="dashboard.js"></script>
 

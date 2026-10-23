@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Business Profile | BizBridge</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="auth-page">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="dashboard.html">
-                BizBridge
-            </a>
+            <a class="navbar-brand fw-bold" href="dashboard.html">BizBridge</a>
 
             <button
                 class="navbar-toggler"
@@ -35,18 +30,13 @@
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">
-                            Dashboard
-                        </a>
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link active"
-                           href="business-profile.html">
+                        <a class="nav-link active" href="business-profile.html">
                             Business Profile
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <button
                             type="button"
@@ -63,16 +53,9 @@
     <main class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-xl-8">
-
                 <div class="mb-4">
-                    <span class="badge text-bg-success mb-3">
-                        Your Business
-                    </span>
-
-                    <h1 class="h2 fw-bold">
-                        Business Profile
-                    </h1>
-
+                    <span class="badge text-bg-success mb-3">Your Business</span>
+                    <h1 class="h2 fw-bold">Business Profile</h1>
                     <p class="text-secondary">
                         Tell us about your business so BizBridge can help
                         you manage and grow it.
@@ -83,35 +66,30 @@
                     id="businessMessage"
                     class="alert d-none"
                     role="alert"
-                    aria-live="polite">
+                    aria-live="polite"
+                    tabindex="-1">
                 </div>
 
                 <section class="card shadow-sm border-0">
                     <div class="card-body p-4 p-md-5">
-
                         <div class="mb-4">
-                            <h2 class="h5 fw-bold">
-                                Business information
-                            </h2>
-
+                            <h2 class="h5 fw-bold">Business information</h2>
                             <p class="text-secondary small mb-0">
                                 Fields marked with * are required.
                             </p>
                         </div>
 
-                        <form id="businessForm">
-
+                        <form id="businessForm" novalidate>
                             <div class="mb-3">
-                                <label for="businessName"
-                                       class="form-label">
+                                <label for="businessName" class="form-label">
                                     Business name *
                                 </label>
-
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="businessName"
                                     name="businessName"
+                                    minlength="2"
                                     maxlength="150"
                                     autocomplete="organization"
                                     placeholder="e.g. Siyanda's Digital Services"
@@ -122,7 +100,6 @@
                                 <label for="industry" class="form-label">
                                     Industry *
                                 </label>
-
                                 <select
                                     class="form-select"
                                     id="industry"
@@ -143,17 +120,37 @@
                                 </select>
                             </div>
 
+                            <div class="mb-3" id="openingBalanceGroup">
+                                <label for="openingBalance" class="form-label">
+                                    Opening balance (R) *
+                                </label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="openingBalance"
+                                    name="openingBalance"
+                                    min="0"
+                                    max="9999999999999999.99"
+                                    step="0.01"
+                                    value="0"
+                                    required>
+                                <div class="form-text">
+                                    Enter the funds available when you start
+                                    tracking your finances in BizBridge. Do not
+                                    include transactions you plan to record separately.
+                                </div>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="location" class="form-label">
                                     Business location
                                 </label>
-
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="location"
                                     name="location"
-                                    maxlength="200"
+                                    maxlength="150"
                                     placeholder="e.g. Soweto, Gauteng">
                             </div>
 
@@ -161,7 +158,6 @@
                                 <label for="description" class="form-label">
                                     Business description
                                 </label>
-
                                 <textarea
                                     class="form-control"
                                     id="description"
@@ -175,7 +171,6 @@
                                 <label for="established" class="form-label">
                                     Date established
                                 </label>
-
                                 <input
                                     type="date"
                                     class="form-control"
@@ -190,27 +185,22 @@
                                     class="btn btn-success btn-lg">
                                     Create Business Profile
                                 </button>
-
                                 <button
                                     type="button"
                                     id="resetBusinessButton"
                                     class="btn btn-outline-secondary btn-lg">
-                                    Clear Form
+                                    Reset Form
                                 </button>
                             </div>
-
                         </form>
                     </div>
                 </section>
-
             </div>
         </div>
     </main>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="api-config.js"></script>
     <script src="business-profile.js"></script>
 </body>
 </html>

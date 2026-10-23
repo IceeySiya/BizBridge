@@ -87,6 +87,10 @@ public class BizBridgeDbContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasIndex(b => b.OwnerUserID);
+            entity.Property(b => b.OpeningBalance)
+                .HasPrecision(18, 2)
+                .HasDefaultValue(0m)
+                .IsRequired();
         });
 
         // CATEGORY
@@ -277,6 +281,9 @@ public class BizBridgeDbContext : DbContext
             entity.HasIndex(o => new
                 { o.Status, o.Deadline });
         });
+        
+       
+
 
         // OPPORTUNITY APPLICATION
         modelBuilder.Entity<OpportunityApplication>(entity =>

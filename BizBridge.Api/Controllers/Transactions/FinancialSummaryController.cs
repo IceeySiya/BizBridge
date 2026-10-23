@@ -4,11 +4,8 @@ using BizBridge.Api.Services.Transactions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BizBridge.Api.Controllers.Transactions;
+namespace BizBridge.Api.Controllers;
 
-/// <summary>
-/// Provides financial summaries for an authenticated user's business.
-/// </summary>
 [ApiController]
 [Authorize]
 [Route("api/businesses/{businessId:int}/financial-summary")]
@@ -35,7 +32,8 @@ public class FinancialSummaryController : ControllerBase
         {
             return Unauthorized(new
             {
-                message = "A valid authenticated user ID is required."
+                message =
+                    "A valid authenticated user ID is required."
             });
         }
 
@@ -52,7 +50,8 @@ public class FinancialSummaryController : ControllerBase
             {
                 return NotFound(new
                 {
-                    message = "Business not found or access denied."
+                    message =
+                        "Business not found or access denied."
                 });
             }
 
@@ -60,7 +59,10 @@ public class FinancialSummaryController : ControllerBase
         }
         catch (ArgumentException ex)
         {
-            return BadRequest(new { message = ex.Message });
+            return BadRequest(new
+            {
+                message = ex.Message
+            });
         }
     }
 }

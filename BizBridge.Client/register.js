@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "http://localhost:5214";
+const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registerForm");
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const response = await fetch(
-                `${API_BASE_URL}/api/auth/register`,
+                `${API_BASE_URL}/auth/register`,
                 {
                     method: "POST",
                     headers: {
