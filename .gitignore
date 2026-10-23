@@ -10,6 +10,11 @@
 # .NET build output
 **/bin/
 **/obj/
+BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.sourcelink.json
+BizBridge.Api/bin/validation/
+BizBridge.Api/obj/Debug/net9.0/BizBridge.Api.sourcelink.json
+BizBridge.Api/obj/Debug/net9.0/staticwebassets.build.json.cache
+BizBridge.Api/obj/Debug/net9.0/swae.build.ex.cache
 
 # Visual Studio
 .vs/
