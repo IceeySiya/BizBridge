@@ -21,18 +21,29 @@ public sealed class FinanceFlowTests : ApiTestBase
         using var initialReadinessJson = await JsonDocument.ParseAsync(
             await initialReadinessResponse.Content.ReadAsStreamAsync());
         Assert.Equal(
-            50,
+            17,
             initialReadinessJson.RootElement
                 .GetProperty("progressPercent").GetInt32());
 
+        var businessId = await GetBusinessIdAsync(token);
+        var incomeCategoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Catering",
+            "Income");
+        var expenseCategoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Supplies",
+            "Expense");
+
         using var incomeResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             new
             {
-                transactionType = "Income",
-                category = "Catering",
+                categoryID = incomeCategoryId,
                 amount = 2500m,
                 description = "Community event catering",
                 paymentReference = "PAY-1001",
@@ -40,12 +51,11 @@ public sealed class FinanceFlowTests : ApiTestBase
             });
         using var expenseResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             new
             {
-                transactionType = "Expense",
-                category = "Supplies",
+                categoryID = expenseCategoryId,
                 amount = 850m,
                 description = "Food supplies",
                 transactionDate = DateTimeOffset.UtcNow
@@ -56,14 +66,14 @@ public sealed class FinanceFlowTests : ApiTestBase
 
         using var summaryResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
-            "/api/transactions/summary",
+            $"/api/businesses/{businessId}/financial-summary",
             token);
         Assert.Equal(HttpStatusCode.OK, summaryResponse.StatusCode);
         using var summaryJson = await JsonDocument.ParseAsync(
             await summaryResponse.Content.ReadAsStreamAsync());
         var summary = summaryJson.RootElement;
-        Assert.Equal(2500m, summary.GetProperty("income").GetDecimal());
-        Assert.Equal(850m, summary.GetProperty("expenses").GetDecimal());
+        Assert.Equal(2500m, summary.GetProperty("totalIncome").GetDecimal());
+        Assert.Equal(850m, summary.GetProperty("totalExpenses").GetDecimal());
         Assert.Equal(1650m, summary.GetProperty("netCashFlow").GetDecimal());
 
         using var readinessResponse = await SendAuthorizedJsonAsync(
@@ -73,7 +83,7 @@ public sealed class FinanceFlowTests : ApiTestBase
         using var readinessJson = await JsonDocument.ParseAsync(
             await readinessResponse.Content.ReadAsStreamAsync());
         Assert.Equal(
-            100,
+            33,
             readinessJson.RootElement
                 .GetProperty("progressPercent").GetInt32());
         Assert.Contains(
@@ -82,13 +92,42 @@ public sealed class FinanceFlowTests : ApiTestBase
 
         using var transactionsResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token);
         using var transactionsJson = await JsonDocument.ParseAsync(
             await transactionsResponse.Content.ReadAsStreamAsync());
         Assert.Equal(
             2,
             transactionsJson.RootElement.GetArrayLength());
+    }
+
+    private async Task<int> GetBusinessIdAsync(string token)
+    {
+        using var response = await SendAuthorizedJsonAsync(
+            HttpMethod.Get,
+            "/api/businesses/mine",
+            token);
+        using var json = await JsonDocument.ParseAsync(
+            await response.Content.ReadAsStreamAsync());
+        return json.RootElement.GetProperty("businessID").GetInt32();
+    }
+
+    private async Task<int> CreateCategoryAsync(
+        string token,
+        int businessId,
+        string name,
+        string transactionType)
+    {
+        using var response = await SendAuthorizedJsonAsync(
+            HttpMethod.Post,
+            $"/api/businesses/{businessId}/categories",
+            token,
+            new { name, transactionType });
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        using var json = await JsonDocument.ParseAsync(
+            await response.Content.ReadAsStreamAsync());
+        return json.RootElement.GetProperty("category")
+            .GetProperty("categoryID").GetInt32();
     }
 
     [Fact]

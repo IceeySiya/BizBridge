@@ -297,6 +297,50 @@ namespace BizBridge.Api.Migrations
 
                     b.HasKey("CheckID");
 
+                    b.HasData(
+                        new
+                        {
+                            CheckID = 1,
+                            Description = "Add your business name and industry to BizBridge.",
+                            IsRequired = true,
+                            Title = "Complete your business profile"
+                        },
+                        new
+                        {
+                            CheckID = 2,
+                            Description = "Add at least one transaction to establish a financial record.",
+                            IsRequired = true,
+                            Title = "Record business income or expenses"
+                        },
+                        new
+                        {
+                            CheckID = 3,
+                            Description = "Confirm that registration details are available for your business.",
+                            IsRequired = true,
+                            Title = "Capture business registration details"
+                        },
+                        new
+                        {
+                            CheckID = 4,
+                            Description = "Keep your tax reference and relevant filings together.",
+                            IsRequired = true,
+                            Title = "Prepare your tax records"
+                        },
+                        new
+                        {
+                            CheckID = 5,
+                            Description = "Keep business finances separate where possible.",
+                            IsRequired = true,
+                            Title = "Set up a business bank account"
+                        },
+                        new
+                        {
+                            CheckID = 6,
+                            Description = "Summarise your customers, offer, costs and revenue model.",
+                            IsRequired = true,
+                            Title = "Prepare a business plan or Lean Canvas"
+                        });
+
                     b.ToTable("ReadinessChecks");
                 });
 
