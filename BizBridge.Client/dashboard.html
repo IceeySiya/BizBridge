@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,126 +8,153 @@
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
+        rel="stylesheet"
+    >
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="auth-page">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="dashboard.html">
-            BizBridge
-        </a>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                BizBridge
+            </a>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-                <li class="nav-item">
-                    <a class="nav-link active"
-                       aria-current="page"
-                       href="dashboard.html">
-                        Command Centre
-                    </a>
-                </li>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="dashboard.html"
+                        >
+                            Command Centre
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="business-profile.html">
-                        Manage Business
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="business-profile.html">
+                            Manage Business
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <button
-                        type="button"
-                        id="logoutButton"
-                        class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">
-                        Logout
-                    </button>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">
+                            Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <button
+                            class="btn btn-outline-light btn-sm"
+                            type="button"
+                            id="logoutButton"
+                        >
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<main class="container py-4 py-lg-5">
-
-    <div id="dashboardMessage"
-         class="alert d-none"
-         role="alert"
-         aria-live="polite"></div>
-
-    <!-- Welcome -->
-    <section class="mb-4">
-        <span class="badge text-bg-success mb-2">
-            BUSINESS COMMAND CENTRE
-        </span>
-
-        <h1 class="h2 fw-bold">
-            Welcome back, <span id="userFullName">...</span>!
-        </h1>
-
-        <p class="text-secondary mb-0">
-            Your business at a glance. Manage your operations,
-            understand your finances and find ways to grow.
-        </p>
-    </section>
-
-    <!-- Empty state: shown when no business exists -->
-    <section id="noBusinessSection"
-             class="card border-0 shadow-sm mb-4 d-none">
-        <div class="card-body p-4 p-lg-5 text-center">
-            <h2 class="h4 fw-bold">Let's get your business started</h2>
-
-            <p class="text-secondary mx-auto"
-               style="max-width: 600px;">
-                Create your business profile to start organising your
-                business information and prepare to track your finances
-                with BizBridge.
+    <main class="container py-4 py-md-5">
+        <!-- Page heading -->
+        <header class="mb-4">
+            <p class="text-success fw-semibold mb-1">
+                BIZBRIDGE BUSINESS TOOLS
             </p>
 
-            <a href="business-profile.html"
-               class="btn btn-success">
-                Create Your Business
-            </a>
-        </div>
-    </section>
+            <h1 class="h2 fw-bold mb-2">
+                Business Command Centre
+            </h1>
 
-    <!-- Business overview -->
-    <section id="businessSection" class="mb-4 d-none">
-        <div class="card border-0 shadow-sm">
+            <p class="text-secondary mb-0">
+                Manage your business, track transactions and monitor your
+                financial performance.
+            </p>
+        </header>
+
+        <!-- General feedback -->
+        <div
+            id="dashboardMessage"
+            class="alert d-none"
+            role="alert"
+            aria-live="polite"
+        ></div>
+
+        <!-- Business profile missing -->
+        <section
+            id="noBusinessSection"
+            class="card border-0 shadow-sm mb-4 d-none"
+            aria-labelledby="noBusinessHeading"
+        >
             <div class="card-body p-4">
+                <h2 id="noBusinessHeading" class="h4 fw-bold">
+                    Set up your business profile
+                </h2>
 
-                <div class="d-flex flex-column flex-md-row
-                            justify-content-between align-items-md-start gap-3">
+                <p class="text-secondary">
+                    Create your business profile before recording transactions
+                    and viewing your business financial overview.
+                </p>
 
+                <a
+                    href="business-profile.html"
+                    class="btn btn-success"
+                >
+                    Create Business Profile
+                </a>
+            </div>
+        </section>
+
+        <!-- Business overview -->
+        <section
+            id="businessSection"
+            class="card border-0 shadow-sm mb-4 d-none"
+            aria-labelledby="businessSectionHeading"
+        >
+            <div class="card-body p-4">
+                <div
+                    class="d-flex flex-column flex-md-row
+                           justify-content-between align-items-md-start gap-3"
+                >
                     <div>
                         <p class="text-success fw-semibold small mb-1">
                             YOUR BUSINESS
                         </p>
 
-                        <h2 class="h3 fw-bold mb-2"
-                            id="businessName">Loading...</h2>
+                        <h2
+                            id="businessName"
+                            class="h3 fw-bold mb-2"
+                        >
+                            Business name
+                        </h2>
 
                         <p class="text-secondary mb-0">
                             <span id="businessIndustry">Industry</span>
                             <span aria-hidden="true"> · </span>
-                            <span id="businessLocation">Location not provided</span>
+                            <span id="businessLocation">Location</span>
                         </p>
                     </div>
 
-                    <a href="business-profile.html"
-                       class="btn btn-outline-success">
+                    <a
+                        href="business-profile.html"
+                        class="btn btn-outline-success"
+                    >
                         Manage Business
                     </a>
                 </div>
@@ -136,216 +162,284 @@
                 <hr class="my-4">
 
                 <div class="row g-3">
-                    <div class="col-md-6">
-                        <p class="small text-secondary mb-1">
-                            Business description
-                        </p>
-                        <p id="businessDescription" class="mb-0">
+                    <div class="col-12 col-md-6">
+                        <h3 class="h6 fw-bold">Business description</h3>
+                        <p
+                            id="businessDescription"
+                            class="text-secondary mb-0"
+                        >
                             No description provided.
                         </p>
                     </div>
 
-                    <div class="col-md-6">
-                        <p class="small text-secondary mb-1">
-                            Established
-                        </p>
-                        <p id="businessEstablished" class="mb-0">
-                            Not provided
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Financial overview -->
-    <section class="mb-5">
-        <div class="d-flex flex-column flex-sm-row
-                    justify-content-between align-items-sm-center gap-2 mb-3">
-
-            <div>
-                <h2 class="h4 fw-bold mb-1">Financial overview</h2>
-                <p class="text-secondary small mb-0">
-                    Your business performance
-                </p>
-            </div>
-
-            <span class="badge text-bg-light border">
-                Analytics coming soon
-            </span>
-        </div>
-
-        <div class="row g-3">
-
-            <div class="col-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-3 p-lg-4">
-                        <p class="small text-secondary mb-2">
-                            Total income
-                        </p>
-                        <h3 class="h5 fw-bold mb-2">Not available</h3>
-                        <p class="small text-secondary mb-0">
-                            Awaiting transactions
+                    <div class="col-12 col-md-6">
+                        <h3 class="h6 fw-bold">Established</h3>
+                        <p
+                            id="businessEstablished"
+                            class="text-secondary mb-0"
+                        >
+                            Not specified
                         </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-3 p-lg-4">
-                        <p class="small text-secondary mb-2">
-                            Total expenses
-                        </p>
-                        <h3 class="h5 fw-bold mb-2">Not available</h3>
-                        <p class="small text-secondary mb-0">
-                            Awaiting transactions
-                        </p>
-                    </div>
+        <!-- Financial overview -->
+        <section
+            id="financialSection"
+            class="mb-4"
+            aria-labelledby="financialHeading"
+        >
+            <div
+                class="d-flex flex-column flex-md-row
+                       justify-content-between align-items-md-center gap-2 mb-3"
+            >
+                <div>
+                    <h2 id="financialHeading" class="h4 fw-bold mb-1">
+                        Financial Overview
+                    </h2>
+
+                    <p class="text-secondary small mb-0">
+                        Current calendar month
+                    </p>
                 </div>
+
+                <a
+                    href="transactions.html"
+                    class="btn btn-outline-success btn-sm"
+                >
+                    View Transactions
+                </a>
             </div>
-
-            <div class="col-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-3 p-lg-4">
-                        <p class="small text-secondary mb-2">
-                            Net cash flow
-                        </p>
-                        <h3 class="h5 fw-bold mb-2">Not available</h3>
-                        <p class="small text-secondary mb-0">
-                            Requires income and expenses
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-3 p-lg-4">
-                        <p class="small text-secondary mb-2">
-                            Transactions
-                        </p>
-                        <h3 class="h5 fw-bold mb-2">Not available</h3>
-                        <p class="small text-secondary mb-0">
-                            Transaction tracking coming soon
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Quick actions -->
-    <section class="mb-5">
-        <h2 class="h4 fw-bold mb-3">Quick actions</h2>
-
-        <div class="row g-3">
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="h5 fw-bold">Manage Business</h3>
-                        <p class="text-secondary small">
-                            Update your business details and profile.
-                        </p>
-                        <a href="business-profile.html"
-                           class="btn btn-success w-100">
-                            Open Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="h5 fw-bold">Add Income</h3>
-                        <p class="text-secondary small">
-                            Record sales and payments received.
-                        </p>
-                        <button type="button"
-                                class="btn btn-outline-success w-100"
-                                disabled>
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="h5 fw-bold">Add Expense</h3>
-                        <p class="text-secondary small">
-                            Record stock purchases and business costs.
-                        </p>
-                        <button type="button"
-                                class="btn btn-outline-success w-100"
-                                disabled>
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="h5 fw-bold">Financial Analysis</h3>
-                        <p class="text-secondary small">
-                            Understand spending patterns and cash flow.
-                        </p>
-                        <button type="button"
-                                class="btn btn-outline-secondary w-100"
-                                disabled>
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Account details -->
-    <section class="card border-0 shadow-sm">
-        <div class="card-body p-4">
-            <h2 class="h5 fw-bold mb-3">Your account</h2>
 
             <div class="row g-3">
-                <div class="col-md-4">
-                    <p class="small text-secondary mb-1">Full name</p>
-                    <p id="profileName" class="mb-0">Loading...</p>
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                Total Income
+                            </p>
+
+                            <p
+                                id="totalIncome"
+                                class="h3 fw-bold text-success mb-2"
+                            >
+                                —
+                            </p>
+
+                            <p class="text-secondary small mb-0">
+                                Money received by your business
+                            </p>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="col-md-4">
-                    <p class="small text-secondary mb-1">Email</p>
-                    <p id="profileEmail" class="mb-0">Loading...</p>
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                Total Expenses
+                            </p>
+
+                            <p
+                                id="totalExpenses"
+                                class="h3 fw-bold text-danger mb-2"
+                            >
+                                —
+                            </p>
+
+                            <p class="text-secondary small mb-0">
+                                Money spent by your business
+                            </p>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="col-md-4">
-                    <p class="small text-secondary mb-1">Account role</p>
-                    <p id="profileRole" class="mb-0">Loading...</p>
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                Net Cash Flow
+                            </p>
+
+                            <p
+                                id="netCashFlow"
+                                class="h3 fw-bold mb-2"
+                            >
+                                —
+                            </p>
+
+                            <p class="text-secondary small mb-0">
+                                Income minus expenses
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                Transactions
+                            </p>
+
+                            <p
+                                id="transactionCount"
+                                class="h3 fw-bold mb-2"
+                            >
+                                —
+                            </p>
+
+                            <p class="text-secondary small mb-0">
+                                Recorded this month
+                            </p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
 
-</main>
+            <p
+                id="financialSummaryMessage"
+                class="text-secondary small mt-3 mb-0"
+                role="status"
+                aria-live="polite"
+            ></p>
+        </section>
 
-<footer class="container py-4">
-    <p class="text-center text-secondary small mb-0">
-        BizBridge — helping small businesses grow.
-    </p>
-</footer>
+        <!-- Quick actions -->
+        <section class="mb-4" aria-labelledby="quickActionsHeading">
+            <h2 id="quickActionsHeading" class="h4 fw-bold mb-3">
+                Quick Actions
+            </h2>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="text-success mb-3">
+                                <span class="fs-2" aria-hidden="true">
+                                    &#128188;
+                                </span>
+                            </div>
 
-<script src="dashboard.js"></script>
+                            <h3 class="h5 fw-bold">Manage Business</h3>
 
+                            <p class="text-secondary">
+                                View and update your business profile details.
+                            </p>
+
+                            <a
+                                href="business-profile.html"
+                                class="btn btn-outline-success"
+                            >
+                                Manage Business
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="text-success mb-3">
+                                <span class="fs-2" aria-hidden="true">
+                                    &#128221;
+                                </span>
+                            </div>
+
+                            <h3 class="h5 fw-bold">Add Transaction</h3>
+
+                            <p class="text-secondary">
+                                Record income or expenses and keep your
+                                business financial records up to date.
+                            </p>
+
+                            <a
+                                href="transactions.html"
+                                class="btn btn-success"
+                            >
+                                Add Transaction
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="text-success mb-3">
+                                <span class="fs-2" aria-hidden="true">
+                                    &#128200;
+                                </span>
+                            </div>
+
+                            <h3 class="h5 fw-bold">Financial Analysis</h3>
+
+                            <p class="text-secondary">
+                                Review your recorded transactions and assess
+                                your business cash flow.
+                            </p>
+
+                            <a
+                                href="transactions.html"
+                                class="btn btn-outline-success"
+                            >
+                                View Financial Records
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account details -->
+        <section
+            class="card border-0 shadow-sm"
+            aria-labelledby="accountHeading"
+        >
+            <div class="card-body p-4">
+                <h2 id="accountHeading" class="h4 fw-bold mb-3">
+                    Account Details
+                </h2>
+
+                <div class="row g-3">
+                    <div class="col-12 col-md-4">
+                        <p class="text-secondary small mb-1">Name</p>
+                        <p id="profileName" class="fw-semibold mb-0">
+                            Loading...
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <p class="text-secondary small mb-1">Email</p>
+                        <p id="profileEmail" class="fw-semibold mb-0">
+                            Loading...
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <p class="text-secondary small mb-1">Role</p>
+                        <p id="profileRole" class="fw-semibold mb-0">
+                            Loading...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container py-4 text-center">
+        <p class="text-secondary small mb-0">
+            BizBridge — Helping small businesses move forward.
+        </p>
+    </footer>
+
+    <script src="api-config.js"></script>
+    <script src="dashboard.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 </body>
 </html>

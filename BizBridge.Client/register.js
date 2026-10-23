@@ -1,104 +1,130 @@
-"use strict";
 
-<<<<<<< Updated upstream
-const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
-=======
-// Your running ASP.NET Core API
-const API_BASE_URL = "https://localhost:7142/api";
->>>>>>> Stashed changes
+const API_BASE_URL = "http://localhost:5214";
 
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registerForm");
-    const registerMessage = document.getElementById("registerMessage");
+    const fullNameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput =
+        document.getElementById("confirmPassword");
     const registerButton = document.getElementById("registerButton");
+    const errorMessage = document.getElementById("registerError");
+    const successMessage = document.getElementById("registerSuccess");
+
+    if (
+        !registerForm ||
+        !fullNameInput ||
+        !emailInput ||
+        !passwordInput ||
+        !registerButton
+    ) {
+        console.error(
+            "Registration form elements are missing. Check register.html."
+        );
+        return;
+    }
+
+    function showMessage(element, message) {
+        if (element) {
+            element.textContent = message;
+            element.classList.remove("d-none");
+        }
+    }
+
+    function clearMessages() {
+        if (errorMessage) {
+            errorMessage.textContent = "";
+            errorMessage.classList.add("d-none");
+        }
+
+        if (successMessage) {
+            successMessage.textContent = "";
+            successMessage.classList.add("d-none");
+        }
+    }
 
     registerForm.addEventListener("submit", async (event) => {
         event.preventDefault();
+        clearMessages();
 
-        const fullName = document.getElementById("fullName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-            document.getElementById("confirmPassword").value;
+        const fullName = fullNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput
+            ? confirmPasswordInput.value
+            : password;
 
-        // Clear the previous message.
-        registerMessage.textContent = "";
-        registerMessage.className = "alert d-none";
-
-        // Check that both passwords match.
-        if (password !== confirmPassword) {
-            showMessage("Passwords do not match.", "danger");
-            return;
-        }
-
-        // Match the backend's minimum password length.
-        if (password.length < 12) {
+        if (!fullName || !email || !password) {
             showMessage(
-                "Your password must contain at least 12 characters.",
-                "danger"
+                errorMessage,
+                "Please complete all required fields."
             );
             return;
         }
 
-        const registrationData = {
-            fullName: fullName,
-            email: email,
-            password: password
-        };
+        if (confirmPassword !== password) {
+            showMessage(
+                errorMessage,
+                "Your passwords do not match."
+            );
+            return;
+        }
 
         registerButton.disabled = true;
+        const originalButtonText = registerButton.textContent;
         registerButton.textContent = "Creating account...";
 
         try {
             const response = await fetch(
-                `${API_BASE_URL}/auth/register`,
+                `${API_BASE_URL}/api/auth/register`,
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(registrationData)
+                    body: JSON.stringify({
+                        fullName,
+                        email,
+                        password
+                    })
                 }
             );
 
-            const result = await response.json().catch(() => ({}));
+            const data = await response.json();
 
             if (!response.ok) {
-                const errorMessage =
-                    result.message ||
-                    result.title ||
-                    "Registration failed. Please check your details.";
-
-                showMessage(errorMessage, "danger");
-                return;
+                throw new Error(
+                    data.message ||
+                    "Registration failed. Please check your details."
+                );
             }
 
-           showMessage(
-                "Account created successfully! Redirecting to login...",
-                "success"
+            showMessage(
+                successMessage,
+                "Your BizBridge account has been created. Redirecting to login..."
             );
 
             registerForm.reset();
 
+            // Do not automatically log the user in here.
+            // They can sign in through the normal login flow.
             setTimeout(() => {
                 window.location.href = "login.html";
-            }, 1500);
-
+            }, 1200);
         } catch (error) {
-            console.error("Registration request failed:", error);
+            console.error("Registration error:", error);
 
             showMessage(
-                "Could not connect to BizBridge. Check that the API is running and try again.",
-                "danger"
+                errorMessage,
+                error instanceof TypeError
+                    ? "Unable to connect to BizBridge. Check that the API is running."
+                    : error.message ||
+                      "Something went wrong. Please try again."
             );
         } finally {
             registerButton.disabled = false;
             registerButton.textContent = "Create Account";
         }
     });
-
-    function showMessage(message, type) {
-        registerMessage.textContent = message;
-        registerMessage.className = `alert alert-${type}`;
-    }
 });

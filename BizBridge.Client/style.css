@@ -128,3 +128,143 @@ body {
     padding: 18px 20px;
 }
 
+
+/* ========================================
+   Transactions Page
+======================================== */
+
+.transactions-page {
+    min-height: 100vh;
+    background: var(--bizbridge-light);
+}
+
+.transactions-header {
+    background:
+        radial-gradient(circle at 90% 10%, #d8f3e2 0, transparent 35%),
+        #ffffff;
+    border: 1px solid #e6eee8;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.transactions-card {
+    background: #ffffff;
+    border: 1px solid #e6eee8;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(20, 60, 35, 0.04);
+}
+
+.transactions-card h2 {
+    color: var(--bizbridge-text);
+    font-weight: 700;
+}
+
+.transactions-card .form-label {
+    font-weight: 600;
+    color: var(--bizbridge-text);
+}
+
+.transactions-card .form-control,
+.transactions-card .form-select {
+    border-radius: 9px;
+    padding: 10px 12px;
+}
+
+.transactions-card .form-control:focus,
+.transactions-card .form-select:focus {
+    border-color: var(--bizbridge-green);
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.transactions-card .btn-primary {
+    background: var(--bizbridge-green);
+    border-color: var(--bizbridge-green);
+}
+
+.transactions-card .btn-primary:hover {
+    background: #146c43;
+    border-color: #146c43;
+}
+
+.transactions-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.transactions-table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.transactions-table thead th {
+    background: #f4f8f5;
+    color: var(--bizbridge-text);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.transactions-table td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.transaction-amount-income {
+    color: var(--bizbridge-green);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.transaction-amount-expense {
+    color: #dc3545;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.transaction-type-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.transaction-type-income {
+    background: #e2f5e9;
+    color: #146c43;
+}
+
+.transaction-type-expense {
+    background: #fce8e8;
+    color: #b02a37;
+}
+
+.transactions-empty-state {
+    padding: 32px 16px;
+    text-align: center;
+    color: #6c757d;
+}
+
+#pageMessage {
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .transactions-header {
+        padding: 20px;
+    }
+
+    .transactions-card {
+        padding: 18px;
+    }
+
+    .transactions-header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .transactions-card {
+        padding: 15px;
+    }
+}

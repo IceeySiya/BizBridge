@@ -76,4 +76,37 @@ public class CategoryService
 
         return category;
     }
+
+    
+/// <summary>
+/// Retrieves active categories belonging to a business.
+/// Only the business owner can access these categories.
+/// Returns null if the business does not belong to the user.
+/// </summary>
+public async Task<List<Category>?> GetCategoriesAsync(
+    int businessId,
+    int userId)
+{
+    // Verify that the authenticated user owns the business.
+    bool ownsBusiness = await _context.Businesses
+        .AnyAsync(b =>
+            b.BusinessID == businessId &&
+            b.OwnerUserID == userId);
+
+    if (!ownsBusiness)
+    {
+        return null;
+    }
+
+    // Return this business's active categories.
+    return await _context.Categories
+        .AsNoTracking()
+        .Where(c =>
+            c.BusinessID == businessId &&
+            c.IsActive)
+        .OrderBy(c => c.TransactionType)
+        .ThenBy(c => c.Name)
+        .ToListAsync();
+}
+
 }

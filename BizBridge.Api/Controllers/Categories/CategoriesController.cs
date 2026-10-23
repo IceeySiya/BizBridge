@@ -72,4 +72,45 @@ public class CategoriesController : ControllerBase
             return BadRequest(new { message = ex.Message });
         }
     }
+
+    
+/// <summary>
+/// Retrieves active categories for a business.
+/// </summary>
+[HttpGet]
+public async Task<IActionResult> GetCategories(int businessId)
+{
+    string? userIdClaim =
+        User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+    if (!int.TryParse(userIdClaim, out int userId))
+    {
+        return Unauthorized(new
+        {
+            message = "Unable to identify the authenticated user."
+        });
+    }
+
+    var categories = await _categoryService.GetCategoriesAsync(
+        businessId,
+        userId);
+
+    if (categories == null)
+    {
+        return NotFound(new
+        {
+            message = "Business not found or access denied."
+        });
+    }
+
+    return Ok(categories.Select(category => new
+    {
+        category.CategoryID,
+        category.BusinessID,
+        category.Name,
+        category.TransactionType,
+        category.IsActive
+    }));
+}
+
 }

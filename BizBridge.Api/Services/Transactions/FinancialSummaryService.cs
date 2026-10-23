@@ -41,21 +41,32 @@ public class FinancialSummaryService
 
         DateTime today = DateTime.UtcNow.Date;
 
-        DateTime periodStart = startDate?.Date
+        DateTime periodStartDate = startDate?.Date
             ?? new DateTime(today.Year, today.Month, 1);
 
-        DateTime periodEnd = endDate?.Date ?? today;
+        DateTime periodEndDate = endDate?.Date ?? today;
 
-        if (periodStart > periodEnd)
+        if (periodStartDate > periodEndDate)
         {
             throw new ArgumentException(
                 "The start date cannot be after the end date.");
         }
 
-        // Use an exclusive upper boundary so the entire end date
-        // is included, including transactions later in the day.
-        DateTime exclusiveEnd = periodEnd.AddDays(1);
+        // Convert the boundaries to UTC DateTimeOffset values.
+        // PostgreSQL timestamp with time zone requires UTC offsets
+        // when used with the Npgsql provider.
+        DateTimeOffset periodStart = new(
+            DateTime.SpecifyKind(
+                periodStartDate,
+                DateTimeKind.Utc));
 
+        DateTimeOffset exclusiveEnd = new(
+            DateTime.SpecifyKind(
+                periodEndDate.AddDays(1),
+                DateTimeKind.Utc));
+
+        // Filter transactions to the selected business and date range.
+        // The exclusive upper boundary includes the entire end date.
         var transactions = _context.Transactions
             .AsNoTracking()
             .Where(t =>
@@ -63,16 +74,19 @@ public class FinancialSummaryService
                 t.TransactionDate >= periodStart &&
                 t.TransactionDate < exclusiveEnd);
 
+        // Calculate income, expenses, and transaction count in the database.
         var totals = await transactions
             .GroupBy(_ => 1)
             .Select(group => new
             {
                 TotalIncome = group
-                    .Where(t => t.Category.TransactionType == "Income")
+                    .Where(t =>
+                        t.Category.TransactionType == "Income")
                     .Sum(t => (decimal?)t.Amount) ?? 0m,
 
                 TotalExpenses = group
-                    .Where(t => t.Category.TransactionType == "Expense")
+                    .Where(t =>
+                        t.Category.TransactionType == "Expense")
                     .Sum(t => (decimal?)t.Amount) ?? 0m,
 
                 TransactionCount = group.Count()
@@ -82,11 +96,12 @@ public class FinancialSummaryService
         decimal totalIncome = totals?.TotalIncome ?? 0m;
         decimal totalExpenses = totals?.TotalExpenses ?? 0m;
 
+        // Return the financial summary.
         return new FinancialSummaryDto
         {
             BusinessID = businessId,
-            PeriodStart = periodStart,
-            PeriodEnd = periodEnd,
+            PeriodStart = periodStartDate,
+            PeriodEnd = periodEndDate,
             TotalIncome = totalIncome,
             TotalExpenses = totalExpenses,
             NetCashFlow = totalIncome - totalExpenses,

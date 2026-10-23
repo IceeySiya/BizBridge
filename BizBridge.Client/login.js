@@ -1,75 +1,107 @@
-"use strict";
 
-<<<<<<< Updated upstream
-const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
-=======
-const API_BASE_URL = "https://localhost:7142/api";
->>>>>>> Stashed changes
+const API_BASE_URL = "http://localhost:5214";
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
-    const loginMessage = document.getElementById("loginMessage");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
     const loginButton = document.getElementById("loginButton");
+    const errorMessage = document.getElementById("loginError");
+
+    if (!loginForm || !emailInput || !passwordInput || !loginButton) {
+        console.error(
+            "Login form elements are missing. Check the IDs in login.html."
+        );
+        return;
+    }
+
+    // Display feedback without inserting HTML.
+    function showError(message) {
+        if (errorMessage) {
+            errorMessage.textContent = message;
+            errorMessage.classList.remove("d-none");
+        } else {
+            alert(message);
+        }
+    }
+
+    function clearError() {
+        if (errorMessage) {
+            errorMessage.textContent = "";
+            errorMessage.classList.add("d-none");
+        }
+    }
 
     loginForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        showMessage("", "");
+        clearError();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!email || !password) {
+            showError("Please enter your email and password.");
+            return;
+        }
+
         loginButton.disabled = true;
-        loginButton.textContent = "Logging in...";
+        const originalButtonText = loginButton.textContent;
+        loginButton.textContent = "Signing in...";
 
         try {
-            const response = await fetch(`${API_BASE_URL}/auth/login`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email: document.getElementById("email").value.trim(),
-                    password: document.getElementById("password").value
-                })
-            });
+            const response = await fetch(
+                `${API_BASE_URL}/api/auth/login`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    })
+                }
+            );
 
-            const result = await response.json().catch(() => ({}));
+            const data = await response.json();
 
             if (!response.ok) {
-                showMessage(
-                    result.message ||
-                        result.title ||
-                        "Login failed. Check your email and password.",
-                    "danger"
+                throw new Error(
+                    data.message || "Invalid email or password."
                 );
-                return;
             }
 
-            if (!result.accessToken) {
-                throw new Error("The API did not return an access token.");
+            if (!data.accessToken) {
+                throw new Error(
+                    "Login succeeded, but no access token was returned."
+                );
             }
 
-            sessionStorage.setItem("bizBridgeAccessToken", result.accessToken);
-            showMessage(
-                `Welcome back, ${result.user.fullName}. Redirecting to your dashboard...`,
-                "success"
-            );
-            loginForm.reset();
-            setTimeout(() => {
-                window.location.href = "dashboard.html";
-            }, 750);
+            // Store the JWT for authenticated API requests.
+            localStorage.setItem("token", data.accessToken);
+
+            // Optional user details for the frontend.
+            if (data.user) {
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(data.user)
+                );
+            }
+
+            loginButton.textContent = "Login successful!";
+
+            // Navigate to the Business Command Centre.
+            window.location.href = "dashboard.html";
         } catch (error) {
-            console.error("Login request failed:", error);
-            showMessage(
-                "Could not connect securely to BizBridge. Check that the HTTPS API is running and its development certificate is trusted.",
-                "danger"
+            console.error("Login error:", error);
+            showError(
+                error instanceof TypeError
+                    ? "Unable to connect to BizBridge. Check that the API is running."
+                    : error.message || "Something went wrong. Please try again."
             );
-        } finally {
+
             loginButton.disabled = false;
-            loginButton.textContent = "Log In";
+            loginButton.textContent = originalButtonText;
         }
     });
-
-    function showMessage(message, type) {
-        loginMessage.textContent = message;
-        loginMessage.className = type
-            ? `alert alert-${type}`
-            : "alert d-none";
-    }
 });
