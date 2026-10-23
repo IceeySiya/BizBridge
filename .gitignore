@@ -1,0 +1,30 @@
+
+# Existing IDE and database-tool settings
+/shelf/
+/workspace.xml
+/httpRequests/
+/queries/
+/dataSources/
+/dataSources.local.xml
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+**/appsettings.*.local.json
+
+# User-specific files
+*.user
+*.suo
+
+# Logs and operating system files
+*.log
+.DS_Store
+Thumbs.db
