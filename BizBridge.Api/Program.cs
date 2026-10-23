@@ -21,6 +21,7 @@ builder.Services.AddScoped<BizBridge.Api.Services.Business.BusinessService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Categories.CategoryService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Transactions.TransactionService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Transactions.FinancialSummaryService>();
+builder.Services.AddScoped<BizBridge.Api.Services.Transactions.FinancialInsightsService>();
 
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException(

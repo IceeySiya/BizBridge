@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Send an authenticated API request.
-    async function apiRequest(path) {
+    async function apiRequest(path, method = "GET", body = null) {
         const currentToken = localStorage.getItem("token");
 
         if (!currentToken) {
@@ -69,11 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const response = await fetch(`${API_BASE_URL}${path}`, {
-            method: "GET",
+            method,
             headers: {
                 Accept: "application/json",
+                ...(body === null
+                    ? {}
+                    : { "Content-Type": "application/json" }),
                 Authorization: `Bearer ${currentToken}`
-            }
+            },
+            body: body === null ? undefined : JSON.stringify(body)
         });
 
         if (response.status === 401 || response.status === 403) {
@@ -322,7 +326,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         displayBusiness(business);
 
-        await loadFinancialSummary();
+        await Promise.all([
+            loadFinancialSummary(),
+            loadReadiness(),
+            loadFinancialInsights()
+        ]);
     }
 
     // Load the current calendar month's financial summary.
@@ -492,6 +500,315 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function renderReadiness(data) {
+        const checks = getProperty(data, "checks", "Checks");
+        const completedCount = Number(
+            getProperty(data, "completedCount", "CompletedCount")
+        );
+        const totalCount = Number(
+            getProperty(data, "totalCount", "TotalCount")
+        );
+        const progressPercent = Number(
+            getProperty(data, "progressPercent", "ProgressPercent")
+        );
+
+        if (
+            !Array.isArray(checks) ||
+            !Number.isFinite(progressPercent) ||
+            !Number.isFinite(completedCount) ||
+            !Number.isFinite(totalCount)
+        ) {
+            throw new Error("The readiness response is incomplete.");
+        }
+
+        document.getElementById("readinessPercent").textContent =
+            `${progressPercent}%`;
+        document.getElementById("readinessSummary").textContent =
+            `${completedCount} of ${totalCount} readiness steps complete.`;
+        document.getElementById("readinessProgress").setAttribute(
+            "aria-valuenow",
+            String(progressPercent)
+        );
+        document.getElementById("readinessProgressBar").style.width =
+            `${progressPercent}%`;
+        document.getElementById("readinessBasis").textContent =
+            getProperty(data, "basis", "Basis") || "";
+
+        const checksElement = document.getElementById("readinessChecks");
+        checksElement.replaceChildren();
+
+        for (const check of checks) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "form-check readiness-check";
+
+            const checkbox = document.createElement("input");
+            const checkId = getProperty(check, "checkId", "CheckID");
+            const canEdit = Boolean(
+                getProperty(check, "canEdit", "CanEdit")
+            );
+            checkbox.type = "checkbox";
+            checkbox.className = "form-check-input";
+            checkbox.id = `readiness-${getProperty(check, "id", "Id")}`;
+            checkbox.checked = Boolean(
+                getProperty(check, "isCompleted", "IsCompleted")
+            );
+            checkbox.disabled = !canEdit;
+
+            const label = document.createElement("label");
+            label.className = "form-check-label fw-semibold";
+            label.htmlFor = checkbox.id;
+            label.textContent =
+                getProperty(check, "title", "Title") || "Readiness item";
+
+            const description = document.createElement("p");
+            description.className = "text-secondary small mb-0";
+            description.textContent = [
+                getProperty(check, "description", "Description"),
+                canEdit ? "Self-reported" : "Based on BizBridge records"
+            ].filter(Boolean).join(" · ");
+
+            checkbox.addEventListener("change", async () => {
+                const wasChecked = !checkbox.checked;
+                checkbox.disabled = true;
+                document.getElementById("readinessMessage").textContent =
+                    "Saving checklist progress...";
+
+                try {
+                    const { data: updated } = await apiRequest(
+                        `/readiness/mine/${checkId}`,
+                        "PUT",
+                        { isCompleted: checkbox.checked }
+                    );
+                    renderReadiness(updated);
+                    document.getElementById("readinessMessage").textContent =
+                        "Checklist progress saved.";
+                } catch (error) {
+                    console.error("Readiness update error:", error);
+                    checkbox.checked = wasChecked;
+                    checkbox.disabled = false;
+                    document.getElementById("readinessMessage").textContent =
+                        `Unable to save checklist progress: ${error.message}`;
+                }
+            });
+
+            wrapper.append(checkbox, label, description);
+            checksElement.append(wrapper);
+        }
+
+        const nextStepsElement =
+            document.getElementById("readinessNextSteps");
+        nextStepsElement.replaceChildren();
+
+        const nextSteps = getProperty(
+            data,
+            "recommendedNextSteps",
+            "RecommendedNextSteps"
+        ) || [];
+
+        if (nextSteps.length === 0) {
+            const item = document.createElement("li");
+            item.textContent =
+                "All listed readiness steps are complete. Keep your records up to date.";
+            nextStepsElement.append(item);
+        } else {
+            for (const step of nextSteps) {
+                const item = document.createElement("li");
+                item.className = "mb-1";
+                item.append(
+                    document.createTextNode(
+                        getProperty(step, "nextStep", "NextStep") ||
+                        getProperty(step, "title", "Title") ||
+                        "Review this readiness item."
+                    )
+                );
+
+                const actionUrl = getProperty(
+                    step,
+                    "actionUrl",
+                    "ActionUrl"
+                );
+                if (actionUrl) {
+                    const link = document.createElement("a");
+                    link.href = actionUrl;
+                    link.className = "ms-2";
+                    link.textContent = "Open";
+                    item.append(link);
+                }
+
+                nextStepsElement.append(item);
+            }
+        }
+
+        document.getElementById("readinessSection").classList.remove("d-none");
+    }
+
+    async function loadReadiness() {
+        try {
+            const { data } = await apiRequest("/readiness/mine");
+            renderReadiness(data);
+        } catch (error) {
+            console.error("Readiness loading error:", error);
+            document.getElementById("readinessMessage").textContent =
+                `Unable to load readiness checklist: ${error.message}`;
+            document.getElementById("readinessSection")
+                .classList.remove("d-none");
+        }
+    }
+
+    function renderFinancialInsights(data) {
+        const cashFlow = getProperty(
+            data,
+            "cashFlowByMonth",
+            "CashFlowByMonth"
+        );
+        const spending = getProperty(
+            data,
+            "spendingByCategory",
+            "SpendingByCategory"
+        );
+        const warnings = getProperty(data, "warnings", "Warnings");
+
+        if (
+            !Array.isArray(cashFlow) ||
+            !Array.isArray(spending) ||
+            !Array.isArray(warnings)
+        ) {
+            throw new Error("The financial insights response is incomplete.");
+        }
+
+        document.getElementById("insightsPeriod").textContent =
+            `Recorded activity: ${new Date(
+                getProperty(data, "periodStart", "PeriodStart")
+            ).toLocaleDateString("en-ZA")} – ${new Date(
+                getProperty(data, "periodEnd", "PeriodEnd")
+            ).toLocaleDateString("en-ZA")}`;
+        document.getElementById("insightsBasis").textContent =
+            getProperty(data, "basis", "Basis") || "";
+
+        const warningContainer =
+            document.getElementById("financialWarnings");
+        warningContainer.replaceChildren();
+        for (const warning of warnings) {
+            const alert = document.createElement("div");
+            const level = getProperty(warning, "level", "Level");
+            alert.className = level === "warning"
+                ? "alert alert-warning py-2 mb-2"
+                : "alert alert-info py-2 mb-2";
+            alert.textContent =
+                getProperty(warning, "message", "Message") || "";
+            warningContainer.append(alert);
+        }
+
+        const maxCashFlow = Math.max(
+            1,
+            ...cashFlow.map(point =>
+                Math.abs(Number(getProperty(point, "netCashFlow", "NetCashFlow")))
+            )
+        );
+        const trendContainer = document.getElementById("cashFlowTrend");
+        trendContainer.replaceChildren();
+
+        for (const point of cashFlow) {
+            const row = document.createElement("div");
+            row.className = "cash-flow-row";
+
+            const month = document.createElement("span");
+            month.className = "small text-secondary";
+            month.textContent = new Date(
+                `${getProperty(point, "month", "Month")}-01T00:00:00`
+            ).toLocaleDateString("en-ZA", { month: "short", year: "2-digit" });
+
+            const track = document.createElement("div");
+            track.className = "cash-flow-track";
+            const fill = document.createElement("div");
+            const net = Number(
+                getProperty(point, "netCashFlow", "NetCashFlow")
+            );
+            fill.className = net >= 0
+                ? "cash-flow-fill cash-flow-positive"
+                : "cash-flow-fill cash-flow-negative";
+            fill.style.width =
+                `${Math.max(2, Math.abs(net) / maxCashFlow * 100)}%`;
+            fill.setAttribute("aria-hidden", "true");
+            track.append(fill);
+
+            const value = document.createElement("span");
+            value.className = `small fw-semibold ${
+                net < 0 ? "text-danger" : "text-success"
+            }`;
+            value.textContent = formatCurrency(net);
+            value.setAttribute(
+                "aria-label",
+                `${getProperty(point, "month", "Month")} net cash flow ${value.textContent}`
+            );
+
+            row.append(month, track, value);
+            trendContainer.append(row);
+        }
+
+        const spendingContainer =
+            document.getElementById("spendingPatterns");
+        spendingContainer.replaceChildren();
+
+        if (spending.length === 0) {
+            const empty = document.createElement("p");
+            empty.className = "text-secondary small";
+            empty.textContent =
+                "No expense transactions are recorded for this period.";
+            spendingContainer.append(empty);
+        } else {
+            for (const pattern of spending) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "spending-pattern mb-3";
+
+                const heading = document.createElement("div");
+                heading.className =
+                    "d-flex justify-content-between gap-2 small mb-1";
+                const category = document.createElement("span");
+                category.textContent =
+                    getProperty(pattern, "category", "Category");
+                const amount = document.createElement("span");
+                amount.className = "fw-semibold text-nowrap";
+                amount.textContent =
+                    `${formatCurrency(getProperty(pattern, "total", "Total"))} · ${
+                        getProperty(pattern, "sharePercent", "SharePercent")
+                    }%`;
+                heading.append(category, amount);
+
+                const progress = document.createElement("div");
+                progress.className = "progress";
+                progress.setAttribute("aria-label", `${category.textContent} share of recorded expenses`);
+                const bar = document.createElement("div");
+                bar.className = "progress-bar bg-success";
+                bar.style.width =
+                    `${getProperty(pattern, "sharePercent", "SharePercent")}%`;
+                progress.append(bar);
+
+                wrapper.append(heading, progress);
+                spendingContainer.append(wrapper);
+            }
+        }
+
+        document.getElementById("insightsSection").classList.remove("d-none");
+    }
+
+    async function loadFinancialInsights() {
+        if (!businessId) return;
+
+        try {
+            const { data } = await apiRequest(
+                `/businesses/${businessId}/financial-insights`
+            );
+            renderFinancialInsights(data);
+        } catch (error) {
+            console.error("Financial insights error:", error);
+            document.getElementById("insightsMessage").textContent =
+                `Unable to load financial insights: ${error.message}`;
+            document.getElementById("insightsSection")
+                .classList.remove("d-none");
+        }
+    }
+
     // Initialise the dashboard.
     async function loadDashboard() {
         if (!localStorage.getItem("token")) {
@@ -552,6 +869,8 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.getItem("token")
         ) {
             loadFinancialSummary();
+            loadReadiness();
+            loadFinancialInsights();
         }
     });
 

@@ -207,6 +207,15 @@ public class BizBridgeDbContext : DbContext
 
             entity.Property(r => r.IsRequired)
                 .HasDefaultValue(true);
+
+            entity.HasData(ReadinessChecklist.Items.Select(item =>
+                new ReadinessCheck
+                {
+                    CheckID = item.CheckID,
+                    Title = item.Title,
+                    Description = item.Description,
+                    IsRequired = true
+                }));
         });
 
         // BUSINESS READINESS
