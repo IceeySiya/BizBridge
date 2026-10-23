@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net9.0": {
       "Humanizer.Core/2.14.1": {
@@ -3154,28 +3154,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Siyanda Mokoena\\.nuget\\packages\\": {}
+    "C:\\Users\\gundo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
+      "projectUniqueName": "C:\\Users\\gundo\\OneDrive\\Documents\\web\\Ice gun\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
       "projectName": "BizBridge.Api",
-      "projectPath": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
-      "packagesPath": "C:\\Users\\Siyanda Mokoena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Siyanda Mokoena\\BizBridge\\BizBridge.Api\\obj\\",
+      "projectPath": "C:\\Users\\gundo\\OneDrive\\Documents\\web\\Ice gun\\BizBridge\\BizBridge.Api\\BizBridge.Api.csproj",
+      "packagesPath": "C:\\Users\\gundo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gundo\\OneDrive\\Documents\\web\\Ice gun\\BizBridge\\BizBridge.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Siyanda Mokoena\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\gundo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {}
         }
@@ -3190,10 +3199,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net9.0": {
+        "framework": "net9.0",
         "targetAlias": "net9.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
@@ -3226,6 +3236,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.17, 9.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[9.0.17, 9.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.17, 9.0.17]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.17, 9.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3234,7 +3262,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.316/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
