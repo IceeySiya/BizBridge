@@ -5,17 +5,23 @@ namespace BizBridge.Api.Models;
 /// Represents a business registered on BizBridge.
 /// Each business belongs to one user.
 /// </summary>
-
 public class Business
 {
-    public int BusinessID {get; set;}
+    public int BusinessID { get; set; }
+
     // Foreign key referencing Users.UserId
-    public int OwnerUserID {get; set;}
-    public string BusinessName {get; set;}=string.Empty;
-    public string Industry {get; set;}=string.Empty;
-    public string? Location {get; set;}
-    public string? Description {get; set;}
-    public DateTimeOffset Established {get;set;}
-    //Navigation properties
+    public int OwnerUserID { get; set; }
+
+    public string BusinessName { get; set; } = string.Empty;
+    public string Industry { get; set; } = string.Empty;
+    public string? Location { get; set; }
+    public string? Description { get; set; }
+    public DateTimeOffset Established { get; set; }
+
+    // Initial funds available when the business starts tracking
+    // its finances on BizBridge.
+    public decimal OpeningBalance { get; set; } = 0m;
+
+    // Navigation properties
     public User Owner { get; set; } = null!;
 }

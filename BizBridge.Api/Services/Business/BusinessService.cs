@@ -31,6 +31,7 @@ public class BusinessService
                 "You already have a business profile.");
         }
 
+        
         var business = new Models.Business
         {
             OwnerUserID = userId,
@@ -38,8 +39,10 @@ public class BusinessService
             Industry = dto.Industry.Trim(),
             Location = dto.Location?.Trim(),
             Description = dto.Description?.Trim(),
-            Established = dto.Established ?? DateTimeOffset.UtcNow
+            Established = dto.Established ?? DateTimeOffset.UtcNow,
+            OpeningBalance = dto.OpeningBalance
         };
+
 
         _context.Businesses.Add(business);
         await _context.SaveChangesAsync();

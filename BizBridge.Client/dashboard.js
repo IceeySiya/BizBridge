@@ -2,56 +2,55 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Shared API configuration from api-config.js
+    // Shared API configuration from api-config.js.
     const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
 
     if (!API_BASE_URL) {
         console.error(
-            "API base URL is missing. Ensure api-config.js loads before dashboard.js."
+            "API base URL is missing. Check that api-config.js loads before dashboard.js."
         );
         return;
     }
 
-    const TOKEN_KEY = "token";
-    const token = localStorage.getItem(TOKEN_KEY);
+    const token = localStorage.getItem("token");
 
-    // Page elements
-    const dashboardMessage = document.getElementById("dashboardMessage");
-    const logoutButton = document.getElementById("logoutButton");
-    const noBusinessSection = document.getElementById("noBusinessSection");
-    const businessSection = document.getElementById("businessSection");
+    // Page elements.
+    const dashboardMessage =
+        document.getElementById("dashboardMessage");
 
-    const financialSummaryMessage = document.getElementById(
-        "financialSummaryMessage"
-    );
+    const logoutButton =
+        document.getElementById("logoutButton");
+
+    const noBusinessSection =
+        document.getElementById("noBusinessSection");
+
+    const businessSection =
+        document.getElementById("businessSection");
+
+    const financialSummaryMessage =
+        document.getElementById("financialSummaryMessage");
 
     let businessId = null;
+    let isLoadingSummary = false;
 
-    // Display a dashboard message safely.
+    // Display a dashboard message.
     function showMessage(message, type = "danger") {
-        if (!dashboardMessage) return;
-
         dashboardMessage.textContent = message;
         dashboardMessage.className = `alert alert-${type}`;
     }
 
     function hideMessage() {
-        if (!dashboardMessage) return;
-
         dashboardMessage.textContent = "";
         dashboardMessage.className = "alert d-none";
     }
 
     // Log the user out.
     function logout() {
-        localStorage.removeItem(TOKEN_KEY);
-        localStorage.removeItem("user");
+        localStorage.removeItem("token");
         window.location.replace("login.html");
     }
 
-    if (logoutButton) {
-        logoutButton.addEventListener("click", logout);
-    }
+    logoutButton.addEventListener("click", logout);
 
     // Support camelCase and PascalCase API responses.
     function getProperty(object, camelCaseName, pascalCaseName) {
@@ -59,19 +58,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Send an authenticated API request.
-    async function apiRequest(path, options = {}) {
-        const currentToken = localStorage.getItem(TOKEN_KEY);
+    async function apiRequest(path) {
+        const currentToken = localStorage.getItem("token");
 
         if (!currentToken) {
             logout();
-            throw new Error("Your session has expired. Please log in again.");
+            throw new Error(
+                "Your session has expired. Please log in again."
+            );
         }
 
         const response = await fetch(`${API_BASE_URL}${path}`, {
-            ...options,
+            method: "GET",
             headers: {
                 Accept: "application/json",
-                ...options.headers,
                 Authorization: `Bearer ${currentToken}`
             }
         });
@@ -106,16 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
                       data.title ||
                       data.detail ||
                       data.error
-                    : typeof data === "string"
-                        ? data
-                        : null;
+                    : null;
 
-            const error = new Error(
-                message || `The API request failed (${response.status}).`
+            throw new Error(
+                message ||
+                `The API request failed (${response.status}).`
             );
-
-            error.status = response.status;
-            throw error;
         }
 
         return { response, data };
@@ -126,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numericAmount = Number(amount);
 
         if (!Number.isFinite(numericAmount)) {
-            return "R 0.00";
+            return "—";
         }
 
         return new Intl.NumberFormat("en-ZA", {
@@ -137,56 +133,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Reset the financial overview cards.
     function resetFinancialSummary(message) {
-        const totalIncome = document.getElementById("totalIncome");
-        const totalExpenses = document.getElementById("totalExpenses");
-        const netCashFlow = document.getElementById("netCashFlow");
-        const transactionCount = document.getElementById("transactionCount");
+        const currentBalanceElement =
+            document.getElementById("currentBalance");
 
-        if (totalIncome) totalIncome.textContent = "—";
-        if (totalExpenses) totalExpenses.textContent = "—";
-        if (netCashFlow) {
-            netCashFlow.textContent = "—";
-            netCashFlow.classList.remove("text-success", "text-danger");
-        }
-        if (transactionCount) transactionCount.textContent = "—";
+        const totalIncomeElement =
+            document.getElementById("totalIncome");
 
-        if (financialSummaryMessage) {
-            financialSummaryMessage.textContent = message;
+        const totalExpensesElement =
+            document.getElementById("totalExpenses");
+
+        const netCashFlowElement =
+            document.getElementById("netCashFlow");
+
+        const transactionCountElement =
+            document.getElementById("transactionCount");
+
+        if (currentBalanceElement) {
+            currentBalanceElement.textContent = "—";
+            currentBalanceElement.classList.remove(
+                "text-success",
+                "text-danger"
+            );
         }
+
+        if (totalIncomeElement) {
+            totalIncomeElement.textContent = "—";
+        }
+
+        if (totalExpensesElement) {
+            totalExpensesElement.textContent = "—";
+        }
+
+        if (netCashFlowElement) {
+            netCashFlowElement.textContent = "—";
+            netCashFlowElement.classList.remove(
+                "text-success",
+                "text-danger"
+            );
+        }
+
+        if (transactionCountElement) {
+            transactionCountElement.textContent = "—";
+        }
+
+        financialSummaryMessage.textContent = message;
     }
 
-    // Show a helpful state when no business profile is available.
+    // Show the state where no business profile exists.
     function showNoBusiness() {
-        if (businessSection) {
-            businessSection.classList.add("d-none");
-        }
-
-        if (noBusinessSection) {
-            noBusinessSection.classList.remove("d-none");
-        }
+        businessSection.classList.add("d-none");
+        noBusinessSection.classList.remove("d-none");
 
         businessId = null;
 
         resetFinancialSummary(
-            "Your financial summary is unavailable until your business profile is found."
-        );
-
-        showMessage(
-            "We couldn't find your business profile. You can create a profile or check your existing profile using the button below.",
-            "warning"
+            "Create a business profile to view your financial summary."
         );
     }
 
     // Display business profile details.
     function displayBusiness(business) {
-        const name = getProperty(business, "businessName", "BusinessName");
-        const industry = getProperty(business, "industry", "Industry");
-        const location = getProperty(business, "location", "Location");
+        const name = getProperty(
+            business,
+            "businessName",
+            "BusinessName"
+        );
+
+        const industry = getProperty(
+            business,
+            "industry",
+            "Industry"
+        );
+
+        const location = getProperty(
+            business,
+            "location",
+            "Location"
+        );
+
         const description = getProperty(
             business,
             "description",
             "Description"
         );
+
         const established = getProperty(
             business,
             "established",
@@ -211,37 +241,39 @@ document.addEventListener("DOMContentLoaded", () => {
         if (established) {
             const establishedDate = new Date(established);
 
-            establishedElement.textContent = Number.isNaN(
-                establishedDate.getTime()
-            )
-                ? "Not specified"
-                : establishedDate.toLocaleDateString("en-ZA");
+            establishedElement.textContent =
+                Number.isNaN(establishedDate.getTime())
+                    ? "Not specified"
+                    : establishedDate.toLocaleDateString("en-ZA");
         } else {
             establishedElement.textContent = "Not specified";
         }
 
-        if (noBusinessSection) {
-            noBusinessSection.classList.add("d-none");
-        }
-
-        if (businessSection) {
-            businessSection.classList.remove("d-none");
-        }
-
-        hideMessage();
+        noBusinessSection.classList.add("d-none");
+        businessSection.classList.remove("d-none");
     }
 
     // Load authenticated account details.
     async function loadAccount() {
         const { data } = await apiRequest("/auth/me");
+
         const user = data?.user ?? data?.data ?? data;
 
         if (!user || typeof user !== "object") {
             throw new Error("Could not load your account details.");
         }
 
-        const firstName = getProperty(user, "firstName", "FirstName");
-        const lastName = getProperty(user, "lastName", "LastName");
+        const firstName = getProperty(
+            user,
+            "firstName",
+            "FirstName"
+        );
+
+        const lastName = getProperty(
+            user,
+            "lastName",
+            "LastName"
+        );
 
         const fullName =
             getProperty(user, "fullName", "FullName") ||
@@ -250,75 +282,74 @@ document.addEventListener("DOMContentLoaded", () => {
             getProperty(user, "username", "Username") ||
             "User";
 
-        document.getElementById("profileName").textContent = fullName;
+        document.getElementById("profileName").textContent =
+            fullName;
 
         document.getElementById("profileEmail").textContent =
-            getProperty(user, "email", "Email") || "Not available";
+            getProperty(user, "email", "Email") ||
+            "Not available";
 
         document.getElementById("profileRole").textContent =
-            getProperty(user, "role", "Role") || "User";
+            getProperty(user, "role", "Role") ||
+            "User";
     }
 
     // Load the logged-in user's business.
     async function loadBusiness() {
-        try {
-            const { response, data } = await apiRequest("/businesses/mine");
+        const { response, data } =
+            await apiRequest("/businesses/mine");
 
-            if (response.status === 204 || !data) {
-                showNoBusiness();
-                return;
-            }
-
-            const business = data?.business ?? data?.data ?? data;
-
-            const id = getProperty(
-                business,
-                "businessID",
-                "BusinessID"
-            );
-
-            if (!id) {
-                showNoBusiness();
-                return;
-            }
-
-            businessId = id;
-
-            displayBusiness(business);
-
-            await loadFinancialSummary();
-        } catch (error) {
-            const message = error.message.toLowerCase();
-
-            const profileNotFound =
-                error.status === 404 ||
-                message.includes("no business profile found") ||
-                message.includes("business not found");
-
-            if (profileNotFound) {
-                showNoBusiness();
-                return;
-            }
-
-            throw error;
+        if (response.status === 204 || !data) {
+            showNoBusiness();
+            return;
         }
+
+        const business =
+            data?.business ?? data?.data ?? data;
+
+        const id = getProperty(
+            business,
+            "businessID",
+            "BusinessID"
+        );
+
+        if (!id) {
+            showNoBusiness();
+            return;
+        }
+
+        businessId = id;
+
+        displayBusiness(business);
+
+        await loadFinancialSummary();
     }
 
     // Load the current calendar month's financial summary.
+    // CurrentBalance is calculated by the API using all transactions.
     async function loadFinancialSummary() {
-        if (!businessId) return;
-
-        if (financialSummaryMessage) {
-            financialSummaryMessage.textContent =
-                "Loading financial summary...";
+        if (!businessId || isLoadingSummary) {
+            return;
         }
 
+        isLoadingSummary = true;
+
+        financialSummaryMessage.textContent =
+            "Loading financial summary...";
+
         try {
+            // Use the browser's local calendar dates for this month's report.
             const now = new Date();
 
             const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, "0");
-            const day = String(now.getDate()).padStart(2, "0");
+
+            const month = String(
+                now.getMonth() + 1
+            ).padStart(2, "0");
+
+            const day = String(
+                now.getDate()
+            ).padStart(2, "0");
 
             const startDate = `${year}-${month}-01`;
             const endDate = `${year}-${month}-${day}`;
@@ -333,20 +364,42 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             if (!data || typeof data !== "object") {
-                throw new Error("The API returned no financial summary.");
+                throw new Error(
+                    "The API returned no financial summary."
+                );
             }
 
+            // Current balance is all-time, unlike the monthly figures.
+            const currentBalance = Number(
+                getProperty(
+                    data,
+                    "currentBalance",
+                    "CurrentBalance"
+                )
+            );
+
             const totalIncome = Number(
-                getProperty(data, "totalIncome", "TotalIncome") ?? 0
+                getProperty(
+                    data,
+                    "totalIncome",
+                    "TotalIncome"
+                ) ?? 0
             );
 
             const totalExpenses = Number(
-                getProperty(data, "totalExpenses", "TotalExpenses") ?? 0
+                getProperty(
+                    data,
+                    "totalExpenses",
+                    "TotalExpenses"
+                ) ?? 0
             );
 
             const netCashFlow = Number(
-                getProperty(data, "netCashFlow", "NetCashFlow") ??
-                (totalIncome - totalExpenses)
+                getProperty(
+                    data,
+                    "netCashFlow",
+                    "NetCashFlow"
+                ) ?? (totalIncome - totalExpenses)
             );
 
             const transactionCount = Number(
@@ -357,27 +410,54 @@ document.addEventListener("DOMContentLoaded", () => {
                 ) ?? 0
             );
 
+            // Do not silently display a zero balance if the API
+            // has not returned the CurrentBalance property.
             if (
+                !Number.isFinite(currentBalance) ||
                 !Number.isFinite(totalIncome) ||
                 !Number.isFinite(totalExpenses) ||
                 !Number.isFinite(netCashFlow) ||
-                !Number.isFinite(transactionCount)
+                !Number.isFinite(transactionCount) ||
+                transactionCount < 0
             ) {
                 throw new Error(
-                    "The financial summary contains invalid values."
+                    "The financial summary contains invalid values. " +
+                    "Check that the API returns CurrentBalance."
                 );
             }
 
+            // Display current balance.
+            const currentBalanceElement =
+                document.getElementById("currentBalance");
+
+            currentBalanceElement.textContent =
+                formatCurrency(currentBalance);
+
+            currentBalanceElement.classList.remove(
+                "text-success",
+                "text-danger"
+            );
+
+            currentBalanceElement.classList.add(
+                currentBalance >= 0
+                    ? "text-success"
+                    : "text-danger"
+            );
+
+            // Display monthly income.
             document.getElementById("totalIncome").textContent =
                 formatCurrency(totalIncome);
 
+            // Display monthly expenses.
             document.getElementById("totalExpenses").textContent =
                 formatCurrency(totalExpenses);
 
+            // Display monthly net cash flow.
             const netCashFlowElement =
                 document.getElementById("netCashFlow");
 
-            netCashFlowElement.textContent = formatCurrency(netCashFlow);
+            netCashFlowElement.textContent =
+                formatCurrency(netCashFlow);
 
             netCashFlowElement.classList.remove(
                 "text-success",
@@ -385,61 +465,81 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             netCashFlowElement.classList.add(
-                netCashFlow >= 0 ? "text-success" : "text-danger"
+                netCashFlow >= 0
+                    ? "text-success"
+                    : "text-danger"
             );
 
+            // Display monthly transaction count.
             document.getElementById("transactionCount").textContent =
                 String(transactionCount);
 
-            if (financialSummaryMessage) {
-                financialSummaryMessage.textContent =
-                    `Summary for ${startDate} to ${endDate}.`;
-            }
+            financialSummaryMessage.textContent =
+                `Summary for ${startDate} to ${endDate}. ` +
+                "Current balance includes all recorded transactions.";
+
         } catch (error) {
-            console.error("Financial summary error:", error);
+            console.error(
+                "Financial summary error:",
+                error
+            );
 
             resetFinancialSummary(
-                `Your business profile was found, but the financial summary could not be loaded: ${error.message}`
+                `Unable to load financial summary: ${error.message}`
             );
+        } finally {
+            isLoadingSummary = false;
         }
     }
 
     // Initialise the dashboard.
     async function loadDashboard() {
-        if (!token) {
+        if (!localStorage.getItem("token")) {
             logout();
             return;
         }
 
         hideMessage();
 
-        document.getElementById("profileName").textContent = "Loading...";
-        document.getElementById("profileEmail").textContent = "Loading...";
-        document.getElementById("profileRole").textContent = "Loading...";
+        document.getElementById("profileName").textContent =
+            "Loading...";
+
+        document.getElementById("profileEmail").textContent =
+            "Loading...";
+
+        document.getElementById("profileRole").textContent =
+            "Loading...";
 
         try {
             await loadAccount();
         } catch (error) {
-            console.error("Account loading error:", error);
+            console.error(
+                "Account loading error:",
+                error
+            );
 
-            if (localStorage.getItem(TOKEN_KEY)) {
+            if (localStorage.getItem("token")) {
                 showMessage(
                     `Could not load account details: ${error.message}`
                 );
             }
         }
 
-        if (!localStorage.getItem(TOKEN_KEY)) return;
+        if (!localStorage.getItem("token")) {
+            return;
+        }
 
         try {
             await loadBusiness();
         } catch (error) {
-            console.error("Business loading error:", error);
+            console.error(
+                "Business loading error:",
+                error
+            );
 
-            if (localStorage.getItem(TOKEN_KEY)) {
+            if (localStorage.getItem("token")) {
                 showMessage(
-                    `We couldn't load your business information. Please try again later. Details: ${error.message}`,
-                    "warning"
+                    `Could not load your business: ${error.message}`
                 );
             }
         }
@@ -447,7 +547,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Refresh financial figures when returning to this page.
     window.addEventListener("pageshow", () => {
-        if (businessId && localStorage.getItem(TOKEN_KEY)) {
+        if (
+            businessId &&
+            localStorage.getItem("token")
+        ) {
             loadFinancialSummary();
         }
     });

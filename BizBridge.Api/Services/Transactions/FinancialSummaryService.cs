@@ -5,9 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BizBridge.Api.Services.Transactions;
 
-/// <summary>
-/// Calculates financial summaries from recorded business transactions.
-/// </summary>
 public class FinancialSummaryService
 {
     private readonly BizBridgeDbContext _context;
@@ -17,28 +14,26 @@ public class FinancialSummaryService
         _context = context;
     }
 
-    /// <summary>
-    /// Calculates financial totals for a business and date range.
-    /// Dates are inclusive; the end date includes the entire day.
-    /// If no dates are supplied, the current UTC month is used.
-    /// </summary>
     public async Task<FinancialSummaryDto?> GetSummaryAsync(
         int businessId,
         int userId,
         DateTime? startDate = null,
         DateTime? endDate = null)
     {
-        // Verify business ownership before retrieving financial data.
-        bool ownsBusiness = await _context.Businesses
-            .AnyAsync(b =>
+        // Confirm that this business belongs to the authenticated user.
+        var business = await _context.Businesses
+            .AsNoTracking()
+            .FirstOrDefaultAsync(b =>
                 b.BusinessID == businessId &&
                 b.OwnerUserID == userId);
 
-        if (!ownsBusiness)
+        if (business is null)
         {
             return null;
         }
 
+        // Default reporting period: first day of the current month
+        // through today's date.
         DateTime today = DateTime.UtcNow.Date;
 
         DateTime periodStartDate = startDate?.Date
@@ -52,9 +47,8 @@ public class FinancialSummaryService
                 "The start date cannot be after the end date.");
         }
 
-        // Convert the boundaries to UTC DateTimeOffset values.
-        // PostgreSQL timestamp with time zone requires UTC offsets
-        // when used with the Npgsql provider.
+        // Use an inclusive start and exclusive end so transactions
+        // occurring at any time on the final day are included.
         DateTimeOffset periodStart = new(
             DateTime.SpecifyKind(
                 periodStartDate,
@@ -65,18 +59,52 @@ public class FinancialSummaryService
                 periodEndDate.AddDays(1),
                 DateTimeKind.Utc));
 
-        // Filter transactions to the selected business and date range.
-        // The exclusive upper boundary includes the entire end date.
-        var transactions = _context.Transactions
+        // ---------------------------------------------------------
+        // ALL-TIME TOTALS: used to calculate the current balance.
+        // ---------------------------------------------------------
+        var allTransactions = _context.Transactions
+            .AsNoTracking()
+            .Where(t => t.BusinessID == businessId);
+
+        var allTimeTotals = await allTransactions
+            .GroupBy(t => t.BusinessID)
+            .Select(group => new
+            {
+                TotalIncome = group
+                    .Where(t =>
+                        t.Category.TransactionType == "Income")
+                    .Sum(t => (decimal?)t.Amount) ?? 0m,
+
+                TotalExpenses = group
+                    .Where(t =>
+                        t.Category.TransactionType == "Expense")
+                    .Sum(t => (decimal?)t.Amount) ?? 0m
+            })
+            .FirstOrDefaultAsync();
+
+        decimal allTimeIncome =
+            allTimeTotals?.TotalIncome ?? 0m;
+
+        decimal allTimeExpenses =
+            allTimeTotals?.TotalExpenses ?? 0m;
+
+        decimal openingBalance = business.OpeningBalance;
+
+        decimal currentBalance =
+            openingBalance + allTimeIncome - allTimeExpenses;
+
+        // ---------------------------------------------------------
+        // SELECTED-PERIOD TOTALS: used for the financial report.
+        // ---------------------------------------------------------
+        var periodTransactions = _context.Transactions
             .AsNoTracking()
             .Where(t =>
                 t.BusinessID == businessId &&
                 t.TransactionDate >= periodStart &&
                 t.TransactionDate < exclusiveEnd);
 
-        // Calculate income, expenses, and transaction count in the database.
-        var totals = await transactions
-            .GroupBy(_ => 1)
+        var periodTotals = await periodTransactions
+            .GroupBy(t => t.BusinessID)
             .Select(group => new
             {
                 TotalIncome = group
@@ -93,19 +121,29 @@ public class FinancialSummaryService
             })
             .FirstOrDefaultAsync();
 
-        decimal totalIncome = totals?.TotalIncome ?? 0m;
-        decimal totalExpenses = totals?.TotalExpenses ?? 0m;
+        decimal totalIncome =
+            periodTotals?.TotalIncome ?? 0m;
 
-        // Return the financial summary.
+        decimal totalExpenses =
+            periodTotals?.TotalExpenses ?? 0m;
+
         return new FinancialSummaryDto
         {
             BusinessID = businessId,
+
             PeriodStart = periodStartDate,
             PeriodEnd = periodEndDate,
+
+            OpeningBalance = openingBalance,
+            CurrentBalance = currentBalance,
+
             TotalIncome = totalIncome,
             TotalExpenses = totalExpenses,
+
             NetCashFlow = totalIncome - totalExpenses,
-            TransactionCount = totals?.TransactionCount ?? 0
+
+            TransactionCount =
+                periodTotals?.TransactionCount ?? 0
         };
     }
 }

@@ -12,6 +12,10 @@ public class FinancialSummaryDto
 
     public DateTime PeriodEnd { get; set; }
 
+    public decimal OpeningBalance { get; set; }
+
+    public decimal CurrentBalance { get; set; }
+
     public decimal TotalIncome { get; set; }
 
     public decimal TotalExpenses { get; set; }
