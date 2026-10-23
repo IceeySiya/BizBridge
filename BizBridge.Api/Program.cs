@@ -58,7 +58,7 @@ builder.Services
         };
     });
 
-// Allow the local BizBridge frontend to call the API.
+ // Allow local development and the deployed Netlify frontend.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("BizBridgeFrontend", policy =>
@@ -66,7 +66,8 @@ builder.Services.AddCors(options =>
         policy
             .WithOrigins(
                 "http://127.0.0.1:5500",
-                "http://localhost:5500"
+                "http://localhost:5500",
+                "https://bizbridgefrontend.netlify.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
