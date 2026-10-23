@@ -3,8 +3,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // API configuration
-    const API_BASE_URL =
-        window.BIZBRIDGE_API_BASE_URL || "http://localhost:5214/api";
+        // Use the shared API configuration from api-config.js
+    const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
+
+    if (!API_BASE_URL) {
+        console.error(
+            "API base URL is missing. Check that api-config.js loads before dashboard.js."
+        );
+        return;
+    }
 
     const token = localStorage.getItem("token");
 

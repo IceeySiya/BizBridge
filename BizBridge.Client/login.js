@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "http://localhost:5214";
+const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");

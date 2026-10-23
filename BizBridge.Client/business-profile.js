@@ -1,8 +1,10 @@
 
+
 "use strict";
 
-const API_BASE_URL = "http://localhost:5214/api";
+const API_BASE_URL = window.BIZBRIDGE_API_BASE_URL;
 const TOKEN_KEY = "token";
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const businessForm = document.getElementById("businessForm");
