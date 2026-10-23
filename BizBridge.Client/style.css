@@ -128,6 +128,55 @@ body {
     padding: 18px 20px;
 }
 
+.readiness-check {
+    padding: 14px 12px 14px 2rem;
+    border-bottom: 1px solid #e7efe9;
+}
+
+.readiness-check:last-child {
+    border-bottom: 0;
+}
+
+.readiness-check .form-check-input {
+    margin-top: 0.35rem;
+}
+
+.readiness-check .form-check-input:disabled {
+    opacity: 0.8;
+}
+
+.cash-flow-row {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(3rem, 1fr) minmax(6rem, auto);
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.cash-flow-track {
+    height: 12px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #edf1ee;
+}
+
+.cash-flow-fill {
+    height: 100%;
+    border-radius: inherit;
+}
+
+.cash-flow-positive {
+    background: var(--bizbridge-green);
+}
+
+.cash-flow-negative {
+    background: #dc3545;
+}
+
+.cash-flow-row > span:last-child {
+    text-align: right;
+}
+
 
 /* ========================================
    Transactions Page

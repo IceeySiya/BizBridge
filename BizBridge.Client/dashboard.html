@@ -307,6 +307,117 @@
             ></p>
         </section>
 
+        <!-- Business readiness passport -->
+        <section
+            id="readinessSection"
+            class="card border-0 shadow-sm mb-4 d-none"
+            aria-labelledby="readinessHeading"
+        >
+            <div class="card-body p-4">
+                <div
+                    class="d-flex flex-column flex-md-row
+                           justify-content-between align-items-md-start gap-3"
+                >
+                    <div>
+                        <p class="text-success fw-semibold small mb-1">
+                            YOUR NEXT STEPS
+                        </p>
+                        <h2 id="readinessHeading" class="h4 fw-bold mb-2">
+                            Business Readiness Passport
+                        </h2>
+                        <p class="text-secondary mb-0">
+                            Track useful records and preparation steps for
+                            moving your business forward.
+                        </p>
+                    </div>
+                    <p class="h3 fw-bold text-success mb-0">
+                        <span id="readinessPercent">—</span>
+                        <span class="fs-6">complete</span>
+                    </p>
+                </div>
+
+                <div
+                    class="progress mt-3"
+                    role="progressbar"
+                    aria-label="Business readiness progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                    id="readinessProgress"
+                >
+                    <div
+                        id="readinessProgressBar"
+                        class="progress-bar bg-success"
+                        style="width: 0%"
+                    ></div>
+                </div>
+
+                <p
+                    id="readinessSummary"
+                    class="text-secondary small mt-2 mb-3"
+                ></p>
+
+                <div id="readinessChecks" class="readiness-checks"></div>
+
+                <div class="mt-4">
+                    <h3 class="h6 fw-bold">Recommended next steps</h3>
+                    <ul id="readinessNextSteps" class="text-secondary mb-0"></ul>
+                    <p
+                        id="readinessMessage"
+                        class="small mt-2 mb-0"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </div>
+
+                <p id="readinessBasis" class="text-secondary small mt-3 mb-0"></p>
+            </div>
+        </section>
+
+        <!-- Recorded financial insights -->
+        <section
+            id="insightsSection"
+            class="card border-0 shadow-sm mb-4 d-none"
+            aria-labelledby="insightsHeading"
+        >
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <p class="text-success fw-semibold small mb-1">
+                        RECORDED TRANSACTIONS
+                    </p>
+                    <h2 id="insightsHeading" class="h4 fw-bold mb-1">
+                        Cash-flow insights
+                    </h2>
+                    <p id="insightsPeriod" class="text-secondary small mb-0"></p>
+                </div>
+
+                <div id="financialWarnings" class="mb-4"></div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-lg-7">
+                        <h3 class="h6 fw-bold">Monthly net cash flow</h3>
+                        <div
+                            id="cashFlowTrend"
+                            class="cash-flow-trend"
+                            aria-label="Monthly net cash-flow trend"
+                        ></div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <h3 class="h6 fw-bold">Spending by category</h3>
+                        <div id="spendingPatterns"></div>
+                    </div>
+                </div>
+
+                <p
+                    id="insightsMessage"
+                    class="text-secondary small mt-3 mb-0"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+                <p id="insightsBasis" class="text-secondary small mt-2 mb-0"></p>
+            </div>
+        </section>
+
         <!-- Quick actions -->
         <section class="mb-4" aria-labelledby="quickActionsHeading">
             <h2 id="quickActionsHeading" class="h4 fw-bold mb-3">
