@@ -1,292 +1,955 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta
         name="description"
-        content="Discover independent South African businesses, products and services on BizBridge.">
-    <title>Explore local businesses | BizBridge</title>
+        content="Discover independent South African businesses, products and services on BizBridge."
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Explore Local Businesses | BizBridge</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="explore.css">
 </head>
 
 <body class="explore-page">
+
+    <!-- ==================================================
+         TOP BAR
+    =================================================== -->
     <header class="explore-topbar">
-        <a class="explore-brand" href="index.html" aria-label="BizBridge home">
+
+        <a
+            class="explore-brand"
+            href="index.html"
+            aria-label="BizBridge home"
+        >
             <span class="explore-brand-mark" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </span>
+
             <span>bizbridge</span>
         </a>
 
-        <form class="explore-search" id="exploreSearchForm" role="search">
+        <form
+            class="explore-search"
+            id="exploreSearchForm"
+            role="search"
+        >
             <span class="search-symbol" aria-hidden="true">⌕</span>
+
             <label class="visually-hidden" for="exploreSearch">
-                Search businesses, products and services
+                Search businesses by name, industry, location or description
             </label>
+
             <input
                 id="exploreSearch"
                 type="search"
-                placeholder="Search businesses, products, services..."
-                autocomplete="off">
-            <kbd>↵</kbd>
+                placeholder="Search businesses, industries, locations..."
+                autocomplete="off"
+                aria-describedby="searchHelp"
+            >
+
+            <span id="searchHelp" class="visually-hidden">
+                Search results update as you type.
+            </span>
+
+            <kbd aria-hidden="true">↵</kbd>
         </form>
 
         <div class="explore-account-actions">
+
             <span class="explore-location">
                 <span aria-hidden="true">⌖</span>
                 South Africa
             </span>
-            <a class="explore-login-link" href="login.html">Log in</a>
-            <a class="explore-join-button" href="register.html">Join BizBridge</a>
+
+            <a class="explore-login-link" href="login.html">
+                Log in
+            </a>
+
+            <a class="explore-join-button" href="register.html">
+                Join BizBridge
+            </a>
+
         </div>
     </header>
 
+
+    <!-- ==================================================
+         PAGE LAYOUT
+    =================================================== -->
     <div class="explore-layout">
-        <aside class="explore-sidebar" aria-label="Main navigation">
+
+        <!-- LEFT SIDEBAR -->
+        <aside
+            class="explore-sidebar"
+            aria-label="Main navigation"
+        >
+
             <div class="sidebar-label">DISCOVER</div>
+
             <nav class="explore-nav">
+
                 <a class="explore-nav-link" href="index.html">
-                    <span aria-hidden="true">⌂</span> Home
+                    <span aria-hidden="true">⌂</span>
+                    Home
                 </a>
-                <a class="explore-nav-link is-active" href="explore.html"
-                   aria-current="page">
-                    <span aria-hidden="true">✳</span> Explore
+
+                <a
+                    class="explore-nav-link is-active"
+                    href="explore.html"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">✳</span>
+                    Explore
                 </a>
-                <button class="explore-nav-link" type="button"
-                        data-feed-filter="following">
-                    <span aria-hidden="true">♡</span> Following
+
+                <button
+                    class="explore-nav-link"
+                    type="button"
+                    data-feed-filter="following"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Following
                 </button>
-                <button class="explore-nav-link" type="button"
-                        data-feed-filter="saved">
-                    <span aria-hidden="true">♧</span> Saved
+
+                <button
+                    class="explore-nav-link"
+                    type="button"
+                    data-account-action="Saved"
+                >
+                    <span aria-hidden="true">♧</span>
+                    Saved
                 </button>
+
             </nav>
 
-            <div class="sidebar-label sidebar-label-spaced">YOUR BIZBRIDGE</div>
+
+            <div class="sidebar-label sidebar-label-spaced">
+                YOUR BIZBRIDGE
+            </div>
+
             <nav class="explore-nav">
-                <button class="explore-nav-link" type="button"
-                        data-account-action="Orders">
-                    <span aria-hidden="true">▤</span> Orders
+
+                <button
+                    class="explore-nav-link"
+                    type="button"
+                    data-account-action="Orders"
+                >
+                    <span aria-hidden="true">▤</span>
+                    Orders
                 </button>
-                <button class="explore-nav-link" type="button"
-                        data-account-action="Enquiries">
-                    <span aria-hidden="true">◌</span> Enquiries
+
+                <button
+                    class="explore-nav-link"
+                    type="button"
+                    data-account-action="Enquiries"
+                >
+                    <span aria-hidden="true">◌</span>
+                    Enquiries
                 </button>
-                <button class="explore-nav-link" type="button"
-                        data-account-action="Messages">
-                    <span aria-hidden="true">✉</span> Messages
+
+                <button
+                    class="explore-nav-link"
+                    type="button"
+                    data-account-action="Messages"
+                >
+                    <span aria-hidden="true">✉</span>
+                    Messages
                 </button>
+
                 <a class="explore-nav-link" href="dashboard.html">
-                    <span aria-hidden="true">▦</span> My Business
+                    <span aria-hidden="true">▦</span>
+                    My Business
                 </a>
+
             </nav>
+
 
             <section class="sidebar-promo">
-                <span class="sidebar-promo-icon" aria-hidden="true">✦</span>
-                <p class="sidebar-promo-eyebrow">GROW TOGETHER</p>
-                <h2>Good things happen when we shop local.</h2>
-                <a href="register.html">Create your free account <span aria-hidden="true">→</span></a>
+
+                <span class="sidebar-promo-icon" aria-hidden="true">
+                    ✦
+                </span>
+
+                <p class="sidebar-promo-eyebrow">
+                    GROW TOGETHER
+                </p>
+
+                <h2>
+                    Good things happen when we shop local.
+                </h2>
+
+                <a href="register.html">
+                    Create your free account
+                    <span aria-hidden="true">→</span>
+                </a>
+
             </section>
 
-            <p class="sidebar-footnote">Built for the next generation of South African business.</p>
+            <p class="sidebar-footnote">
+                Built for the next generation of South African business.
+            </p>
+
         </aside>
 
+
+        <!-- ==================================================
+             MAIN CONTENT
+        =================================================== -->
         <main class="explore-main" id="mainContent">
-            <section class="explore-heading" aria-labelledby="exploreTitle">
+
+            <!-- PAGE HEADING -->
+            <section
+                class="explore-heading"
+                aria-labelledby="exploreTitle"
+            >
+
                 <div>
+
                     <div class="eyebrow-line">
                         <span class="eyebrow-dot"></span>
                         THE LOCAL BUSINESS SCENE
                     </div>
-                    <h1 id="exploreTitle">Find your <span>next favourite.</span></h1>
-                    <p>Meet the makers, movers and dreamers building something special near you.</p>
+
+                    <h1 id="exploreTitle">
+                        Find your <span>next favourite.</span>
+                    </h1>
+
+                    <p>
+                        Meet the makers, movers and dreamers building
+                        something special across South Africa.
+                    </p>
+
                 </div>
+
                 <a class="creator-link" href="register.html">
                     <span aria-hidden="true">＋</span>
                     <span>Showcase your business</span>
                 </a>
+
             </section>
 
-            <div class="preview-note" role="note">
-                <span aria-hidden="true">ⓘ</span>
-                Preview mode — sample businesses and activity. Public listings are not connected yet.
+
+            <!-- DYNAMIC API STATUS -->
+            <div
+                class="explore-api-status"
+                id="exploreApiStatus"
+                role="status"
+                aria-live="polite"
+            >
+                Loading public business listings...
             </div>
 
-            <section class="stories-section" aria-label="Featured local businesses">
+
+            <!-- BUSINESS STORIES -->
+            <section
+                class="stories-section"
+                aria-labelledby="storiesHeading"
+            >
+
                 <div class="section-kicker-row">
-                    <h2>Meet the locals</h2>
-                    <span>GOOD PEOPLE. GOOD BUSINESS.</span>
+
+                    <h2 id="storiesHeading">
+                        Meet the locals
+                    </h2>
+
+                    <span>
+                        GOOD PEOPLE. GOOD BUSINESS.
+                    </span>
+
                 </div>
-                <div class="stories-row" id="businessStories"></div>
+
+                <div
+                    class="stories-row"
+                    id="businessStories"
+                    aria-label="Public business profiles"
+                >
+                    <p class="text-muted">
+                        Loading businesses...
+                    </p>
+                </div>
+
             </section>
 
-            <section class="feed-section" aria-labelledby="feedHeading">
+
+            <!-- DISCOVERY FEED -->
+            <section
+                class="feed-section"
+                aria-labelledby="feedHeading"
+            >
+
                 <div class="feed-title-row">
+
                     <div>
-                        <h2 id="feedHeading">The discovery feed</h2>
-                        <p>Fresh finds from independent businesses</p>
+
+                        <h2 id="feedHeading">
+                            Discover local businesses
+                        </h2>
+
+                        <p>
+                            Explore public business profiles and find
+                            services in your community.
+                        </p>
+
                     </div>
+
                     <span class="feed-live-indicator">
-                        <span></span> COMMUNITY PREVIEW
+                        <span></span>
+                        PUBLIC LISTINGS
                     </span>
+
                 </div>
 
+
+                <!-- FEED CONTROLS -->
                 <div class="feed-controls">
-                    <div class="feed-tabs" role="group" aria-label="Feed filter">
-                        <button class="feed-tab is-active" type="button"
-                                data-feed-filter="for-you" aria-pressed="true">
-                            For you
+
+                    <div
+                        class="feed-tabs"
+                        role="group"
+                        aria-label="Discovery filters"
+                    >
+
+                        <button
+                            class="feed-tab is-active"
+                            type="button"
+                            data-feed-filter="for-you"
+                            aria-pressed="true"
+                        >
+                            Explore
                         </button>
-                        <button class="feed-tab" type="button"
-                                data-feed-filter="following" aria-pressed="false">
+
+                        <button
+                            class="feed-tab"
+                            type="button"
+                            data-feed-filter="following"
+                            aria-pressed="false"
+                        >
                             Following
                         </button>
-                        <button class="feed-tab" type="button"
-                                data-feed-filter="products" aria-pressed="false">
+
+                        <button
+                            class="feed-tab"
+                            type="button"
+                            data-feed-filter="products"
+                            aria-pressed="false"
+                        >
                             Products
                         </button>
-                        <button class="feed-tab" type="button"
-                                data-feed-filter="saved" aria-pressed="false">
+
+                        <button
+                            class="feed-tab"
+                            type="button"
+                            data-account-action="Saved"
+                            aria-pressed="false"
+                        >
                             Saved
                         </button>
+
                     </div>
+
+
                     <label class="category-select-wrap">
-                        <span class="visually-hidden">Filter by category</span>
-                        <select id="categoryFilter" aria-label="Filter by category">
-                            <option value="all">All categories</option>
+
+                        <span class="visually-hidden">
+                            Filter businesses by industry
+                        </span>
+
+                        <select
+                            id="categoryFilter"
+                            aria-label="Filter businesses by industry"
+                        >
+                            <option value="all">
+                                All categories
+                            </option>
                         </select>
+
                         <span aria-hidden="true">⌄</span>
+
                     </label>
+
                 </div>
 
-                <div id="feedMessage" class="feed-message" role="status"
-                     aria-live="polite"></div>
-                <div id="exploreFeed" class="explore-feed"></div>
-                <div id="feedSentinel" class="feed-sentinel" aria-hidden="true"></div>
-                <div class="feed-load-row">
-                    <button class="load-more-button" id="loadMoreButton"
-                            type="button">
-                        Show more discoveries <span aria-hidden="true">↓</span>
-                    </button>
+
+                <!-- SEARCH / RESULTS STATUS -->
+                <div
+                    id="feedMessage"
+                    class="feed-message"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- API-DRIVEN BUSINESS CARDS -->
+                <div
+                    id="exploreFeed"
+                    class="explore-feed"
+                    aria-live="polite"
+                    aria-busy="true"
+                >
+                    <div class="explore-loading">
+                        <span
+                            class="explore-spinner"
+                            aria-hidden="true"
+                        ></span>
+
+                        <p>Discovering businesses on BizBridge...</p>
+                    </div>
                 </div>
+
+
+                <!-- PAGINATION -->
+                <div
+                    id="feedSentinel"
+                    class="feed-sentinel"
+                    aria-hidden="true"
+                ></div>
+
+                <div class="feed-load-row">
+
+                    <button
+                        class="load-more-button"
+                        id="loadMoreButton"
+                        type="button"
+                        hidden
+                    >
+                        Show more businesses
+                        <span aria-hidden="true">↓</span>
+                    </button>
+
+                </div>
+
             </section>
 
+
+            <!-- FOOTER -->
             <footer class="explore-footer">
-                <span>BizBridge · Made for businesses building what's next.</span>
-                <a href="index.html">About BizBridge</a>
+
+                <span>
+                    BizBridge · Made for businesses building what's next.
+                </span>
+
+                <a href="index.html">
+                    About BizBridge
+                </a>
+
             </footer>
+
         </main>
 
-        <aside class="explore-rightbar" aria-label="Explore more">
+
+        <!-- ==================================================
+             RIGHT SIDEBAR
+        =================================================== -->
+        <aside
+            class="explore-rightbar"
+            aria-label="Discover more businesses"
+        >
+
+            <!-- NEIGHBOURHOOD PANEL -->
             <section class="right-panel search-hint-panel">
+
                 <div class="right-panel-heading">
+
                     <div>
-                        <span class="panel-overline">YOUR NEIGHBOURHOOD</span>
-                        <h2>Big ideas start close by.</h2>
+
+                        <span class="panel-overline">
+                            YOUR NEIGHBOURHOOD
+                        </span>
+
+                        <h2>
+                            Big ideas start close by.
+                        </h2>
+
                     </div>
-                    <span class="map-pin" aria-hidden="true">⌖</span>
+
+                    <span class="map-pin" aria-hidden="true">
+                        ⌖
+                    </span>
+
                 </div>
-                <p>Discover businesses from township streets to small-town main streets.</p>
+
+                <p>
+                    Discover businesses from township streets to
+                    small-town main streets.
+                </p>
+
                 <div class="neighbourhood-tags">
                     <span>Johannesburg</span>
                     <span>Durban</span>
                     <span>Cape Town</span>
-                    <span>+ across SA</span>
+                    <span>Across SA</span>
                 </div>
+
+                <p class="text-muted small mt-2 mb-0">
+                    Search results depend on the location information
+                    provided by each business.
+                </p>
+
             </section>
 
+
+            <!-- FEATURED BUSINESSES -->
             <section class="right-panel trending-panel">
+
                 <div class="right-panel-heading">
+
                     <div>
-                        <span class="panel-overline">ON THE RISE</span>
-                        <h2>Trending businesses</h2>
+
+                        <span class="panel-overline">
+                            DISCOVER
+                        </span>
+
+                        <h2>
+                            Featured businesses
+                        </h2>
+
                     </div>
-                    <span class="trending-spark" aria-hidden="true">↗</span>
+
+                    <span class="trending-spark" aria-hidden="true">
+                        ↗
+                    </span>
+
                 </div>
-                <p class="panel-caption">A preview based on sample community activity.</p>
-                <ol class="trending-list" id="trendingBusinesses"></ol>
+
+                <p class="panel-caption">
+                    Explore public business profiles on BizBridge.
+                </p>
+
+                <ol
+                    class="trending-list"
+                    id="trendingBusinesses"
+                >
+                    <li class="text-muted">
+                        Loading businesses...
+                    </li>
+                </ol>
+
             </section>
 
+
+            <!-- DYNAMIC CATEGORIES -->
             <section class="right-panel categories-panel">
+
                 <div class="right-panel-heading">
+
                     <div>
-                        <span class="panel-overline">BROWSE YOUR WAY</span>
-                        <h2>Popular categories</h2>
+
+                        <span class="panel-overline">
+                            BROWSE YOUR WAY
+                        </span>
+
+                        <h2>
+                            Business categories
+                        </h2>
+
                     </div>
+
                 </div>
-                <div class="category-link-list" id="popularCategories"></div>
+
+                <div
+                    class="category-link-list"
+                    id="popularCategories"
+                >
+                    <p class="text-muted">
+                        Loading categories...
+                    </p>
+                </div>
+
             </section>
 
+
+            <!-- SELLER INVITATION -->
             <section class="seller-invite">
+
                 <div class="seller-invite-art" aria-hidden="true">
-                    <span>✦</span><span>✳</span><span>✦</span>
+                    <span>✦</span>
+                    <span>✳</span>
+                    <span>✦</span>
                 </div>
-                <p class="panel-overline">YOUR STORY DESERVES A STAGE</p>
-                <h2>Put your business on the map.</h2>
-                <p>Build your profile and help more people find what you do.</p>
-                <a href="register.html">Get started <span aria-hidden="true">→</span></a>
+
+                <p class="panel-overline">
+                    YOUR STORY DESERVES A STAGE
+                </p>
+
+                <h2>
+                    Put your business on the map.
+                </h2>
+
+                <p>
+                    Create a business profile and make your business
+                    discoverable to potential customers.
+                </p>
+
+                <a href="register.html">
+                    Get started
+                    <span aria-hidden="true">→</span>
+                </a>
+
             </section>
 
-            <p class="rightbar-disclaimer">Trending and featured content shown here is illustrative preview data.</p>
+
+            <p class="rightbar-disclaimer">
+                Only businesses made public through BizBridge's
+                Explore visibility setting should appear in listings.
+            </p>
+
         </aside>
+
     </div>
 
-    <nav class="mobile-explore-nav" aria-label="Mobile navigation">
-        <a href="index.html"><span aria-hidden="true">⌂</span><small>Home</small></a>
-        <a class="is-active" href="explore.html" aria-current="page">
-            <span aria-hidden="true">✳</span><small>Explore</small>
+
+    <!-- ==================================================
+         MOBILE NAVIGATION
+    =================================================== -->
+    <nav
+        class="mobile-explore-nav"
+        aria-label="Mobile navigation"
+    >
+
+        <a href="index.html">
+            <span aria-hidden="true">⌂</span>
+            <small>Home</small>
         </a>
-        <button type="button" data-account-action="Saved">
-            <span aria-hidden="true">♧</span><small>Saved</small>
+
+        <a
+            class="is-active"
+            href="explore.html"
+            aria-current="page"
+        >
+            <span aria-hidden="true">✳</span>
+            <small>Explore</small>
+        </a>
+
+        <button
+            type="button"
+            data-account-action="Saved"
+        >
+            <span aria-hidden="true">♧</span>
+            <small>Saved</small>
         </button>
-        <a href="dashboard.html"><span aria-hidden="true">▦</span><small>My business</small></a>
+
+        <a href="dashboard.html">
+            <span aria-hidden="true">▦</span>
+            <small>My business</small>
+        </a>
+
     </nav>
 
-    <dialog class="explore-dialog" id="signInDialog" aria-labelledby="signInTitle">
+
+    <!-- ==================================================
+         SIGN-IN DIALOG
+    =================================================== -->
+    <dialog
+        class="explore-dialog"
+        id="signInDialog"
+        aria-labelledby="signInTitle"
+    >
+
         <form method="dialog" class="dialog-close-form">
-            <button class="dialog-close" aria-label="Close">×</button>
+
+            <button
+                class="dialog-close"
+                type="submit"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
         </form>
-        <div class="dialog-icon" aria-hidden="true">✦</div>
-        <p class="panel-overline">A LITTLE MORE BIZBRIDGE</p>
-        <h2 id="signInTitle">Make it yours.</h2>
-        <p id="signInMessage">
-            Sign in to follow local businesses, save your favourites and start a conversation.
-        </p>
-        <div class="dialog-actions">
-            <a class="explore-join-button" href="login.html">Log in</a>
-            <a class="dialog-secondary-link" href="register.html">Create an account</a>
+
+        <div class="dialog-icon" aria-hidden="true">
+            ✦
         </div>
-        <p class="dialog-preview-note">You can keep browsing without an account.</p>
+
+        <p class="panel-overline">
+            A LITTLE MORE BIZBRIDGE
+        </p>
+
+        <h2 id="signInTitle">
+            Make it yours.
+        </h2>
+
+        <p id="signInMessage">
+            Sign in to access your account and discover the features
+            available to you.
+        </p>
+
+        <div class="dialog-actions">
+
+            <a class="explore-join-button" href="login.html">
+                Log in
+            </a>
+
+            <a
+                class="dialog-secondary-link"
+                href="register.html"
+            >
+                Create an account
+            </a>
+
+        </div>
+
+        <p class="dialog-preview-note">
+            You can continue browsing public business listings
+            without an account.
+        </p>
+
     </dialog>
 
-    <dialog class="explore-dialog profile-dialog" id="businessProfileDialog"
-            aria-labelledby="businessProfileTitle">
+
+    <!-- ==================================================
+         BUSINESS PROFILE DIALOG
+    =================================================== -->
+    <dialog
+        class="explore-dialog profile-dialog"
+        id="businessProfileDialog"
+        aria-labelledby="businessProfileTitle"
+    >
+
         <form method="dialog" class="dialog-close-form">
-            <button class="dialog-close" aria-label="Close business profile">×</button>
+
+            <button
+                class="dialog-close"
+                type="submit"
+                aria-label="Close business profile"
+            >
+                ×
+            </button>
+
         </form>
-        <div id="businessProfileContent"></div>
+
+        <div id="businessProfileContent">
+
+            <p class="text-muted">
+                Select a business to view its profile.
+            </p>
+
+        </div>
+
     </dialog>
 
-    <dialog class="explore-dialog video-dialog" id="videoPreviewDialog"
-            aria-labelledby="videoPreviewTitle">
+
+    <!-- ==================================================
+         VIDEO PLACEHOLDER DIALOG
+    =================================================== -->
+    <dialog
+        class="explore-dialog video-dialog"
+        id="videoPreviewDialog"
+        aria-labelledby="videoPreviewTitle"
+    >
+
         <form method="dialog" class="dialog-close-form">
-            <button class="dialog-close" aria-label="Close video preview">×</button>
+
+            <button
+                class="dialog-close"
+                type="submit"
+                aria-label="Close video information"
+            >
+                ×
+            </button>
+
         </form>
-        <div class="video-preview-icon" aria-hidden="true">▶</div>
-        <p class="panel-overline">SHORTS FROM THE NEIGHBOURHOOD</p>
-        <h2 id="videoPreviewTitle">A little more to come.</h2>
-        <p>Business video previews will play here when media is connected to BizBridge.</p>
+
+        <div class="video-preview-icon" aria-hidden="true">
+            ▶
+        </div>
+
+        <p class="panel-overline">
+            BUSINESS MEDIA
+        </p>
+
+        <h2 id="videoPreviewTitle">
+            Business media is coming.
+        </h2>
+
+        <p>
+            Video previews will be available when business media
+            is supported by BizBridge.
+        </p>
+
     </dialog>
 
-    <div class="explore-toast" id="exploreToast" role="status"
-         aria-live="polite"></div>
 
-    <script src="explore.js"></script>
+    <!-- ==================================================
+         TOAST NOTIFICATION
+    =================================================== -->
+    <div
+        class="explore-toast"
+        id="exploreToast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <!-- API URL is configured in explore.js, with the deployed
+         BizBridge API as its default. -->
+    <script src="explore.js" defer></script>
+
+    <!-- UI interactions for features that are not yet backed by
+         dedicated Following, Saved, Products, Orders, Enquiries
+         or Messages endpoints. -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const signInDialog =
+                document.getElementById("signInDialog");
+
+            const signInMessage =
+                document.getElementById("signInMessage");
+
+            const feedButtons = [
+                ...document.querySelectorAll("[data-feed-filter]")
+            ];
+
+            const accountButtons = [
+                ...document.querySelectorAll("[data-account-action]")
+            ];
+
+            function showFeatureMessage(feature) {
+                if (!signInDialog || !signInMessage) {
+                    return;
+                }
+
+                const messages = {
+                    following:
+                        "Following businesses will be available when BizBridge's follow feature is connected.",
+
+                    products:
+                        "Product listings will appear here when BizBridge's product feature is connected.",
+
+                    saved:
+                        "Saved businesses will be available when the saved-listings feature is connected.",
+
+                    orders:
+                        "Your orders will appear here when order management is available.",
+
+                    enquiries:
+                        "Your business enquiries will appear here when the enquiries feature is connected.",
+
+                    messages:
+                        "Your conversations will appear here when messaging is available."
+                };
+
+                signInMessage.textContent =
+                    messages[feature] ||
+                    "This feature is not connected yet.";
+
+                if (!signInDialog.open) {
+                    signInDialog.showModal();
+                }
+            }
+
+            feedButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const filter = button.dataset.feedFilter;
+
+                    if (filter === "for-you") {
+                        feedButtons.forEach((item) => {
+                            const isActive =
+                                item.dataset.feedFilter === "for-you";
+
+                            item.classList.toggle("is-active", isActive);
+
+                            item.setAttribute(
+                                "aria-pressed",
+                                String(isActive)
+                            );
+                        });
+
+                        return;
+                    }
+
+                    showFeatureMessage(filter);
+                });
+            });
+
+            accountButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const feature =
+                        (button.dataset.accountAction || "")
+                            .toLowerCase();
+
+                    showFeatureMessage(feature);
+                });
+            });
+
+            const exploreFeed =
+                document.getElementById("exploreFeed");
+
+            const feedMessage =
+                document.getElementById("feedMessage");
+
+            const exploreApiStatus =
+                document.getElementById("exploreApiStatus");
+
+            // Keep the feed's accessibility loading state accurate.
+            if (exploreFeed && exploreApiStatus) {
+                const observer = new MutationObserver(() => {
+                    const loading =
+                        exploreFeed.querySelector(".explore-loading") !== null;
+
+                    const failed =
+                        exploreFeed.querySelector(".explore-error") !== null;
+
+                    exploreFeed.setAttribute(
+                        "aria-busy",
+                        String(loading)
+                    );
+
+                    if (loading) {
+                        exploreApiStatus.textContent =
+                            "Loading public business listings...";
+                    } else if (failed) {
+                        exploreApiStatus.textContent =
+                            "Business listings could not be loaded. You can retry.";
+                    } else {
+                        const cards = exploreFeed.querySelectorAll(
+                            ".explore-business-card"
+                        );
+
+                        const empty =
+                            exploreFeed.querySelector(
+                                ".explore-empty-state"
+                            ) !== null;
+
+                        exploreApiStatus.textContent = empty
+                            ? "No matching public business listings."
+                            : `${cards.length} business listings currently displayed.`;
+                    }
+                });
+
+                observer.observe(exploreFeed, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+
+            // Avoid leaving an empty status area visually prominent.
+            if (feedMessage && !feedMessage.textContent.trim()) {
+                feedMessage.setAttribute("aria-label", "Feed status");
+            }
+        });
+    </script>
+
 </body>
 </html>
