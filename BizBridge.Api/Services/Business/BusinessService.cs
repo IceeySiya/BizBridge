@@ -74,22 +74,25 @@ public class BusinessService
         return null;
     }
 
+    // Update core business details.
     business.BusinessName = dto.BusinessName.Trim();
     business.Industry = dto.Industry.Trim();
     business.Location = dto.Location?.Trim();
     business.Description = dto.Description?.Trim();
 
+    // Update the established date only when provided.
     if (dto.Established.HasValue)
     {
         business.Established = dto.Established.Value;
     }
 
+    // Update contact and online presence details.
     business.BusinessEmail = dto.BusinessEmail?.Trim();
     business.BusinessPhone = dto.BusinessPhone?.Trim();
     business.WebsiteUrl = dto.WebsiteUrl?.Trim();
 
     // Preserve ImageUrl.
-    // Business images are updated through UpdateMyBusinessImageAsync().
+    // Image changes are handled by UpdateMyBusinessImageAsync().
 
     await _context.SaveChangesAsync();
 

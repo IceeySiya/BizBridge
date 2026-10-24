@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const locationInput = document.getElementById("location");
     const descriptionInput = document.getElementById("description");
     const establishedInput = document.getElementById("established");
+    const businessEmailInput = document.getElementById("businessEmail");
+    const businessPhoneInput = document.getElementById("businessPhone");
+    const websiteUrlInput = document.getElementById("websiteUrl");
 
     // Business image elements
     const businessImageInput = document.getElementById("businessImage");
@@ -47,7 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
         !businessImageInput ||
         !businessImagePreview ||
         !uploadImageButton ||
-        !businessImageStatus
+        !businessImageStatus||
+        !businessEmailInput ||
+        !businessPhoneInput ||
+        !websiteUrlInput 
     ) {
         console.error(
             "Business profile HTML is missing required elements. Check the element IDs."
@@ -324,6 +330,15 @@ document.addEventListener("DOMContentLoaded", () => {
             ? String(established).substring(0, 10)
             : "";
 
+        businessEmailInput.value =
+            business.businessEmail ?? business.BusinessEmail ?? "";
+
+        businessPhoneInput.value =
+            business.businessPhone ?? business.BusinessPhone ?? "";
+
+        websiteUrlInput.value =
+            business.websiteUrl ?? business.WebsiteUrl ?? "";
+
         currentImageUrl =
             business.imageUrl ?? business.ImageUrl ?? "";
 
@@ -396,7 +411,10 @@ document.addEventListener("DOMContentLoaded", () => {
             description: description || null,
             established: establishedDate
                 ? `${establishedDate}T00:00:00Z`
-                : null
+                : null,
+            businessEmail: businessEmailInput.value.trim() || null,
+            businessPhone: businessPhoneInput.value.trim() || null,
+            websiteUrl: websiteUrlInput.value.trim() || null
         };
 
         if (!existingBusiness) {

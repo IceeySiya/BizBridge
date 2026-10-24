@@ -53,12 +53,13 @@
     <main class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-xl-8">
+
                 <div class="mb-4">
                     <span class="badge text-bg-success mb-3">Your Business</span>
                     <h1 class="h2 fw-bold">Business Profile</h1>
                     <p class="text-secondary">
-                        Tell us about your business so BizBridge can help
-                        you manage and grow it.
+                        Manage your business information and keep your
+                        BizBridge profile up to date.
                     </p>
                 </div>
 
@@ -72,151 +73,232 @@
 
                 <section class="card shadow-sm border-0">
                     <div class="card-body p-4 p-md-5">
-                        <div class="mb-4">
-                            <h2 class="h5 fw-bold">Business information</h2>
-                            <p class="text-secondary small mb-0">
-                                Fields marked with * are required.
-                            </p>
-                        </div>
 
                         <form id="businessForm" novalidate>
-                            <div class="mb-3">
-                                <label for="businessName" class="form-label">
-                                    Business name *
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="businessName"
-                                    name="businessName"
-                                    minlength="2"
-                                    maxlength="150"
-                                    autocomplete="organization"
-                                    placeholder="e.g. Siyanda's Digital Services"
-                                    required>
-                            </div>
 
-                            <div class="mb-3">
-                                <label for="industry" class="form-label">
-                                    Industry *
-                                </label>
-                                <select
-                                    class="form-select"
-                                    id="industry"
-                                    name="industry"
-                                    required>
-                                    <option value="">Select an industry</option>
-                                    <option value="Agriculture">Agriculture</option>
-                                    <option value="Construction">Construction</option>
-                                    <option value="Education">Education</option>
-                                    <option value="Fashion">Fashion</option>
-                                    <option value="Food and Beverage">Food and Beverage</option>
-                                    <option value="Manufacturing">Manufacturing</option>
-                                    <option value="Retail">Retail</option>
-                                    <option value="Technology">Technology</option>
-                                    <option value="Transport and Logistics">Transport and Logistics</option>
-                                    <option value="Professional Services">Professional Services</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
+                            <!-- Business information -->
+                            <section class="mb-4"
+                                aria-labelledby="businessInfoHeading">
 
-                            <div class="mb-3" id="openingBalanceGroup">
-                                <label for="openingBalance" class="form-label">
-                                    Opening balance (R) *
-                                </label>
-                                <input
-                                    type="number"
-                                    class="form-control"
-                                    id="openingBalance"
-                                    name="openingBalance"
-                                    min="0"
-                                    max="9999999999999999.99"
-                                    step="0.01"
-                                    value="0"
-                                    required>
-                                <div class="form-text">
-                                    Enter the funds available when you start
-                                    tracking your finances in BizBridge. Do not
-                                    include transactions you plan to record separately.
+                                <h2 id="businessInfoHeading" class="h5 fw-bold">
+                                    Business information
+                                </h2>
+
+                                <p class="text-secondary small">
+                                    Fields marked with * are required.
+                                </p>
+
+                                <div class="mb-3">
+                                    <label for="businessName" class="form-label">
+                                        Business name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="businessName"
+                                        name="businessName"
+                                        minlength="2"
+                                        maxlength="150"
+                                        autocomplete="organization"
+                                        placeholder="e.g. Siyanda's Digital Services"
+                                        required>
                                 </div>
-                            </div>
 
-                            <div class="mb-3">
-                                <label for="location" class="form-label">
-                                    Business location
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="location"
-                                    name="location"
-                                    maxlength="150"
-                                    placeholder="e.g. Soweto, Gauteng">
-                            </div>
+                                <div class="mb-3">
+                                    <label for="industry" class="form-label">
+                                        Industry *
+                                    </label>
+                                    <select
+                                        class="form-select"
+                                        id="industry"
+                                        name="industry"
+                                        required>
+                                        <option value="">Select an industry</option>
+                                        <option value="Agriculture">Agriculture</option>
+                                        <option value="Construction">Construction</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Fashion">Fashion</option>
+                                        <option value="Food and Beverage">Food and Beverage</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Transport and Logistics">Transport and Logistics</option>
+                                        <option value="Professional Services">Professional Services</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="description" class="form-label">
-                                    Business description
-                                </label>
-                                <textarea
-                                    class="form-control"
-                                    id="description"
-                                    name="description"
-                                    rows="4"
-                                    maxlength="1000"
-                                    placeholder="What does your business do?"></textarea>
-                            </div>
+                                <div class="mb-3" id="openingBalanceGroup">
+                                    <label for="openingBalance" class="form-label">
+                                        Opening balance (R) *
+                                    </label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="openingBalance"
+                                        name="openingBalance"
+                                        min="0"
+                                        max="9999999999999999.99"
+                                        step="0.01"
+                                        value="0"
+                                        required>
+                                    <div class="form-text">
+                                        Enter the funds available when you start
+                                        tracking your finances. Don't include
+                                        transactions you plan to record separately.
+                                    </div>
+                                </div>
 
-                           
-                            <div class="mb-4">
-                            <label for="established" class="form-label">Date established</label>
-                            <input type="date" class="form-control" id="established" name="established">
-                            </div>
+                                <div class="mb-3">
+                                    <label for="location" class="form-label">
+                                        Business location
+                                    </label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="location"
+                                        name="location"
+                                        maxlength="150"
+                                        placeholder="e.g. Soweto, Gauteng">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">
+                                        Business description
+                                    </label>
+                                    <textarea
+                                        class="form-control"
+                                        id="description"
+                                        name="description"
+                                        rows="4"
+                                        maxlength="1000"
+                                        placeholder="What does your business do?"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="established" class="form-label">
+                                        Date established
+                                    </label>
+                                    <input
+                                        type="date"
+                                        class="form-control"
+                                        id="established"
+                                        name="established">
+                                </div>
+                            </section>
 
                             <hr class="my-4">
 
-                            <section aria-labelledby="businessImageHeading" class="mb-4">
-                            <h2 id="businessImageHeading" class="h5 fw-bold">Business photo</h2>
-                            <p class="text-secondary small">
-                                Add a logo or photo that represents your business.
-                                JPEG, PNG, or WebP only; maximum size 5 MB.
-                            </p>
+                            <!-- Business contact details -->
+                            <section class="mb-4"
+                                aria-labelledby="contactHeading">
 
-                            <div class="mb-3">
-                                <img
-                                id="businessImagePreview"
-                                src=""
-                                alt="Business photo preview"
-                                class="img-thumbnail d-none"
-                                style="width: 180px; height: 180px; object-fit: cover;"
-                                >
-                            </div>
+                                <h2 id="contactHeading" class="h5 fw-bold">
+                                    Contact details
+                                </h2>
+                                <p class="text-secondary small">
+                                    Help customers and potential partners
+                                    contact your business.
+                                </p>
 
-                            <div class="mb-3">
-                                <label for="businessImage" class="form-label">Choose an image</label>
-                                <input
-                                type="file"
-                                class="form-control"
-                                id="businessImage"
-                                name="image"
-                                accept="image/jpeg,image/png,image/webp"
-                                >
-                            </div>
+                                <div class="mb-3">
+                                    <label for="businessEmail" class="form-label">
+                                        Business email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="businessEmail"
+                                        name="businessEmail"
+                                        maxlength="254"
+                                        autocomplete="email"
+                                        placeholder="business@example.com">
+                                </div>
 
-                            <button
-                                type="button"
-                                id="uploadBusinessImageButton"
-                                class="btn btn-outline-success"
-                                disabled
-                            >
-                                Upload business photo
-                            </button>
+                                <div class="mb-3">
+                                    <label for="businessPhone" class="form-label">
+                                        Business phone
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="businessPhone"
+                                        name="businessPhone"
+                                        maxlength="30"
+                                        autocomplete="tel"
+                                        placeholder="e.g. 082 123 4567">
+                                </div>
 
-                            <p id="businessImageStatus" class="small text-secondary mt-2 mb-0"
-                                role="status" aria-live="polite"></p>
+                                <div class="mb-3">
+                                    <label for="websiteUrl" class="form-label">
+                                        Website
+                                    </label>
+                                    <input
+                                        type="url"
+                                        class="form-control"
+                                        id="websiteUrl"
+                                        name="websiteUrl"
+                                        maxlength="2048"
+                                        placeholder="https://example.com">
+                                </div>
                             </section>
 
+                            <hr class="my-4">
 
+                            <!-- Business photo -->
+                            <section class="mb-4"
+                                aria-labelledby="businessImageHeading">
+
+                                <h2 id="businessImageHeading" class="h5 fw-bold">
+                                    Business photo
+                                </h2>
+
+                                <p class="text-secondary small">
+                                    Add a logo or photo that represents your
+                                    business. JPEG, PNG, or WebP only;
+                                    maximum size 5 MB.
+                                </p>
+
+                                <div class="mb-3">
+                                    <img
+                                        id="businessImagePreview"
+                                        src=""
+                                        alt="Business photo preview"
+                                        class="img-thumbnail d-none"
+                                        style="width: 180px; height: 180px; object-fit: cover;">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="businessImage" class="form-label">
+                                        Choose an image
+                                    </label>
+                                    <input
+                                        type="file"
+                                        class="form-control"
+                                        id="businessImage"
+                                        name="image"
+                                        accept="image/jpeg,image/png,image/webp">
+                                </div>
+
+                                <button
+                                    type="button"
+                                    id="uploadBusinessImageButton"
+                                    class="btn btn-outline-success"
+                                    disabled>
+                                    Upload business photo
+                                </button>
+
+                                <p
+                                    id="businessImageStatus"
+                                    class="small text-secondary mt-2 mb-0"
+                                    role="status"
+                                    aria-live="polite">
+                                </p>
+                            </section>
+
+                            <hr class="my-4">
+
+                            <!-- Form actions -->
                             <div class="d-flex flex-column flex-sm-row gap-2">
                                 <button
                                     type="submit"
@@ -224,6 +306,7 @@
                                     class="btn btn-success btn-lg">
                                     Create Business Profile
                                 </button>
+
                                 <button
                                     type="button"
                                     id="resetBusinessButton"
@@ -231,6 +314,7 @@
                                     Reset Form
                                 </button>
                             </div>
+
                         </form>
                     </div>
                 </section>

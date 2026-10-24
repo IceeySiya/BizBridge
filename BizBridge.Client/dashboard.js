@@ -233,6 +233,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 establishedElement.textContent = "Not specified";
             }
         }
+        // Display optional business contact details only when they have values.
+const hasEmail = displayContactField(
+    "businessEmailRow",
+    "businessEmail",
+    getProperty(business, "businessEmail", "BusinessEmail"),
+    "email"
+);
+
+const hasPhone = displayContactField(
+    "businessPhoneRow",
+    "businessPhone",
+    getProperty(business, "businessPhone", "BusinessPhone"),
+    "phone"
+);
+
+const hasWebsite = displayContactField(
+    "websiteUrlRow",
+    "websiteUrl",
+    getProperty(business, "websiteUrl", "WebsiteUrl"),
+    "website"
+);
+
+document.getElementById("businessContactSection")?.classList.toggle(
+    "d-none",
+    !hasEmail && !hasPhone && !hasWebsite
+);
 
         noBusinessSection?.classList.add("d-none");
         businessSection?.classList.remove("d-none");
@@ -876,5 +902,39 @@ document.addEventListener("DOMContentLoaded", () => {
     image.src = imageUrl;
 }
 
+function displayContactField(rowId, linkId, value, type) {
+    const row = document.getElementById(rowId);
+    const link = document.getElementById(linkId);
+
+    if (!row || !link) {
+        console.warn(`Missing contact field elements: ${rowId}, ${linkId}`);
+        return false;
+    }
+
+    const cleanValue =
+        typeof value === "string" ? value.trim() : "";
+
+    if (!cleanValue) {
+        row.classList.add("d-none");
+        link.removeAttribute("href");
+        link.textContent = "";
+        return false;
+    }
+
+    link.textContent = cleanValue;
+
+    if (type === "email") {
+        link.href = `mailto:${cleanValue}`;
+    } else if (type === "phone") {
+        link.href = `tel:${cleanValue}`;
+    } else if (type === "website") {
+        link.href = /^https?:\/\//i.test(cleanValue)
+            ? cleanValue
+            : `https://${cleanValue}`;
+    }
+
+    row.classList.remove("d-none");
+    return true;
+}
     loadDashboard();
 });
