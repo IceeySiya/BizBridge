@@ -63,36 +63,38 @@ public class BusinessService
 
     // Update the authenticated user's business profile.
     public async Task<Models.Business?> UpdateMyBusinessAsync(
-        int userId,
-        UpdateBusinessDto dto)
+    int userId,
+    UpdateBusinessDto dto)
+{
+    var business = await _context.Businesses
+        .FirstOrDefaultAsync(b => b.OwnerUserID == userId);
+
+    if (business is null)
     {
-        var business = await _context.Businesses
-            .FirstOrDefaultAsync(b => b.OwnerUserID == userId);
-
-        if (business is null)
-        {
-            return null;
-        }
-
-        business.BusinessName = dto.BusinessName.Trim();
-        business.Industry = dto.Industry.Trim();
-        business.Location = dto.Location?.Trim();
-        business.Description = dto.Description?.Trim();
-
-        if (dto.Established.HasValue)
-        {
-            business.Established = dto.Established.Value;
-        }
-
-        business.BusinessEmail = dto.BusinessEmail?.Trim();
-        business.BusinessPhone = dto.BusinessPhone?.Trim();
-        business.WebsiteUrl = dto.WebsiteUrl?.Trim();
-        business.ImageUrl = dto.ImageUrl?.Trim();
-
-        await _context.SaveChangesAsync();
-
-        return business;
+        return null;
     }
+
+    business.BusinessName = dto.BusinessName.Trim();
+    business.Industry = dto.Industry.Trim();
+    business.Location = dto.Location?.Trim();
+    business.Description = dto.Description?.Trim();
+
+    if (dto.Established.HasValue)
+    {
+        business.Established = dto.Established.Value;
+    }
+
+    business.BusinessEmail = dto.BusinessEmail?.Trim();
+    business.BusinessPhone = dto.BusinessPhone?.Trim();
+    business.WebsiteUrl = dto.WebsiteUrl?.Trim();
+
+    // Preserve ImageUrl.
+    // Business images are updated through UpdateMyBusinessImageAsync().
+
+    await _context.SaveChangesAsync();
+
+    return business;
+}
 
     
     // Save the uploaded image URL for the authenticated user's business.
