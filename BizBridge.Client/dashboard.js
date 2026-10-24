@@ -188,6 +188,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayBusiness(business) {
+        const imageUrl = getProperty(
+        business,
+        "imageUrl",
+        "ImageUrl"
+        );
+
+        displayBusinessImage(imageUrl);
         setText(
             "businessName",
             getProperty(business, "businessName", "BusinessName"),
@@ -840,6 +847,34 @@ document.addEventListener("DOMContentLoaded", () => {
             refreshDashboardData();
         }
     });
+
+    function displayBusinessImage(imageUrl) {
+    const image = document.getElementById("businessImage");
+    const placeholder = document.getElementById(
+        "businessImagePlaceholder"
+    );
+
+    if (!image || !placeholder) return;
+
+    if (!imageUrl) {
+        image.removeAttribute("src");
+        image.classList.add("d-none");
+        placeholder.classList.remove("d-none");
+        return;
+    }
+
+    image.onerror = () => {
+        image.classList.add("d-none");
+        placeholder.classList.remove("d-none");
+    };
+
+    image.onload = () => {
+        image.classList.remove("d-none");
+        placeholder.classList.add("d-none");
+    };
+
+    image.src = imageUrl;
+}
 
     loadDashboard();
 });

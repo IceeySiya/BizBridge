@@ -31,7 +31,6 @@ public class BusinessService
                 "You already have a business profile.");
         }
 
-        
         var business = new Models.Business
         {
             OwnerUserID = userId,
@@ -40,9 +39,13 @@ public class BusinessService
             Location = dto.Location?.Trim(),
             Description = dto.Description?.Trim(),
             Established = dto.Established ?? DateTimeOffset.UtcNow,
-            OpeningBalance = dto.OpeningBalance
-        };
+            OpeningBalance = dto.OpeningBalance,
 
+            BusinessEmail = dto.BusinessEmail?.Trim(),
+            BusinessPhone = dto.BusinessPhone?.Trim(),
+            WebsiteUrl = dto.WebsiteUrl?.Trim(),
+            ImageUrl = dto.ImageUrl?.Trim()
+        };
 
         _context.Businesses.Add(business);
         await _context.SaveChangesAsync();
@@ -81,8 +84,35 @@ public class BusinessService
             business.Established = dto.Established.Value;
         }
 
+        business.BusinessEmail = dto.BusinessEmail?.Trim();
+        business.BusinessPhone = dto.BusinessPhone?.Trim();
+        business.WebsiteUrl = dto.WebsiteUrl?.Trim();
+        business.ImageUrl = dto.ImageUrl?.Trim();
+
         await _context.SaveChangesAsync();
 
         return business;
     }
+
+    
+    // Save the uploaded image URL for the authenticated user's business.
+    public async Task<bool> UpdateMyBusinessImageAsync(
+        int userId,
+        string imageUrl)
+    {
+        var business = await _context.Businesses
+            .FirstOrDefaultAsync(b => b.OwnerUserID == userId);
+
+        if (business is null)
+        {
+            return false;
+        }
+
+        business.ImageUrl = imageUrl;
+
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
+
 }

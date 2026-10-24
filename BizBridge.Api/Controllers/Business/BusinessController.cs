@@ -5,6 +5,9 @@ using BizBridge.Api.Services.Business;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+using BizBridge.Api.Services.Images;
+using Microsoft.AspNetCore.Http;
+
 namespace BizBridge.Api.Controllers.Business;
 
 [ApiController]
@@ -13,10 +16,14 @@ namespace BizBridge.Api.Controllers.Business;
 public class BusinessController : ControllerBase
 {
     private readonly BusinessService _businessService;
+    private readonly CloudinaryImageService _imageService;
 
-    public BusinessController(BusinessService businessService)
+    public BusinessController(
+        BusinessService businessService,
+        CloudinaryImageService imageService)
     {
         _businessService = businessService;
+        _imageService = imageService;
     }
 
     // Create a business profile.
@@ -24,7 +31,8 @@ public class BusinessController : ControllerBase
     public async Task<IActionResult> CreateBusiness(
         CreateBusinessDto dto)
     {
-        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userIdClaim =
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (!int.TryParse(userIdClaim, out var userId))
         {
@@ -44,7 +52,12 @@ public class BusinessController : ControllerBase
                 business.Industry,
                 business.Location,
                 business.Description,
-                business.Established
+                business.Established,
+                business.OpeningBalance,
+                business.BusinessEmail,
+                business.BusinessPhone,
+                business.WebsiteUrl,
+                business.ImageUrl
             });
         }
         catch (InvalidOperationException ex)
@@ -57,7 +70,8 @@ public class BusinessController : ControllerBase
     [HttpGet("mine")]
     public async Task<IActionResult> GetMyBusiness()
     {
-        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userIdClaim =
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (!int.TryParse(userIdClaim, out var userId))
         {
@@ -81,7 +95,12 @@ public class BusinessController : ControllerBase
             business.Industry,
             business.Location,
             business.Description,
-            business.Established
+            business.Established,
+            business.OpeningBalance,
+            business.BusinessEmail,
+            business.BusinessPhone,
+            business.WebsiteUrl,
+            business.ImageUrl
         });
     }
 
@@ -90,7 +109,8 @@ public class BusinessController : ControllerBase
     public async Task<IActionResult> UpdateMyBusiness(
         UpdateBusinessDto dto)
     {
-        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userIdClaim =
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (!int.TryParse(userIdClaim, out var userId))
         {
@@ -116,7 +136,107 @@ public class BusinessController : ControllerBase
             business.Industry,
             business.Location,
             business.Description,
-            business.Established
+            business.Established,
+            business.OpeningBalance,
+            business.BusinessEmail,
+            business.BusinessPhone,
+            business.WebsiteUrl,
+            business.ImageUrl
         });
     }
+
+    
+    // Upload or replace the authenticated user's business image.
+    [HttpPost("mine/image")]
+    [Consumes("multipart/form-data")]
+    [RequestSizeLimit(5 * 1024 * 1024)]
+    public async Task<IActionResult> UploadMyBusinessImage(
+        [FromForm] IFormFile? image,
+        CancellationToken cancellationToken)
+    {
+        var userIdClaim =
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        if (!int.TryParse(userIdClaim, out var userId))
+        {
+            return Unauthorized();
+        }
+
+        if (image is null || image.Length == 0)
+        {
+            return BadRequest(new
+            {
+                message = "Please select an image to upload."
+            });
+        }
+
+        const long maxBytes = 5 * 1024 * 1024;
+
+        if (image.Length > maxBytes)
+        {
+            return BadRequest(new
+            {
+                message = "The image must not exceed 5 MB."
+            });
+        }
+
+        var allowedTypes = new HashSet<string>(
+            StringComparer.OrdinalIgnoreCase)
+        {
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+        };
+
+        if (!allowedTypes.Contains(image.ContentType))
+        {
+            return BadRequest(new
+            {
+                message = "Only JPEG, PNG, and WebP images are supported."
+            });
+        }
+
+        var business = await _businessService.GetMyBusinessAsync(userId);
+
+        if (business is null)
+        {
+            return NotFound(new
+            {
+                message = "Create your business profile before uploading an image."
+            });
+        }
+
+        try
+        {
+            var imageUrl = await _imageService.UploadBusinessImageAsync(
+                image,
+                cancellationToken);
+
+            var updated = await _businessService.UpdateMyBusinessImageAsync(
+                userId,
+                imageUrl);
+
+            if (!updated)
+            {
+                return NotFound(new
+                {
+                    message = "Your business profile could not be found."
+                });
+            }
+
+            return Ok(new
+            {
+                message = "Business image uploaded successfully.",
+                imageUrl
+            });
+        }
+        catch (InvalidOperationException)
+        {
+            return StatusCode(502, new
+            {
+                message = "The image service could not complete the upload. Please try again."
+            });
+        }
+    }
+
 }

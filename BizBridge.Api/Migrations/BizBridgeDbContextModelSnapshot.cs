@@ -30,10 +30,18 @@ namespace BizBridge.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BusinessID"));
 
+                    b.Property<string>("BusinessEmail")
+                        .HasMaxLength(254)
+                        .HasColumnType("character varying(254)");
+
                     b.Property<string>("BusinessName")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
+
+                    b.Property<string>("BusinessPhone")
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
 
                     b.Property<string>("Description")
                         .HasMaxLength(1000)
@@ -41,6 +49,10 @@ namespace BizBridge.Api.Migrations
 
                     b.Property<DateTimeOffset>("Established")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(2048)
+                        .HasColumnType("character varying(2048)");
 
                     b.Property<string>("Industry")
                         .IsRequired()
@@ -59,6 +71,10 @@ namespace BizBridge.Api.Migrations
 
                     b.Property<int>("OwnerUserID")
                         .HasColumnType("integer");
+
+                    b.Property<string>("WebsiteUrl")
+                        .HasMaxLength(2048)
+                        .HasColumnType("character varying(2048)");
 
                     b.HasKey("BusinessID");
 
@@ -297,6 +313,8 @@ namespace BizBridge.Api.Migrations
 
                     b.HasKey("CheckID");
 
+                    b.ToTable("ReadinessChecks");
+
                     b.HasData(
                         new
                         {
@@ -340,8 +358,6 @@ namespace BizBridge.Api.Migrations
                             IsRequired = true,
                             Title = "Prepare a business plan or Lean Canvas"
                         });
-
-                    b.ToTable("ReadinessChecks");
                 });
 
             modelBuilder.Entity("BizBridge.Api.Models.Transaction", b =>

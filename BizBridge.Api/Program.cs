@@ -18,6 +18,7 @@ builder.Services.AddDbContext<BizBridgeDbContext>(options =>
 builder.Services.AddScoped<PasswordService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Business.BusinessService>();
+builder.Services.AddScoped<BizBridge.Api.Services.Images.CloudinaryImageService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Categories.CategoryService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Transactions.TransactionService>();
 builder.Services.AddScoped<BizBridge.Api.Services.Transactions.FinancialSummaryService>();

@@ -24,4 +24,20 @@ public class UpdateBusinessDto
     public string? Description { get; set; }
 
     public DateTimeOffset? Established { get; set; }
+
+    [EmailAddress]
+    [StringLength(254)]
+    public string? BusinessEmail { get; set; }
+
+    [Phone]
+    [StringLength(30)]
+    public string? BusinessPhone { get; set; }
+
+    [Url]
+    [StringLength(2048)]
+    public string? WebsiteUrl { get; set; }
+
+    [Url]
+    [StringLength(2048)]
+    public string? ImageUrl { get; set; }
 }

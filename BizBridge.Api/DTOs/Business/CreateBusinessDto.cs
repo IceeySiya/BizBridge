@@ -27,4 +27,20 @@ public class CreateBusinessDto
 
     [Range(typeof(decimal), "0", "9999999999999999.99")]
     public decimal OpeningBalance { get; set; } = 0m;
+
+    [EmailAddress]
+    [StringLength(254)]
+    public string? BusinessEmail { get; set; }
+
+    [Phone]
+    [StringLength(30)]
+    public string? BusinessPhone { get; set; }
+
+    [Url]
+    [StringLength(2048)]
+    public string? WebsiteUrl { get; set; }
+
+    [Url]
+    [StringLength(2048)]
+    public string? ImageUrl { get; set; }
 }

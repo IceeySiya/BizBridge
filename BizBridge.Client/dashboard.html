@@ -119,7 +119,7 @@
             </div>
         </section>
 
-        <!-- Business overview -->
+                <!-- Business overview -->
         <section
             id="businessSection"
             class="card border-0 shadow-sm mb-4 d-none"
@@ -128,9 +128,39 @@
             <div class="card-body p-4">
                 <div
                     class="d-flex flex-column flex-md-row
-                           justify-content-between align-items-md-start gap-3"
+                           justify-content-between align-items-md-start gap-4"
                 >
-                    <div>
+                    <!-- Business photo -->
+                    <div class="flex-shrink-0 text-center">
+                        <img
+                            id="businessImage"
+                            src=""
+                            alt="Business logo or photo"
+                            class="img-thumbnail rounded-3 d-none"
+                            style="width: 150px; height: 150px; object-fit: cover;"
+                        >
+
+                        <div
+                            id="businessImagePlaceholder"
+                            class="d-flex align-items-center justify-content-center
+                                   rounded-3 bg-success-subtle text-success"
+                            style="width: 150px; height: 150px;"
+                            role="img"
+                            aria-label="No business photo uploaded"
+                        >
+                            <span class="fs-1" aria-hidden="true">&#127970;</span>
+                        </div>
+
+                        <a
+                            href="business-profile.html"
+                            class="btn btn-sm btn-outline-success mt-2"
+                        >
+                            Update Photo
+                        </a>
+                    </div>
+
+                    <!-- Business details -->
+                    <div class="flex-grow-1">
                         <p class="text-success fw-semibold small mb-1">
                             YOUR BUSINESS
                         </p>
@@ -139,19 +169,19 @@
                             Business name
                         </h2>
 
-                        <p class="text-secondary mb-0">
+                        <p class="text-secondary mb-3">
                             <span id="businessIndustry">Industry</span>
                             <span aria-hidden="true"> · </span>
                             <span id="businessLocation">Location</span>
                         </p>
-                    </div>
 
-                    <a
-                        href="business-profile.html"
-                        class="btn btn-outline-success"
-                    >
-                        Manage Business
-                    </a>
+                        <a
+                            href="business-profile.html"
+                            class="btn btn-outline-success"
+                        >
+                            Manage Business
+                        </a>
+                    </div>
                 </div>
 
                 <hr class="my-4">

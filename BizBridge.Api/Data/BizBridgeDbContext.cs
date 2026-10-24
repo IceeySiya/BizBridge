@@ -81,12 +81,29 @@ public class BizBridgeDbContext : DbContext
             entity.Property(b => b.Description)
                 .HasMaxLength(1000);
 
+            // Business contact details.
+            entity.Property(b => b.BusinessEmail)
+                .HasMaxLength(254);
+
+            entity.Property(b => b.BusinessPhone)
+                .HasMaxLength(30);
+
+            entity.Property(b => b.WebsiteUrl)
+                .HasMaxLength(2048);
+
+            // URL for the business logo or profile picture.
+            entity.Property(b => b.ImageUrl)
+                .HasMaxLength(2048);
+
+            // Relationship between a business and its owner.
             entity.HasOne(b => b.Owner)
                 .WithMany()
                 .HasForeignKey(b => b.OwnerUserID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasIndex(b => b.OwnerUserID);
+
+            // Initial business balance.
             entity.Property(b => b.OpeningBalance)
                 .HasPrecision(18, 2)
                 .HasDefaultValue(0m)
@@ -125,7 +142,6 @@ public class BizBridgeDbContext : DbContext
                 "CK_Categories_TransactionType",
                 "\"TransactionType\" IN ('Income', 'Expense')"));
         });
-
 
         // TRANSACTION
         modelBuilder.Entity<BizBridge.Api.Models.Transaction>(entity =>
@@ -281,9 +297,6 @@ public class BizBridgeDbContext : DbContext
             entity.HasIndex(o => new
                 { o.Status, o.Deadline });
         });
-        
-       
-
 
         // OPPORTUNITY APPLICATION
         modelBuilder.Entity<OpportunityApplication>(entity =>
@@ -314,16 +327,19 @@ public class BizBridgeDbContext : DbContext
                 .IsUnique();
         });
 
-        if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+        // SQLITE DATETIMEOFFSET CONVERSION
+        if (Database.ProviderName ==
+            "Microsoft.EntityFrameworkCore.Sqlite")
         {
             var dateTimeOffsetConverter =
                 new DateTimeOffsetToBinaryConverter();
+
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 foreach (var property in entityType.GetProperties().Where(
-                             property =>
-                                 property.ClrType == typeof(DateTimeOffset) ||
-                                 property.ClrType == typeof(DateTimeOffset?)))
+                    property =>
+                        property.ClrType == typeof(DateTimeOffset) ||
+                        property.ClrType == typeof(DateTimeOffset?)))
                 {
                     modelBuilder.Entity(entityType.ClrType)
                         .Property(property.Name)

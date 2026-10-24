@@ -167,16 +167,55 @@
                                     placeholder="What does your business do?"></textarea>
                             </div>
 
+                           
                             <div class="mb-4">
-                                <label for="established" class="form-label">
-                                    Date established
-                                </label>
-                                <input
-                                    type="date"
-                                    class="form-control"
-                                    id="established"
-                                    name="established">
+                            <label for="established" class="form-label">Date established</label>
+                            <input type="date" class="form-control" id="established" name="established">
                             </div>
+
+                            <hr class="my-4">
+
+                            <section aria-labelledby="businessImageHeading" class="mb-4">
+                            <h2 id="businessImageHeading" class="h5 fw-bold">Business photo</h2>
+                            <p class="text-secondary small">
+                                Add a logo or photo that represents your business.
+                                JPEG, PNG, or WebP only; maximum size 5 MB.
+                            </p>
+
+                            <div class="mb-3">
+                                <img
+                                id="businessImagePreview"
+                                src=""
+                                alt="Business photo preview"
+                                class="img-thumbnail d-none"
+                                style="width: 180px; height: 180px; object-fit: cover;"
+                                >
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="businessImage" class="form-label">Choose an image</label>
+                                <input
+                                type="file"
+                                class="form-control"
+                                id="businessImage"
+                                name="image"
+                                accept="image/jpeg,image/png,image/webp"
+                                >
+                            </div>
+
+                            <button
+                                type="button"
+                                id="uploadBusinessImageButton"
+                                class="btn btn-outline-success"
+                                disabled
+                            >
+                                Upload business photo
+                            </button>
+
+                            <p id="businessImageStatus" class="small text-secondary mt-2 mb-0"
+                                role="status" aria-live="polite"></p>
+                            </section>
+
 
                             <div class="d-flex flex-column flex-sm-row gap-2">
                                 <button
