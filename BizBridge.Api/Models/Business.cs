@@ -31,6 +31,10 @@ public class Business
     // its finances on BizBridge.
     public decimal OpeningBalance { get; set; } = 0m;
 
+       // Controls whether this business appears in public Explore listings.
+    // Businesses remain private until the owner opts in.
+    public bool IsVisibleOnExplore { get; set; } = false;
+
     // Navigation properties
     public User Owner { get; set; } = null!;
 }

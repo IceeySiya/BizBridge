@@ -239,4 +239,55 @@ public class BusinessController : ControllerBase
         }
     }
 
+    
+[AllowAnonymous]
+[HttpGet("explore")]
+public async Task<IActionResult> GetExploreBusinesses()
+{
+    var businesses = await _businessService.GetVisibleBusinessesAsync();
+    return Ok(businesses);
+}
+
+[HttpPut("mine/explore-visibility")]
+public async Task<IActionResult> UpdateExploreVisibility(
+    [FromBody] UpdateExploreVisibilityDto dto)
+{
+    var userIdClaim =
+        User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+    if (!int.TryParse(userIdClaim, out var userId))
+    {
+        return Unauthorized();
+    }
+
+    if (!dto.IsVisibleOnExplore.HasValue)
+    {
+        return BadRequest(new
+        {
+            message = "Please specify whether your business should be visible on Explore."
+        });
+    }
+
+    var business = await _businessService.UpdateMyExploreVisibilityAsync(
+        userId,
+        dto.IsVisibleOnExplore.Value);
+
+    if (business is null)
+    {
+        return NotFound(new
+        {
+            message = "Create your business profile before changing Explore visibility."
+        });
+    }
+
+    return Ok(new
+    {
+        message = business.IsVisibleOnExplore
+            ? "Your business is now visible on Explore."
+            : "Your business is now hidden from Explore.",
+        business.IsVisibleOnExplore
+    });
+}
+
+
 }

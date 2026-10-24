@@ -2,6 +2,7 @@
 using BizBridge.Api.Data;
 using BizBridge.Api.DTOs.Business;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace BizBridge.Api.Services.Business;
 
@@ -119,5 +120,48 @@ public class BusinessService
 
         return true;
     }
+
+
+    
+public async Task<List<ExploreBusinessDto>> GetVisibleBusinessesAsync()
+{
+    return await _context.Businesses
+        .AsNoTracking()
+        .Where(b => b.IsVisibleOnExplore)
+        .OrderBy(b => b.BusinessName)
+        .Select(b => new ExploreBusinessDto
+        {
+            BusinessID = b.BusinessID,
+            BusinessName = b.BusinessName,
+            Industry = b.Industry,
+            Location = b.Location,
+            Description = b.Description,
+            BusinessEmail = b.BusinessEmail,
+            BusinessPhone = b.BusinessPhone,
+            WebsiteUrl = b.WebsiteUrl,
+            ImageUrl = b.ImageUrl
+        })
+        .ToListAsync();
+}
+
+public async Task<Models.Business?> UpdateMyExploreVisibilityAsync(
+    int userId,
+    bool isVisibleOnExplore)
+{
+    var business = await _context.Businesses
+        .FirstOrDefaultAsync(b => b.OwnerUserID == userId);
+
+    if (business is null)
+    {
+        return null;
+    }
+
+    business.IsVisibleOnExplore = isVisibleOnExplore;
+
+    await _context.SaveChangesAsync();
+
+    return business;
+}
+
 
 }

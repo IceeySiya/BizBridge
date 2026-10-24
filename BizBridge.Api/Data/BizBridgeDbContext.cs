@@ -108,6 +108,12 @@ public class BizBridgeDbContext : DbContext
                 .HasPrecision(18, 2)
                 .HasDefaultValue(0m)
                 .IsRequired();
+            
+            // Controls whether the business appears in public Explore listings.
+            // Businesses are hidden from Explore by default.
+            entity.Property(b => b.IsVisibleOnExplore)
+                .HasDefaultValue(false)
+                .IsRequired();
         });
 
         // CATEGORY
