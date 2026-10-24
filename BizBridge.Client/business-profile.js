@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const businessEmailInput = document.getElementById("businessEmail");
     const businessPhoneInput = document.getElementById("businessPhone");
     const websiteUrlInput = document.getElementById("websiteUrl");
+    const exploreVisibilityInput = document.getElementById("isVisibleOnExplore");
+    const exploreVisibilityBadge = document.getElementById("exploreVisibilityBadge");
+    const exploreVisibilityStatus =document.getElementById("exploreVisibilityStatus");
+    const saveExploreVisibilityButton =document.getElementById("saveExploreVisibilityButton");
 
     // Business image elements
     const businessImageInput = document.getElementById("businessImage");
@@ -53,6 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
         !businessImageStatus||
         !businessEmailInput ||
         !businessPhoneInput ||
+        !exploreVisibilityInput ||
+        !exploreVisibilityBadge ||
+        !exploreVisibilityStatus ||
+        !saveExploreVisibilityButton ||
         !websiteUrlInput 
     ) {
         console.error(
@@ -67,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedImageFile = null;
     let currentImageUrl = "";
     let previewObjectUrl = null;
+    let savedExploreVisibility = false;
+    let savingExploreVisibility = false;
 
     class ApiError extends Error {
         constructor(message, status = 0) {
@@ -174,6 +184,53 @@ document.addEventListener("DOMContentLoaded", () => {
         openingBalanceInput.disabled = hasBusiness;
 
         updateUploadButton();
+        updateExploreVisibilityUI();
+    }
+
+    function updateExploreVisibilityUI() {
+        const visible = exploreVisibilityInput.checked;
+        const hasUnsavedChanges = visible !== savedExploreVisibility;
+
+        exploreVisibilityBadge.className = visible
+            ? "badge text-bg-success"
+            : "badge text-bg-secondary";
+
+        exploreVisibilityBadge.textContent = visible
+            ? "Visible on Explore"
+            : "Hidden from Explore";
+
+        if (!existingBusiness) {
+            exploreVisibilityInput.disabled = true;
+            saveExploreVisibilityButton.disabled = true;
+
+            exploreVisibilityStatus.textContent =
+                "Create your business profile first to manage Explore visibility.";
+
+            return;
+        }
+
+        exploreVisibilityInput.disabled = savingExploreVisibility;
+        saveExploreVisibilityButton.disabled =
+            savingExploreVisibility || !hasUnsavedChanges;
+
+        saveExploreVisibilityButton.textContent = savingExploreVisibility
+            ? "Saving..."
+            : "Save visibility setting";
+
+        if (hasUnsavedChanges) {
+            exploreVisibilityStatus.textContent =
+                "You have an unsaved visibility change. Save it to apply the change.";
+        } else {
+            exploreVisibilityStatus.textContent = visible
+                ? "Your business is listed for public discovery on Explore."
+                : "Your business is hidden from public Explore listings.";
+        }
+    }
+
+    function setExploreVisibility(value) {
+        savedExploreVisibility = value === true;
+        exploreVisibilityInput.checked = savedExploreVisibility;
+        updateExploreVisibilityUI();
     }
 
     // Shared API request function for JSON and multipart requests.
@@ -351,6 +408,11 @@ document.addEventListener("DOMContentLoaded", () => {
             currentImageUrl
                 ? "Saved business photo loaded."
                 : "No business photo uploaded yet."
+        );
+        setExploreVisibility(
+            business.isVisibleOnExplore ??
+            business.IsVisibleOnExplore ??
+            false
         );
 
         setBusinessMode(true);
@@ -799,6 +861,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clean up the temporary preview when leaving the page.
     window.addEventListener("pagehide", releasePreviewObjectUrl);
+
+    exploreVisibilityInput.addEventListener("change", () => {
+    updateExploreVisibilityUI();
+});
+
+saveExploreVisibilityButton.addEventListener("click", async () => {
+    if (!existingBusiness || savingExploreVisibility) {
+        return;
+    }
+
+    const requestedVisibility = exploreVisibilityInput.checked;
+
+    savingExploreVisibility = true;
+    updateExploreVisibilityUI();
+    clearMessage();
+
+    try {
+        const { data } = await apiRequest(
+            "/businesses/mine/explore-visibility",
+            {
+                method: "PUT",
+                body: JSON.stringify({
+                    isVisibleOnExplore: requestedVisibility
+                })
+            }
+        );
+
+        // Trust the value returned by the API.
+        const confirmedVisibility =
+            data?.isVisibleOnExplore ??
+            data?.IsVisibleOnExplore;
+
+        if (typeof confirmedVisibility !== "boolean") {
+            throw new ApiError(
+                "The server did not confirm the saved visibility setting."
+            );
+        }
+
+        setExploreVisibility(confirmedVisibility);
+
+        showMessage(
+            "Explore visibility updated",
+            confirmedVisibility
+                ? "Your business is now visible in public Explore listings."
+                : "Your business is now hidden from public Explore listings.",
+            "success"
+        );
+    } catch (error) {
+        console.error("Explore visibility update error:", error);
+
+        if (error.status === 401 || error.status === 403) {
+            return;
+        }
+
+        // Restore the last confirmed setting after a failed request.
+        setExploreVisibility(savedExploreVisibility);
+
+        showMessage(
+            "Couldn't update Explore visibility",
+            error.message || "Please try again.",
+            "danger"
+        );
+    } finally {
+        savingExploreVisibility = false;
+        updateExploreVisibilityUI();
+    }
+});
 
     loadBusinessProfile();
 });

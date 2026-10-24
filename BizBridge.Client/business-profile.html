@@ -33,7 +33,9 @@
                         <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="business-profile.html">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="business-profile.html">
                             Business Profile
                         </a>
                     </li>
@@ -58,8 +60,8 @@
                     <span class="badge text-bg-success mb-3">Your Business</span>
                     <h1 class="h2 fw-bold">Business Profile</h1>
                     <p class="text-secondary">
-                        Manage your business information and keep your
-                        BizBridge profile up to date.
+                        Manage your business information, control your public
+                        visibility, and keep your BizBridge profile up to date.
                     </p>
                 </div>
 
@@ -196,6 +198,7 @@
                                 <h2 id="contactHeading" class="h5 fw-bold">
                                     Contact details
                                 </h2>
+
                                 <p class="text-secondary small">
                                     Help customers and potential partners
                                     contact your business.
@@ -240,6 +243,81 @@
                                         name="websiteUrl"
                                         maxlength="2048"
                                         placeholder="https://example.com">
+                                </div>
+                            </section>
+
+                            <hr class="my-4">
+
+                            <!-- Explore visibility -->
+                            <section class="mb-4"
+                                aria-labelledby="exploreVisibilityHeading">
+
+                                <h2 id="exploreVisibilityHeading"
+                                    class="h5 fw-bold">
+                                    Public Explore visibility
+                                </h2>
+
+                                <p class="text-secondary">
+                                    Let customers and potential partners
+                                    discover your business on BizBridge Explore.
+                                </p>
+
+                                <div class="border rounded-3 p-3 p-md-4">
+                                    <div class="d-flex flex-column flex-sm-row
+                                                justify-content-between
+                                                align-items-sm-center gap-3">
+
+                                        <div class="flex-grow-1">
+                                            <label
+                                                for="isVisibleOnExplore"
+                                                class="form-label fw-semibold mb-1">
+                                                Show my business on Explore
+                                            </label>
+
+                                            <p class="text-secondary small mb-0">
+                                                When enabled, your business can
+                                                appear in public Explore listings.
+                                                When disabled, it will be hidden
+                                                from those listings.
+                                            </p>
+                                        </div>
+
+                                        <div class="form-check form-switch fs-4 mb-0">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                role="switch"
+                                                id="isVisibleOnExplore"
+                                                name="isVisibleOnExplore"
+                                                aria-describedby="exploreVisibilityStatus"
+                                                disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <span
+                                            id="exploreVisibilityBadge"
+                                            class="badge text-bg-secondary">
+                                            Profile required
+                                        </span>
+                                    </div>
+
+                                    <p
+                                        id="exploreVisibilityStatus"
+                                        class="small text-secondary mt-2 mb-0"
+                                        role="status"
+                                        aria-live="polite">
+                                        Create your business profile first to
+                                        manage Explore visibility.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        id="saveExploreVisibilityButton"
+                                        class="btn btn-outline-success mt-3"
+                                        disabled>
+                                        Save visibility setting
+                                    </button>
                                 </div>
                             </section>
 
