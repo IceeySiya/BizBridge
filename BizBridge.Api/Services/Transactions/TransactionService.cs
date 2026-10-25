@@ -99,4 +99,44 @@ public class TransactionService
 
         return (true, transactions);
     }
+
+    
+/// <summary>
+/// Deletes a transaction after validating business ownership.
+/// The transaction must belong to the specified business.
+/// </summary>
+public async Task<bool> DeleteTransactionAsync(
+    int businessId,
+    int transactionId,
+    int userId)
+{
+    // Confirm that the authenticated user owns the business.
+    bool ownsBusiness = await _context.Businesses
+        .AnyAsync(b =>
+            b.BusinessID == businessId &&
+            b.OwnerUserID == userId);
+
+    if (!ownsBusiness)
+    {
+        return false;
+    }
+
+    // Find the transaction only within this business.
+    var transaction = await _context.Transactions
+        .FirstOrDefaultAsync(t =>
+            t.TransactionID == transactionId &&
+            t.BusinessID == businessId);
+
+    if (transaction == null)
+    {
+        return false;
+    }
+
+    _context.Transactions.Remove(transaction);
+
+    await _context.SaveChangesAsync();
+
+    return true;
+}
+
 }

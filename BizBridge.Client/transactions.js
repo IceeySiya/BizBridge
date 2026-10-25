@@ -12,26 +12,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryTypeSelect = document.getElementById("categoryType");
     const categorySelect = document.getElementById("transactionCategory");
 
-    const createCategoryButton = document.getElementById("createCategoryButton");
-    const saveTransactionButton = document.getElementById("saveTransactionButton");
-    const refreshTransactionsButton = document.getElementById("refreshTransactionsButton");
+    const createCategoryButton =
+        document.getElementById("createCategoryButton");
+    const saveTransactionButton =
+        document.getElementById("saveTransactionButton");
+    const refreshTransactionsButton =
+        document.getElementById("refreshTransactionsButton");
     const logoutButton = document.getElementById("logoutButton");
 
-    const transactionAmountInput = document.getElementById("transactionAmount");
-    const transactionDateInput = document.getElementById("transactionDate");
-    const transactionDescriptionInput = document.getElementById("transactionDescription");
-    const paymentReferenceInput = document.getElementById("paymentReference");
+    const transactionAmountInput =
+        document.getElementById("transactionAmount");
+    const transactionDateInput =
+        document.getElementById("transactionDate");
+    const transactionDescriptionInput =
+        document.getElementById("transactionDescription");
+    const paymentReferenceInput =
+        document.getElementById("paymentReference");
 
-    const transactionFilter = document.getElementById("transactionFilter");
-    const transactionCount = document.getElementById("transactionCount");
-    const transactionsTableBody = document.getElementById("transactionsTableBody");
+    const transactionFilter =
+        document.getElementById("transactionFilter");
+    const transactionCount =
+        document.getElementById("transactionCount");
+    const transactionsTableBody =
+        document.getElementById("transactionsTableBody");
 
     // Current page data
     let businessId = null;
     let categories = [];
     let transactions = [];
+    const deletingTransactionIds = new Set();
 
-    // Display a message to the user.
     function showMessage(message, type = "info") {
         pageMessage.textContent = message;
         pageMessage.className = `alert alert-${type}`;
@@ -43,24 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
         pageMessage.className = "alert d-none";
     }
 
-    // Redirect the user to the login page.
     function logout() {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         window.location.replace("login.html");
     }
 
-    // Get the user's token and communicate with the API.
+    // Authenticated API helper.
     async function apiRequest(path, options = {}) {
         const token = localStorage.getItem("token");
 
         if (!token) {
             logout();
-            throw new Error("Your session has expired. Please log in again.");
+            throw new Error(
+                "Your session has expired. Please log in again."
+            );
         }
 
         if (!API_BASE_URL) {
-            throw new Error("The API URL is not configured in api-config.js.");
+            throw new Error(
+                "The API URL is not configured in api-config.js."
+            );
         }
 
         let response;
@@ -79,11 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         } catch {
             throw new Error(
-                "Cannot connect to the BizBridge API. Check that the backend is running and the API URL is correct."
+                "Cannot connect to the BizBridge API. Check the backend and API URL."
             );
         }
 
-        // Some successful responses, such as HTTP 204, have no body.
         const responseText = await response.text();
         let data = null;
 
@@ -121,15 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 errorMessage = data;
             }
 
-            throw new Error(errorMessage);
+            const error = new Error(errorMessage);
+            error.status = response.status;
+            throw error;
         }
 
         return { response, data };
     }
 
-    // Get today's date in the user's local timezone.
     function getTodayLocalDate() {
         const today = new Date();
+
         const year = today.getFullYear();
         const month = String(today.getMonth() + 1).padStart(2, "0");
         const day = String(today.getDate()).padStart(2, "0");
@@ -142,14 +156,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return object?.[camelCaseName] ?? object?.[pascalCaseName];
     }
 
-    // Load the authenticated user's business.
-    async function loadBusiness() {
-        const { response, data } = await apiRequest("/businesses/mine");
+    // Resolve a transaction ID from common API property names.
+    function getTransactionId(transaction) {
+        return getProperty(transaction, "transactionID", "TransactionID")
+            ?? getProperty(transaction, "id", "Id");
+    }
 
-        const business = data?.business ?? data;
+    async function loadBusiness() {
+        const { response, data } =
+            await apiRequest("/businesses/mine");
+
+        const business = data?.business ?? data?.data ?? data;
         const id = getProperty(business, "businessID", "BusinessID");
 
-        if (response.status === 204 || !id) {
+        if (response.status === 204 || id === null ||
+            id === undefined || id === "") {
             throw new Error(
                 "You need to create your business profile before recording transactions."
             );
@@ -158,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
         businessId = id;
     }
 
-    // Load categories belonging to the current business.
     async function loadCategories() {
         const { data } = await apiRequest(
             `/businesses/${businessId}/categories`
@@ -178,16 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         categories.forEach(category => {
             const categoryId = getProperty(
-                category,
-                "categoryID",
-                "CategoryID"
+                category, "categoryID", "CategoryID"
             );
-
             const name = getProperty(category, "name", "Name");
             const type = getProperty(
-                category,
-                "transactionType",
-                "TransactionType"
+                category, "transactionType", "TransactionType"
             );
 
             const option = document.createElement("option");
@@ -200,18 +215,28 @@ document.addEventListener("DOMContentLoaded", () => {
         saveTransactionButton.disabled = categories.length === 0;
     }
 
-    // Render the transaction table.
+    function createEmptyRow(message) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+
+        cell.colSpan = 6;
+        cell.className = "transactions-empty-state";
+        cell.textContent = message;
+
+        row.appendChild(cell);
+        return row;
+    }
+
     function renderTransactions() {
         const selectedFilter = transactionFilter.value;
 
         const filteredTransactions = transactions.filter(transaction => {
             const type = getProperty(
-                transaction,
-                "transactionType",
-                "TransactionType"
+                transaction, "transactionType", "TransactionType"
             );
 
-            return selectedFilter === "All" || type === selectedFilter;
+            return selectedFilter === "All" ||
+                type === selectedFilter;
         });
 
         transactionsTableBody.replaceChildren();
@@ -220,47 +245,32 @@ document.addEventListener("DOMContentLoaded", () => {
             `${filteredTransactions.length} transaction(s) displayed`;
 
         if (filteredTransactions.length === 0) {
-            const row = document.createElement("tr");
-            const cell = document.createElement("td");
-
-            cell.colSpan = 5;
-            cell.className = "transactions-empty-state";
-            cell.textContent = transactions.length === 0
-                ? "No transactions recorded yet. Add your first transaction using the form."
-                : "No transactions match this filter.";
-
-            row.appendChild(cell);
-            transactionsTableBody.appendChild(row);
+            transactionsTableBody.appendChild(
+                createEmptyRow(
+                    transactions.length === 0
+                        ? "No transactions recorded yet. Add your first transaction using the form."
+                        : "No transactions match this filter."
+                )
+            );
             return;
         }
 
         filteredTransactions.forEach(transaction => {
             const row = document.createElement("tr");
 
+            const transactionId = getTransactionId(transaction);
             const transactionDate = getProperty(
-                transaction,
-                "transactionDate",
-                "TransactionDate"
+                transaction, "transactionDate", "TransactionDate"
             );
-
             const categoryName = getProperty(
-                transaction,
-                "categoryName",
-                "CategoryName"
+                transaction, "categoryName", "CategoryName"
             ) ?? "Uncategorised";
-
             const description = getProperty(
-                transaction,
-                "description",
-                "Description"
+                transaction, "description", "Description"
             ) ?? "—";
-
             const type = getProperty(
-                transaction,
-                "transactionType",
-                "TransactionType"
+                transaction, "transactionType", "TransactionType"
             );
-
             const amount = Number(
                 getProperty(transaction, "amount", "Amount")
             );
@@ -270,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const descriptionCell = document.createElement("td");
             const typeCell = document.createElement("td");
             const amountCell = document.createElement("td");
+            const actionsCell = document.createElement("td");
 
             if (transactionDate) {
                 const date = new Date(transactionDate);
@@ -284,16 +295,13 @@ document.addEventListener("DOMContentLoaded", () => {
             categoryCell.textContent = categoryName;
             descriptionCell.textContent = description;
 
-            // Style the transaction type.
             const typeBadge = document.createElement("span");
             typeBadge.className = type === "Income"
                 ? "transaction-type-badge transaction-type-income"
                 : "transaction-type-badge transaction-type-expense";
-
             typeBadge.textContent = type ?? "Unknown";
             typeCell.appendChild(typeBadge);
 
-            // Format the amount as South African rand.
             amountCell.className = "text-end";
 
             const formattedAmount = Number.isFinite(amount)
@@ -303,10 +311,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 : "—";
 
-            amountCell.textContent =
-                type === "Income"
-                    ? `+${formattedAmount}`
-                    : `-${formattedAmount}`;
+            amountCell.textContent = type === "Income"
+                ? `+${formattedAmount}`
+                : `-${formattedAmount}`;
 
             amountCell.classList.add(
                 type === "Income"
@@ -314,31 +321,49 @@ document.addEventListener("DOMContentLoaded", () => {
                     : "transaction-amount-expense"
             );
 
+            actionsCell.className = "text-end";
+
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.className = "btn btn-outline-danger btn-sm";
+            deleteButton.textContent = "Delete";
+
+            // Without a known ID, do not send an unsafe delete request.
+            if (transactionId === null ||
+                transactionId === undefined ||
+                transactionId === "") {
+                deleteButton.disabled = true;
+                deleteButton.title =
+                    "This transaction does not include an ID.";
+            } else {
+                deleteButton.disabled =
+                    deletingTransactionIds.has(String(transactionId));
+
+                deleteButton.addEventListener("click", () => {
+                    deleteTransaction(transaction, deleteButton);
+                });
+            }
+
+            actionsCell.appendChild(deleteButton);
+
             row.append(
                 dateCell,
                 categoryCell,
                 descriptionCell,
                 typeCell,
-                amountCell
+                amountCell,
+                actionsCell
             );
 
             transactionsTableBody.appendChild(row);
         });
     }
 
-    // Retrieve transaction history from the API.
     async function loadTransactions() {
         transactionsTableBody.replaceChildren();
-
-        const loadingRow = document.createElement("tr");
-        const loadingCell = document.createElement("td");
-
-        loadingCell.colSpan = 5;
-        loadingCell.className = "transactions-empty-state";
-        loadingCell.textContent = "Loading transactions...";
-
-        loadingRow.appendChild(loadingCell);
-        transactionsTableBody.appendChild(loadingRow);
+        transactionsTableBody.appendChild(
+            createEmptyRow("Loading transactions...")
+        );
 
         try {
             const { data } = await apiRequest(
@@ -348,23 +373,106 @@ document.addEventListener("DOMContentLoaded", () => {
             transactions = Array.isArray(data) ? data : [];
             renderTransactions();
         } catch (error) {
-            transactionCount.textContent = "Could not load transactions.";
+            transactionCount.textContent =
+                "Could not load transactions.";
 
             transactionsTableBody.replaceChildren();
+            transactionsTableBody.appendChild(
+                createEmptyRow(error.message)
+            );
 
-            const row = document.createElement("tr");
-            const cell = document.createElement("td");
-
-            cell.colSpan = 5;
-            cell.className = "transactions-empty-state";
-            cell.textContent = error.message;
-
-            row.appendChild(cell);
-            transactionsTableBody.appendChild(row);
+            throw error;
         }
     }
 
-    // Create or reuse a custom category.
+    // Delete only after confirmation and a successful API response.
+    async function deleteTransaction(transaction, button) {
+        const transactionId = getTransactionId(transaction);
+
+        if (transactionId === null ||
+            transactionId === undefined ||
+            transactionId === "") {
+            showMessage(
+                "Cannot delete this transaction because its ID is missing.",
+                "danger"
+            );
+            return;
+        }
+
+        const categoryName = getProperty(
+            transaction, "categoryName", "CategoryName"
+        ) ?? "this category";
+
+        const amount = Number(
+            getProperty(transaction, "amount", "Amount")
+        );
+
+        const type = getProperty(
+            transaction, "transactionType", "TransactionType"
+        ) ?? "transaction";
+
+        const formattedAmount = Number.isFinite(amount)
+            ? amount.toLocaleString("en-ZA", {
+                style: "currency",
+                currency: "ZAR"
+            })
+            : "this amount";
+
+        const confirmed = window.confirm(
+            `Are you sure you want to permanently delete this ${type.toLowerCase()} transaction?\n\n` +
+            `Category: ${categoryName}\n` +
+            `Amount: ${formattedAmount}\n\n` +
+            "This action cannot be undone."
+        );
+
+        if (!confirmed) {
+            return;
+        }
+
+        const idKey = String(transactionId);
+
+        if (deletingTransactionIds.has(idKey)) {
+            return;
+        }
+
+        deletingTransactionIds.add(idKey);
+        button.disabled = true;
+        button.textContent = "Deleting...";
+        clearMessage();
+
+        try {
+            // This route must match the DELETE endpoint implemented
+            // by the BizBridge backend.
+            await apiRequest(
+                `/businesses/${businessId}/transactions/${encodeURIComponent(transactionId)}`,
+                { method: "DELETE" }
+            );
+
+            // Refresh from the API only after deletion succeeds.
+            await loadTransactions();
+
+            showMessage(
+                "Transaction deleted successfully.",
+                "success"
+            );
+
+            // Notify other open pages if they listen for this event.
+            window.dispatchEvent(
+                new CustomEvent("bizbridge:transactions-changed", {
+                    detail: { businessId }
+                })
+            );
+        } catch (error) {
+            showMessage(
+                `Could not delete transaction: ${error.message}`,
+                "danger"
+            );
+        } finally {
+            deletingTransactionIds.delete(idKey);
+            renderTransactions();
+        }
+    }
+
     categoryForm.addEventListener("submit", async event => {
         event.preventDefault();
         clearMessage();
@@ -388,24 +496,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 `/businesses/${businessId}/categories`,
                 {
                     method: "POST",
-                    body: JSON.stringify({
-                        name,
-                        transactionType
-                    })
+                    body: JSON.stringify({ name, transactionType })
                 }
             );
 
             await loadCategories();
-
             categoryForm.reset();
 
             const savedCategory =
                 data?.category ?? data?.Category ?? data;
 
             const savedName = getProperty(
-                savedCategory,
-                "name",
-                "Name"
+                savedCategory, "name", "Name"
             );
 
             showMessage(
@@ -425,7 +527,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Save a new income or expense transaction.
     transactionForm.addEventListener("submit", async event => {
         event.preventDefault();
         clearMessage();
@@ -448,7 +549,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (!Number.isFinite(amount) || amount <= 0) {
-            showMessage("Enter an amount greater than R0.00.", "warning");
+            showMessage(
+                "Enter an amount greater than R0.00.",
+                "warning"
+            );
             return;
         }
 
@@ -457,7 +561,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Use midday UTC to reduce date shifts when displaying the date.
         const payload = {
             categoryID,
             amount,
@@ -489,6 +592,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Transaction saved successfully.",
                 "success"
             );
+
+            window.dispatchEvent(
+                new CustomEvent("bizbridge:transactions-changed", {
+                    detail: { businessId }
+                })
+            );
         } catch (error) {
             showMessage(
                 `Could not save transaction: ${error.message}`,
@@ -500,12 +609,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Filter the displayed transaction history.
-    transactionFilter.addEventListener("change", () => {
-        renderTransactions();
-    });
+    transactionFilter.addEventListener("change", renderTransactions);
 
-    // Refresh categories and transactions.
     refreshTransactionsButton.addEventListener("click", async () => {
         clearMessage();
         refreshTransactionsButton.disabled = true;
@@ -527,10 +632,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Log out.
     logoutButton.addEventListener("click", logout);
 
-    // Initialise the page.
     async function initialisePage() {
         if (!localStorage.getItem("token")) {
             logout();

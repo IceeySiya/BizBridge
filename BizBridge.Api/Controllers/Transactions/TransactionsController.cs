@@ -122,6 +122,42 @@ public class TransactionsController : ControllerBase
         return Ok(transactions);
     }
 
+    
+/// <summary>
+/// Deletes a transaction belonging to the authenticated user's business.
+/// </summary>
+[HttpDelete("{transactionId:int}")]
+public async Task<IActionResult> DeleteTransaction(
+    int businessId,
+    int transactionId)
+{
+    int? userId = GetAuthenticatedUserId();
+
+    if (userId == null)
+    {
+        return Unauthorized(new
+        {
+            message = "Unable to identify the authenticated user."
+        });
+    }
+
+    bool deleted = await _transactionService.DeleteTransactionAsync(
+        businessId,
+        transactionId,
+        userId.Value);
+
+    if (!deleted)
+    {
+        return NotFound(new
+        {
+            message = "Transaction or business not found, or access denied."
+        });
+    }
+
+    return NoContent();
+}
+
+
     /// <summary>
     /// Extracts the authenticated user's ID from their JWT claims.
     /// </summary>
