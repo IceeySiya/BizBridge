@@ -280,8 +280,12 @@ document.getElementById("businessContactSection")?.classList.toggle(
         showBusinessGuideEntry();
     }
 
-    function showBusinessGuideEntry() {
-    if (!noBusinessSection) return;
+    
+function showBusinessGuideEntry() {
+    if (!noBusinessSection) {
+        console.error("noBusinessSection element was not found.");
+        return;
+    }
 
     noBusinessSection.innerHTML = `
         <div class="alert alert-info mb-0" role="region"
@@ -302,7 +306,10 @@ document.getElementById("businessContactSection")?.classList.toggle(
             </a>
         </div>
     `;
+
+    noBusinessSection.classList.remove("d-none");
 }
+
 
     async function loadAccount() {
         const { data } = await apiRequest("/auth/me");

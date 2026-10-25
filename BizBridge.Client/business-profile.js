@@ -149,6 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return null;
     }
 
+    
+
     function updateUploadButton() {
         uploadImageButton.disabled =
             !existingBusiness ||
