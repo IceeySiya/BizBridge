@@ -172,20 +172,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showNoBusiness() {
-        if (businessSection) businessSection.classList.add("d-none");
-        if (noBusinessSection) {
-            noBusinessSection.classList.remove("d-none");
-        }
+    if (businessSection) businessSection.classList.add("d-none");
 
-        businessId = null;
+    if (noBusinessSection) {
+        noBusinessSection.classList.remove("d-none");
 
-        resetFinancialSummary(
-            "Create a business profile to view your financial summary."
-        );
-
-        document.getElementById("readinessSection")?.classList.add("d-none");
-        document.getElementById("insightsSection")?.classList.add("d-none");
+        noBusinessSection.innerHTML = `
+            <div class="alert alert-warning mb-0" role="alert">
+                <h5 class="alert-heading">Set up your business</h5>
+                <p>
+                    Create your business profile to unlock financial
+                    tracking, readiness insights and business guidance.
+                </p>
+                <a href="business-profile.html" class="btn btn-warning">
+                    Create Business Profile
+                </a>
+            </div>
+        `;
     }
+
+    businessId = null;
+
+    resetFinancialSummary(
+        "Create a business profile to view your financial summary."
+    );
+
+    document.getElementById("readinessSection")?.classList.add("d-none");
+    document.getElementById("insightsSection")?.classList.add("d-none");
+}
 
     function displayBusiness(business) {
         const imageUrl = getProperty(
@@ -260,9 +274,35 @@ document.getElementById("businessContactSection")?.classList.toggle(
     !hasEmail && !hasPhone && !hasWebsite
 );
 
-        noBusinessSection?.classList.add("d-none");
+        
         businessSection?.classList.remove("d-none");
+
+        showBusinessGuideEntry();
     }
+
+    function showBusinessGuideEntry() {
+    if (!noBusinessSection) return;
+
+    noBusinessSection.innerHTML = `
+        <div class="alert alert-info mb-0" role="region"
+             aria-labelledby="businessGuideTitle">
+            <h5 class="alert-heading" id="businessGuideTitle">
+                <i class="bi bi-compass me-2"></i>
+                BizBridge Business Guide
+            </h5>
+
+            <p>
+                Your business profile is ready! Explore practical tips
+                and recommended next steps based on your business
+                progress.
+            </p>
+
+            <a href="business-guide.html" class="btn btn-primary">
+                Open Business Guide
+            </a>
+        </div>
+    `;
+}
 
     async function loadAccount() {
         const { data } = await apiRequest("/auth/me");
@@ -295,42 +335,47 @@ document.getElementById("businessContactSection")?.classList.toggle(
         );
     }
 
-    async function loadBusiness() {
-        let result;
+   async function loadBusiness() {
+    let result;
 
-        try {
-            result = await apiRequest("/businesses/mine");
-        } catch (error) {
-            // Only treat 404 as "no business" if that is the documented
-            // response contract of the BusinessesController.
-            throw error;
-        }
-
-        const { response, data } = result;
-
-        if (response.status === 204 || !data) {
+    try {
+        result = await apiRequest("/businesses/mine");
+    } catch (error) {
+        if (error.status === 404) {
+            businessId = null;
             showNoBusiness();
             return;
         }
 
-        const business = data?.business ?? data?.data ?? data;
-        const id = getProperty(business, "businessID", "BusinessID");
-
-        if (id === null || id === undefined || id === "") {
-            throw new Error(
-                "The business response did not include a business ID."
-            );
-        }
-
-        businessId = id;
-        displayBusiness(business);
-
-        await Promise.all([
-            loadFinancialSummary(),
-            loadReadiness(),
-            loadFinancialInsights()
-        ]);
+        throw error;
     }
+
+    const { response, data } = result;
+
+    if (response.status === 204 || !data) {
+        businessId = null;
+        showNoBusiness();
+        return;
+    }
+
+    const business = data?.business ?? data?.data ?? data;
+    const id = getProperty(business, "businessID", "BusinessID");
+
+    if (id === null || id === undefined || id === "") {
+        throw new Error(
+            "The business response did not include a business ID."
+        );
+    }
+
+    businessId = id;
+    displayBusiness(business);
+
+    await Promise.all([
+        loadFinancialSummary(),
+        loadReadiness(),
+        loadFinancialInsights()
+    ]);
+}
 
     async function loadFinancialSummary() {
         if (!businessId || isLoadingSummary) return;
