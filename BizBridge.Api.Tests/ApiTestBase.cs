@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace BizBridge.Api.Tests;
 
@@ -133,6 +134,14 @@ internal sealed class TestApiFactory : WebApplicationFactory<Program>
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
+        builder.ConfigureAppConfiguration(configuration =>
+            configuration.AddInMemoryCollection(
+                new Dictionary<string, string?>
+                {
+                    ["Cloudinary:CloudName"] = "test",
+                    ["Cloudinary:ApiKey"] = "test",
+                    ["Cloudinary:ApiSecret"] = "test"
+                }));
         builder.ConfigureServices(services =>
         {
             services.RemoveAll<

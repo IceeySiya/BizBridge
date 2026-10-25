@@ -25,7 +25,7 @@ public class CreateBusinessDto
 
     public DateTimeOffset? Established { get; set; }
 
-    [Range(typeof(decimal), "0", "9999999999999999.99")]
+    [Range(typeof(decimal), "0", "9999999999999999")]
     public decimal OpeningBalance { get; set; } = 0m;
 
     [EmailAddress]

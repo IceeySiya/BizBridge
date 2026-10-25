@@ -49,10 +49,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
+                    <li class="nav-item" id="loginNavItem">
+                        <a class="nav-link" id="loginNavLink" href="login.html">
+                            Log in
+                        </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="logoutNavItem" hidden>
+                        <button
+                            class="btn btn-outline-light btn-sm"
+                            type="button"
+                            id="logoutButton">
+                            Log out
+                        </button>
+                    </li>
+                    <li class="nav-item" id="registerNavItem">
                         <a class="btn btn-success ms-lg-3" href="register.html">
                             Get Started
                         </a>
@@ -83,8 +93,8 @@
                     </p>
 
                     <div class="mt-4 d-flex flex-wrap gap-3" id="get-started">
-                        <a href="#features" class="btn btn-success btn-lg">
-                            Explore BizBridge
+                        <a href="explore.html" class="btn btn-success btn-lg">
+                            Discover businesses
                         </a>
 
                         <a href="#about" class="btn btn-outline-dark btn-lg">
@@ -143,6 +153,41 @@
             </div>
         </div>
     </header>
+
+    <!-- Public business listings are loaded from the BizBridge API. -->
+    <section
+        class="py-5 bg-white"
+        id="businessDiscoverySection"
+        aria-labelledby="businessDiscoveryHeading">
+        <div class="container py-3">
+            <div class="d-flex flex-column flex-md-row
+                        justify-content-between align-items-md-end gap-3 mb-4">
+                <div>
+                    <p class="text-success fw-semibold mb-2">
+                        REAL BUSINESSES ON BIZBRIDGE
+                    </p>
+                    <h2 id="businessDiscoveryHeading" class="fw-bold mb-2">
+                        Discover local businesses
+                    </h2>
+                    <p class="text-secondary mb-0">
+                        Public profiles shared by businesses across South Africa.
+                    </p>
+                </div>
+                <a href="explore.html" class="btn btn-outline-success">
+                    Explore all businesses
+                </a>
+            </div>
+
+            <p
+                id="businessDiscoveryStatus"
+                class="text-secondary"
+                role="status"
+                aria-live="polite">
+                Loading public businesses...
+            </p>
+            <div id="featuredBusinesses" class="row g-3"></div>
+        </div>
+    </section>
 
     <!-- Features -->
     <section class="py-5" id="features">
@@ -227,6 +272,7 @@
     </script>
 
     <!-- Custom JavaScript -->
+    <script src="api-config.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

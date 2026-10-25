@@ -52,20 +52,20 @@
         >
             <span class="search-symbol" aria-hidden="true">⌕</span>
 
-            <label class="visually-hidden" for="exploreSearch">
-                Search businesses by name, industry, location or description
+            <label class="visually-hidden" id="exploreSearchLabel" for="exploreSearch">
+                Search businesses, products, updates or locations
             </label>
 
             <input
                 id="exploreSearch"
                 type="search"
-                placeholder="Search businesses, industries, locations..."
+                placeholder="Search businesses, products, services or locations..."
                 autocomplete="off"
                 aria-describedby="searchHelp"
             >
 
             <span id="searchHelp" class="visually-hidden">
-                Search results update as you type.
+                Search results update as you type across public Explore content.
             </span>
 
             <kbd aria-hidden="true">↵</kbd>
@@ -78,11 +78,20 @@
                 South Africa
             </span>
 
-            <a class="explore-login-link" href="login.html">
+            <a class="explore-login-link" id="exploreLoginLink" href="login.html">
                 Log in
             </a>
 
-            <a class="explore-join-button" href="register.html">
+            <button
+                class="explore-logout-button"
+                id="exploreLogoutButton"
+                type="button"
+                hidden
+            >
+                Log out
+            </button>
+
+            <a class="explore-join-button" id="exploreJoinLink" href="register.html">
                 Join BizBridge
             </a>
 
@@ -149,28 +158,10 @@
                 <button
                     class="explore-nav-link"
                     type="button"
-                    data-account-action="Orders"
-                >
-                    <span aria-hidden="true">▤</span>
-                    Orders
-                </button>
-
-                <button
-                    class="explore-nav-link"
-                    type="button"
                     data-account-action="Enquiries"
                 >
                     <span aria-hidden="true">◌</span>
                     Enquiries
-                </button>
-
-                <button
-                    class="explore-nav-link"
-                    type="button"
-                    data-account-action="Messages"
-                >
-                    <span aria-hidden="true">✉</span>
-                    Messages
                 </button>
 
                 <a class="explore-nav-link" href="dashboard.html">
@@ -180,27 +171,6 @@
 
             </nav>
 
-
-            <section class="sidebar-promo">
-
-                <span class="sidebar-promo-icon" aria-hidden="true">
-                    ✦
-                </span>
-
-                <p class="sidebar-promo-eyebrow">
-                    GROW TOGETHER
-                </p>
-
-                <h2>
-                    Good things happen when we shop local.
-                </h2>
-
-                <a href="register.html">
-                    Create your free account
-                    <span aria-hidden="true">→</span>
-                </a>
-
-            </section>
 
             <p class="sidebar-footnote">
                 Built for the next generation of South African business.
@@ -253,38 +223,78 @@
                 role="status"
                 aria-live="polite"
             >
-                Loading public business listings...
+                Loading public businesses, updates and products...
             </div>
 
 
-            <!-- BUSINESS STORIES -->
-            <section
-                class="stories-section"
-                aria-labelledby="storiesHeading"
-            >
-
+            <!-- BUSINESS OWNER TOOLS -->
+            <section class="business-tools" id="businessTools" hidden>
                 <div class="section-kicker-row">
-
-                    <h2 id="storiesHeading">
-                        Meet the locals
-                    </h2>
-
-                    <span>
-                        GOOD PEOPLE. GOOD BUSINESS.
-                    </span>
-
+                    <h2>Share with your community</h2>
+                    <span id="ownerBusinessName"></span>
                 </div>
 
-                <div
-                    class="stories-row"
-                    id="businessStories"
-                    aria-label="Public business profiles"
-                >
-                    <p class="text-muted">
-                        Loading businesses...
-                    </p>
-                </div>
+                <div class="business-tools-grid">
+                    <form id="postForm" class="business-tool-card">
+                        <h3>Publish an update</h3>
+                        <label for="postContent">Post</label>
+                        <textarea
+                            id="postContent"
+                            name="content"
+                            maxlength="2000"
+                            rows="3"
+                            required
+                            placeholder="Share news, work in progress, or a story..."
+                        ></textarea>
+                        <label for="postImageUrl">Image URL (optional)</label>
+                        <input
+                            id="postImageUrl"
+                            name="imageUrl"
+                            type="url"
+                            maxlength="2048"
+                            placeholder="https://..."
+                        >
+                        <button class="btn btn-primary" type="submit">
+                            Publish post
+                        </button>
+                    </form>
 
+                    <form id="productForm" class="business-tool-card">
+                        <h3>List a product</h3>
+                        <label for="productName">Product name</label>
+                        <input id="productName" name="name" maxlength="150" required>
+                        <label for="productCategory">Category</label>
+                        <input id="productCategory" name="category" maxlength="100" required>
+                        <label for="productDescription">Description</label>
+                        <textarea
+                            id="productDescription"
+                            name="description"
+                            maxlength="1000"
+                            rows="2"
+                        ></textarea>
+                        <label for="productPrice">Price (ZAR)</label>
+                        <input
+                            id="productPrice"
+                            name="price"
+                            type="number"
+                            min="0.01"
+                            max="1000000000000"
+                            step="0.01"
+                            required
+                        >
+                        <label for="productImageUrl">Image URL (optional)</label>
+                        <input
+                            id="productImageUrl"
+                            name="imageUrl"
+                            type="url"
+                            maxlength="2048"
+                            placeholder="https://..."
+                        >
+                        <button class="btn btn-primary" type="submit">
+                            Publish product
+                        </button>
+                    </form>
+                </div>
             </section>
 
 
@@ -299,19 +309,18 @@
                     <div>
 
                         <h2 id="feedHeading">
-                            Discover local businesses
+                            Explore local businesses
                         </h2>
 
-                        <p>
-                            Explore public business profiles and find
-                            services in your community.
+                        <p id="feedDescription">
+                            Updates, available products and public business profiles from across South Africa.
                         </p>
 
                     </div>
 
                     <span class="feed-live-indicator">
                         <span></span>
-                        PUBLIC LISTINGS
+                        <span id="feedModeLabel">REAL BUSINESS ACTIVITY</span>
                     </span>
 
                 </div>
@@ -356,7 +365,7 @@
                         <button
                             class="feed-tab"
                             type="button"
-                            data-account-action="Saved"
+                            data-feed-filter="saved"
                             aria-pressed="false"
                         >
                             Saved
@@ -367,23 +376,31 @@
 
                     <label class="category-select-wrap">
 
-                        <span class="visually-hidden">
-                            Filter businesses by industry
+                        <span class="visually-hidden" id="categoryFilterLabel">
+                            Filter by business or product category
                         </span>
 
                         <select
                             id="categoryFilter"
-                            aria-label="Filter businesses by industry"
+                            aria-labelledby="categoryFilterLabel"
                         >
-                            <option value="all">
-                                All categories
-                            </option>
+                            <option value="all">All categories</option>
                         </select>
 
                         <span aria-hidden="true">⌄</span>
 
                     </label>
 
+                </div>
+
+                <div class="feed-location-filters">
+                    <span class="feed-location-label">Location</span>
+                    <div class="location-filter-buttons" role="group" aria-label="Filter by business location">
+                        <button type="button" data-action="location" data-location="all" aria-pressed="true">All South Africa</button>
+                        <button type="button" data-action="location" data-location="Johannesburg" aria-pressed="false">Johannesburg</button>
+                        <button type="button" data-action="location" data-location="Durban" aria-pressed="false">Durban</button>
+                        <button type="button" data-action="location" data-location="Cape Town" aria-pressed="false">Cape Town</button>
+                    </div>
                 </div>
 
 
@@ -409,7 +426,7 @@
                             aria-hidden="true"
                         ></span>
 
-                        <p>Discovering businesses on BizBridge...</p>
+                        <p>Discovering local businesses and products...</p>
                     </div>
                 </div>
 
@@ -429,7 +446,7 @@
                         type="button"
                         hidden
                     >
-                        Show more businesses
+                        Show more
                         <span aria-hidden="true">↓</span>
                     </button>
 
@@ -457,93 +474,7 @@
         <!-- ==================================================
              RIGHT SIDEBAR
         =================================================== -->
-        <aside
-            class="explore-rightbar"
-            aria-label="Discover more businesses"
-        >
-
-            <!-- NEIGHBOURHOOD PANEL -->
-            <section class="right-panel search-hint-panel">
-
-                <div class="right-panel-heading">
-
-                    <div>
-
-                        <span class="panel-overline">
-                            YOUR NEIGHBOURHOOD
-                        </span>
-
-                        <h2>
-                            Big ideas start close by.
-                        </h2>
-
-                    </div>
-
-                    <span class="map-pin" aria-hidden="true">
-                        ⌖
-                    </span>
-
-                </div>
-
-                <p>
-                    Discover businesses from township streets to
-                    small-town main streets.
-                </p>
-
-                <div class="neighbourhood-tags">
-                    <span>Johannesburg</span>
-                    <span>Durban</span>
-                    <span>Cape Town</span>
-                    <span>Across SA</span>
-                </div>
-
-                <p class="text-muted small mt-2 mb-0">
-                    Search results depend on the location information
-                    provided by each business.
-                </p>
-
-            </section>
-
-
-            <!-- FEATURED BUSINESSES -->
-            <section class="right-panel trending-panel">
-
-                <div class="right-panel-heading">
-
-                    <div>
-
-                        <span class="panel-overline">
-                            DISCOVER
-                        </span>
-
-                        <h2>
-                            Featured businesses
-                        </h2>
-
-                    </div>
-
-                    <span class="trending-spark" aria-hidden="true">
-                        ↗
-                    </span>
-
-                </div>
-
-                <p class="panel-caption">
-                    Explore public business profiles on BizBridge.
-                </p>
-
-                <ol
-                    class="trending-list"
-                    id="trendingBusinesses"
-                >
-                    <li class="text-muted">
-                        Loading businesses...
-                    </li>
-                </ol>
-
-            </section>
-
-
+        <aside class="explore-rightbar" aria-label="Browse by category">
             <!-- DYNAMIC CATEGORIES -->
             <section class="right-panel categories-panel">
 
@@ -555,7 +486,7 @@
                             BROWSE YOUR WAY
                         </span>
 
-                        <h2>
+                        <h2 id="popularCategoriesHeading">
                             Business categories
                         </h2>
 
@@ -571,36 +502,6 @@
                         Loading categories...
                     </p>
                 </div>
-
-            </section>
-
-
-            <!-- SELLER INVITATION -->
-            <section class="seller-invite">
-
-                <div class="seller-invite-art" aria-hidden="true">
-                    <span>✦</span>
-                    <span>✳</span>
-                    <span>✦</span>
-                </div>
-
-                <p class="panel-overline">
-                    YOUR STORY DESERVES A STAGE
-                </p>
-
-                <h2>
-                    Put your business on the map.
-                </h2>
-
-                <p>
-                    Create a business profile and make your business
-                    discoverable to potential customers.
-                </p>
-
-                <a href="register.html">
-                    Get started
-                    <span aria-hidden="true">→</span>
-                </a>
 
             </section>
 
@@ -746,6 +647,59 @@
     </dialog>
 
 
+    <dialog
+        class="explore-dialog"
+        id="enquiryDialog"
+        aria-labelledby="enquiryDialogTitle"
+    >
+        <form method="dialog" class="dialog-close-form">
+            <button class="dialog-close" type="submit" aria-label="Close enquiry form">
+                ×
+            </button>
+        </form>
+        <p class="panel-overline">CONTACT A LOCAL BUSINESS</p>
+        <h2 id="enquiryDialogTitle">Send an enquiry</h2>
+        <p id="enquiryProductName" class="text-muted"></p>
+        <form id="enquiryForm">
+            <input type="hidden" id="enquiryBusinessId" name="businessID">
+            <input type="hidden" id="enquiryProductId" name="exploreProductID">
+            <label for="enquiryMessage">Your message</label>
+            <textarea
+                id="enquiryMessage"
+                name="message"
+                maxlength="2000"
+                minlength="5"
+                rows="5"
+                required
+                placeholder="Ask about price, stock, delivery or a custom request..."
+            ></textarea>
+            <button class="btn btn-primary mt-3" type="submit">
+                Send enquiry
+            </button>
+            <p class="dialog-preview-note">
+                This sends a request to the business. It does not place an order or take payment.
+            </p>
+        </form>
+    </dialog>
+
+    <dialog
+        class="explore-dialog"
+        id="enquiryInboxDialog"
+        aria-labelledby="enquiryInboxTitle"
+    >
+        <form method="dialog" class="dialog-close-form">
+            <button class="dialog-close" type="submit" aria-label="Close enquiries">
+                ×
+            </button>
+        </form>
+        <p class="panel-overline">BIZBRIDGE INBOX</p>
+        <h2 id="enquiryInboxTitle">Your enquiries</h2>
+        <div id="enquiryInboxContent" aria-live="polite">
+            <p class="text-muted">Loading enquiries...</p>
+        </div>
+    </dialog>
+
+
     <!-- ==================================================
          VIDEO PLACEHOLDER DIALOG
     =================================================== -->
@@ -802,13 +756,11 @@
          JAVASCRIPT
     =================================================== -->
 
-    <!-- API URL is configured in explore.js, with the deployed
-         BizBridge API as its default. -->
+    <!-- Shared API URL for the BizBridge client. -->
+    <script src="api-config.js"></script>
     <script src="explore.js" defer></script>
 
-    <!-- UI interactions for features that are not yet backed by
-         dedicated Following, Saved, Products, Orders, Enquiries
-         or Messages endpoints. -->
+    <!-- Navigation actions not handled by the Explore API. -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const signInDialog =
@@ -831,23 +783,7 @@
                 }
 
                 const messages = {
-                    following:
-                        "Following businesses will be available when BizBridge's follow feature is connected.",
-
-                    products:
-                        "Product listings will appear here when BizBridge's product feature is connected.",
-
-                    saved:
-                        "Saved businesses will be available when the saved-listings feature is connected.",
-
-                    orders:
-                        "Your orders will appear here when order management is available.",
-
-                    enquiries:
-                        "Your business enquiries will appear here when the enquiries feature is connected.",
-
-                    messages:
-                        "Your conversations will appear here when messaging is available."
+                    saved: "Sign in to see the businesses, posts and products you saved."
                 };
 
                 signInMessage.textContent =
@@ -863,23 +799,28 @@
                 button.addEventListener("click", () => {
                     const filter = button.dataset.feedFilter;
 
-                    if (filter === "for-you") {
-                        feedButtons.forEach((item) => {
-                            const isActive =
-                                item.dataset.feedFilter === "for-you";
-
-                            item.classList.toggle("is-active", isActive);
-
-                            item.setAttribute(
-                                "aria-pressed",
-                                String(isActive)
-                            );
-                        });
-
+                    if (
+                        (filter === "following" || filter === "saved") &&
+                        !localStorage.getItem("token")
+                    ) {
+                        signInMessage.textContent =
+                            "Sign in to see this personalized Explore feed.";
+                        if (!signInDialog.open) signInDialog.showModal();
                         return;
                     }
 
-                    showFeatureMessage(filter);
+                    feedButtons.forEach((item) => {
+                        const isActive = item.dataset.feedFilter === filter;
+
+                        item.classList.toggle("is-active", isActive);
+                        item.setAttribute("aria-pressed", String(isActive));
+                    });
+
+                    window.dispatchEvent(
+                        new CustomEvent("explore:feed-filter", {
+                            detail: { filter }
+                        })
+                    );
                 });
             });
 
@@ -888,6 +829,30 @@
                     const feature =
                         (button.dataset.accountAction || "")
                             .toLowerCase();
+
+                    if (feature === "saved") {
+                        if (!localStorage.getItem("token")) {
+                            showFeatureMessage(feature);
+                            return;
+                        }
+                        document.querySelector(
+                            '[data-feed-filter="saved"]'
+                        )?.click();
+                        return;
+                    }
+
+                    if (feature === "enquiries") {
+                        if (!localStorage.getItem("token")) {
+                            signInMessage.textContent =
+                                "Sign in to view your sent or received enquiries.";
+                            if (!signInDialog.open) signInDialog.showModal();
+                            return;
+                        }
+                        window.dispatchEvent(
+                            new CustomEvent("explore:show-enquiries")
+                        );
+                        return;
+                    }
 
                     showFeatureMessage(feature);
                 });
@@ -909,7 +874,10 @@
                         exploreFeed.querySelector(".explore-loading") !== null;
 
                     const failed =
-                        exploreFeed.querySelector(".explore-error") !== null;
+                        exploreFeed.querySelector(".explore-error, .explore-inline-error") !== null;
+                    const mode =
+                        document.getElementById("feedModeLabel")
+                            ?.textContent || "";
 
                     exploreFeed.setAttribute(
                         "aria-busy",
@@ -918,13 +886,13 @@
 
                     if (loading) {
                         exploreApiStatus.textContent =
-                            "Loading public business listings...";
+                            "Loading public businesses, updates and products...";
                     } else if (failed) {
                         exploreApiStatus.textContent =
-                            "Business listings could not be loaded. You can retry.";
-                    } else {
-                        const cards = exploreFeed.querySelectorAll(
-                            ".explore-business-card"
+                            "Some Explore content could not be loaded. You can retry.";
+                    } else if (mode.includes("PRODUCT")) {
+                        const products = exploreFeed.querySelectorAll(
+                            ".explore-product-card"
                         );
 
                         const empty =
@@ -933,8 +901,27 @@
                             ) !== null;
 
                         exploreApiStatus.textContent = empty
-                            ? "No matching public business listings."
-                            : `${cards.length} business listings currently displayed.`;
+                            ? "No matching available products."
+                            : `${products.length} available products currently displayed.`;
+                    } else {
+                        const cards = exploreFeed.querySelectorAll(
+                            ".explore-business-card"
+                        );
+                        const posts = exploreFeed.querySelectorAll(
+                            ".business-update-card"
+                        );
+                        const products = exploreFeed.querySelectorAll(
+                            ".explore-product-card"
+                        );
+
+                        const empty =
+                            exploreFeed.querySelector(
+                                ".explore-empty-state"
+                            ) !== null;
+
+                        exploreApiStatus.textContent = empty
+                            ? "No matching public Explore content."
+                            : `${posts.length} business updates, ${products.length} products and ${cards.length} business profiles currently displayed.`;
                     }
                 });
 

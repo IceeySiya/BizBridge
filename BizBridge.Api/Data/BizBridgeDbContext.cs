@@ -28,6 +28,18 @@ public class BizBridgeDbContext : DbContext
     public DbSet<Opportunity> Opportunities => Set<Opportunity>();
     public DbSet<OpportunityApplication> OpportunityApplications
         => Set<OpportunityApplication>();
+    public DbSet<ExplorePost> ExplorePosts => Set<ExplorePost>();
+    public DbSet<ExploreProduct> ExploreProducts => Set<ExploreProduct>();
+    public DbSet<BusinessFollow> BusinessFollows => Set<BusinessFollow>();
+    public DbSet<ExplorePostLike> ExplorePostLikes => Set<ExplorePostLike>();
+    public DbSet<ExploreSavedBusiness> ExploreSavedBusinesses
+        => Set<ExploreSavedBusiness>();
+    public DbSet<ExploreSavedPost> ExploreSavedPosts
+        => Set<ExploreSavedPost>();
+    public DbSet<ExploreSavedProduct> ExploreSavedProducts
+        => Set<ExploreSavedProduct>();
+    public DbSet<BusinessEnquiry> BusinessEnquiries
+        => Set<BusinessEnquiry>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -331,6 +343,175 @@ public class BizBridgeDbContext : DbContext
             entity.HasIndex(a => new
                 { a.BusinessID, a.OpportunityID })
                 .IsUnique();
+        });
+
+        // EXPLORE POST
+        modelBuilder.Entity<ExplorePost>(entity =>
+        {
+            entity.HasKey(post => post.ExplorePostID);
+            entity.Property(post => post.Content)
+                .HasMaxLength(2000)
+                .IsRequired();
+            entity.Property(post => post.ImageUrl)
+                .HasMaxLength(2048);
+            entity.Property(post => post.CreatedAt)
+                .IsRequired();
+            entity.HasOne<Business>()
+                .WithMany()
+                .HasForeignKey(post => post.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(post => new
+                { post.BusinessID, post.CreatedAt });
+            entity.HasIndex(post => post.CreatedAt);
+        });
+
+        // EXPLORE PRODUCT
+        modelBuilder.Entity<ExploreProduct>(entity =>
+        {
+            entity.HasKey(product => product.ExploreProductID);
+            entity.Property(product => product.Name)
+                .HasMaxLength(150)
+                .IsRequired();
+            entity.Property(product => product.Category)
+                .HasMaxLength(100)
+                .IsRequired();
+            entity.Property(product => product.Description)
+                .HasMaxLength(1000)
+                .IsRequired();
+            entity.Property(product => product.Price)
+                .HasPrecision(18, 2)
+                .IsRequired();
+            entity.Property(product => product.ImageUrl)
+                .HasMaxLength(2048);
+            entity.Property(product => product.IsAvailable)
+                .HasDefaultValue(true)
+                .IsRequired();
+            entity.Property(product => product.CreatedAt)
+                .IsRequired();
+            entity.HasOne<Business>()
+                .WithMany()
+                .HasForeignKey(product => product.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(product => new
+                { product.BusinessID, product.IsAvailable });
+            entity.ToTable(table => table.HasCheckConstraint(
+                "CK_ExploreProducts_Price",
+                "\"Price\" > 0"));
+        });
+
+        // BUSINESS FOLLOWS
+        modelBuilder.Entity<BusinessFollow>(entity =>
+        {
+            entity.HasKey(follow => new
+                { follow.UserID, follow.BusinessID });
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(follow => follow.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<Business>()
+                .WithMany()
+                .HasForeignKey(follow => follow.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(follow => follow.BusinessID);
+        });
+
+        // EXPLORE POST LIKES
+        modelBuilder.Entity<ExplorePostLike>(entity =>
+        {
+            entity.HasKey(like => new
+                { like.UserID, like.ExplorePostID });
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(like => like.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<ExplorePost>()
+                .WithMany()
+                .HasForeignKey(like => like.ExplorePostID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(like => like.ExplorePostID);
+        });
+
+        // SAVED BUSINESSES
+        modelBuilder.Entity<ExploreSavedBusiness>(entity =>
+        {
+            entity.HasKey(saved => new
+                { saved.UserID, saved.BusinessID });
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(saved => saved.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<Business>()
+                .WithMany()
+                .HasForeignKey(saved => saved.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // SAVED POSTS
+        modelBuilder.Entity<ExploreSavedPost>(entity =>
+        {
+            entity.HasKey(saved => new
+                { saved.UserID, saved.ExplorePostID });
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(saved => saved.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<ExplorePost>()
+                .WithMany()
+                .HasForeignKey(saved => saved.ExplorePostID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(saved => saved.ExplorePostID);
+        });
+
+        // SAVED PRODUCTS
+        modelBuilder.Entity<ExploreSavedProduct>(entity =>
+        {
+            entity.HasKey(saved => new
+                { saved.UserID, saved.ExploreProductID });
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(saved => saved.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<ExploreProduct>()
+                .WithMany()
+                .HasForeignKey(saved => saved.ExploreProductID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasIndex(saved => saved.ExploreProductID);
+        });
+
+        // BUSINESS ENQUIRIES
+        modelBuilder.Entity<BusinessEnquiry>(entity =>
+        {
+            entity.HasKey(enquiry => enquiry.BusinessEnquiryID);
+            entity.Property(enquiry => enquiry.Message)
+                .HasMaxLength(2000)
+                .IsRequired();
+            entity.Property(enquiry => enquiry.BusinessResponse)
+                .HasMaxLength(2000);
+            entity.Property(enquiry => enquiry.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("New")
+                .IsRequired();
+            entity.Property(enquiry => enquiry.CreatedAt)
+                .IsRequired();
+            entity.HasOne<Business>()
+                .WithMany()
+                .HasForeignKey(enquiry => enquiry.BusinessID)
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne<ExploreProduct>()
+                .WithMany()
+                .HasForeignKey(enquiry => enquiry.ExploreProductID)
+                .OnDelete(DeleteBehavior.SetNull);
+            entity.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(enquiry => enquiry.CustomerUserID)
+                .OnDelete(DeleteBehavior.Restrict);
+            entity.HasIndex(enquiry => new
+                { enquiry.BusinessID, enquiry.CreatedAt });
+            entity.HasIndex(enquiry => new
+                { enquiry.CustomerUserID, enquiry.CreatedAt });
+            entity.ToTable(table => table.HasCheckConstraint(
+                "CK_BusinessEnquiries_Status",
+                "\"Status\" IN ('New', 'InProgress', 'Closed')"));
         });
 
         // SQLITE DATETIMEOFFSET CONVERSION

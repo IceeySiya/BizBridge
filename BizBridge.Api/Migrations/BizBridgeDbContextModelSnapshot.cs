@@ -88,6 +88,77 @@ namespace BizBridge.Api.Migrations
                     b.ToTable("Businesses");
                 });
 
+            modelBuilder.Entity("BizBridge.Api.Models.BusinessEnquiry", b =>
+                {
+                    b.Property<int>("BusinessEnquiryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BusinessEnquiryID"));
+
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("BusinessResponse")
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CustomerUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("ExploreProductID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<DateTimeOffset?>("ResponseAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)")
+                        .HasDefaultValue("New");
+
+                    b.HasKey("BusinessEnquiryID");
+
+                    b.HasIndex("ExploreProductID");
+
+                    b.HasIndex("BusinessID", "CreatedAt");
+
+                    b.HasIndex("CustomerUserID", "CreatedAt");
+
+                    b.ToTable("BusinessEnquiries", t =>
+                        {
+                            t.HasCheckConstraint("CK_BusinessEnquiries_Status", "\"Status\" IN ('New', 'InProgress', 'Closed')");
+                        });
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.BusinessFollow", b =>
+                {
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserID", "BusinessID");
+
+                    b.HasIndex("BusinessID");
+
+                    b.ToTable("BusinessFollows");
+                });
+
             modelBuilder.Entity("BizBridge.Api.Models.BusinessReadiness", b =>
                 {
                     b.Property<int>("BusinessReadinessID")
@@ -155,6 +226,162 @@ namespace BizBridge.Api.Migrations
                         {
                             t.HasCheckConstraint("CK_Categories_TransactionType", "\"TransactionType\" IN ('Income', 'Expense')");
                         });
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExplorePost", b =>
+                {
+                    b.Property<int>("ExplorePostID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ExplorePostID"));
+
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(2048)
+                        .HasColumnType("character varying(2048)");
+
+                    b.HasKey("ExplorePostID");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("BusinessID", "CreatedAt");
+
+                    b.ToTable("ExplorePosts");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExplorePostLike", b =>
+                {
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExplorePostID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserID", "ExplorePostID");
+
+                    b.HasIndex("ExplorePostID");
+
+                    b.ToTable("ExplorePostLikes");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreProduct", b =>
+                {
+                    b.Property<int>("ExploreProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ExploreProductID"));
+
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(2048)
+                        .HasColumnType("character varying(2048)");
+
+                    b.Property<bool>("IsAvailable")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("numeric(18,2)");
+
+                    b.HasKey("ExploreProductID");
+
+                    b.HasIndex("BusinessID", "IsAvailable");
+
+                    b.ToTable("ExploreProducts", t =>
+                        {
+                            t.HasCheckConstraint("CK_ExploreProducts_Price", "\"Price\" > 0");
+                        });
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedBusiness", b =>
+                {
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("BusinessID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserID", "BusinessID");
+
+                    b.HasIndex("BusinessID");
+
+                    b.ToTable("ExploreSavedBusinesses");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedPost", b =>
+                {
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExplorePostID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserID", "ExplorePostID");
+
+                    b.HasIndex("ExplorePostID");
+
+                    b.ToTable("ExploreSavedPosts");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedProduct", b =>
+                {
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExploreProductID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserID", "ExploreProductID");
+
+                    b.HasIndex("ExploreProductID");
+
+                    b.ToTable("ExploreSavedProducts");
                 });
 
             modelBuilder.Entity("BizBridge.Api.Models.Opportunity", b =>
@@ -457,6 +684,41 @@ namespace BizBridge.Api.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("BizBridge.Api.Models.BusinessEnquiry", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", null)
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("CustomerUserID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.ExploreProduct", null)
+                        .WithMany()
+                        .HasForeignKey("ExploreProductID")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.BusinessFollow", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", null)
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BizBridge.Api.Models.BusinessReadiness", b =>
                 {
                     b.HasOne("BizBridge.Api.Models.Business", "Business")
@@ -485,6 +747,84 @@ namespace BizBridge.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Business");
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExplorePost", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", null)
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExplorePostLike", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.ExplorePost", null)
+                        .WithMany()
+                        .HasForeignKey("ExplorePostID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreProduct", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", null)
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedBusiness", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.Business", null)
+                        .WithMany()
+                        .HasForeignKey("BusinessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedPost", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.ExplorePost", null)
+                        .WithMany()
+                        .HasForeignKey("ExplorePostID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BizBridge.Api.Models.ExploreSavedProduct", b =>
+                {
+                    b.HasOne("BizBridge.Api.Models.ExploreProduct", null)
+                        .WithMany()
+                        .HasForeignKey("ExploreProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BizBridge.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BizBridge.Api.Models.Opportunity", b =>
