@@ -137,8 +137,94 @@ public sealed class ReadinessAndInsightsTests : ApiTestBase
             warning => warning.GetProperty("message").GetString()!
                 .Contains("higher than the same elapsed calendar period"));
         Assert.Contains(
+            insights.GetProperty("recommendations").EnumerateArray(),
+            recommendation => recommendation.GetProperty("message").GetString()!
+                .Contains("Prioritise essential spending"));
+        Assert.Contains(
+            insights.GetProperty("recommendations").EnumerateArray(),
+            recommendation => recommendation.GetProperty("message").GetString()!
+                .Contains("history is incomplete or inconsistent"));
+        Assert.Contains(
             "not guaranteed predictions",
             insights.GetProperty("basis").GetString());
+    }
+
+    [Fact]
+    public async Task Financial_insights_recommendations_follow_recorded_monthly_trends()
+    {
+        var token = await RegisterAndLoginAsync();
+        await CreateBusinessAsync(token);
+        var businessId = await GetBusinessIdAsync(token);
+        var incomeCategoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Sales",
+            "Income");
+        var expenseCategoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Supplies",
+            "Expense");
+
+        using var initialResponse = await SendAuthorizedJsonAsync(
+            HttpMethod.Get,
+            $"/api/businesses/{businessId}/financial-insights",
+            token);
+        using var initialJson = await JsonDocument.ParseAsync(
+            await initialResponse.Content.ReadAsStreamAsync());
+        Assert.Contains(
+            initialJson.RootElement.GetProperty("recommendations")
+                .EnumerateArray(),
+            recommendation => recommendation.GetProperty("message")
+                .GetString()!.Contains("history is incomplete or inconsistent"));
+
+        var now = DateTimeOffset.UtcNow;
+        for (var monthsAgo = 2; monthsAgo >= 0; monthsAgo--)
+        {
+            var transactionDate = now.AddMonths(-monthsAgo);
+            await CreateTransactionAsync(
+                token,
+                businessId,
+                incomeCategoryId,
+                (monthsAgo + 1) * 1000m,
+                transactionDate);
+            await CreateTransactionAsync(
+                token,
+                businessId,
+                expenseCategoryId,
+                (3 - monthsAgo) * 500m,
+                transactionDate);
+        }
+
+        using var response = await SendAuthorizedJsonAsync(
+            HttpMethod.Get,
+            $"/api/businesses/{businessId}/financial-insights",
+            token);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        using var json = await JsonDocument.ParseAsync(
+            await response.Content.ReadAsStreamAsync());
+        var insights = json.RootElement;
+
+        Assert.Contains(
+            insights.GetProperty("warnings").EnumerateArray(),
+            warning => warning.GetProperty("message").GetString()!
+                .Contains("expenses have increased over three consecutive months"));
+        Assert.Contains(
+            insights.GetProperty("warnings").EnumerateArray(),
+            warning => warning.GetProperty("message").GetString()!
+                .Contains("income has declined over three consecutive months"));
+        Assert.Contains(
+            insights.GetProperty("recommendations").EnumerateArray(),
+            recommendation => recommendation.GetProperty("message").GetString()!
+                .Contains("Review your largest expense categories"));
+        Assert.Contains(
+            insights.GetProperty("recommendations").EnumerateArray(),
+            recommendation => recommendation.GetProperty("message").GetString()!
+                .Contains("Review sales trends and customer activity"));
+        Assert.DoesNotContain(
+            insights.GetProperty("recommendations").EnumerateArray(),
+            recommendation => recommendation.GetProperty("message").GetString()!
+                .Contains("history is incomplete or inconsistent"));
     }
 
     private async Task<int> GetBusinessIdAsync(string token)

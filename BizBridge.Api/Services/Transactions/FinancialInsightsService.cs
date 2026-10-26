@@ -119,7 +119,28 @@ public sealed class FinancialInsightsService
             .ToArray();
 
         var warnings = new List<FinancialWarningDto>();
+        var recommendations = new List<FinancialRecommendationDto>();
         var current = cashFlowByMonth[^1];
+        var monthsWithTransactions = cashFlowByMonth
+            .Select((month, index) => new { month, index })
+            .Where(item => item.month.TransactionCount > 0)
+            .ToArray();
+        var hasInsufficientHistory = monthsWithTransactions.Length < 3;
+        var hasHistoryGap = monthsWithTransactions.Length > 1 &&
+            monthsWithTransactions[^1].index -
+            monthsWithTransactions[0].index + 1 >
+            monthsWithTransactions.Length;
+        var recentMonths = cashFlowByMonth.TakeLast(3).ToArray();
+        var expensesAreRising = recentMonths.Length == 3 &&
+            recentMonths.All(month =>
+                month.TransactionCount > 0 && month.Expenses > 0) &&
+            recentMonths[0].Expenses < recentMonths[1].Expenses &&
+            recentMonths[1].Expenses < recentMonths[2].Expenses;
+        var incomeIsDeclining = recentMonths.Length == 3 &&
+            recentMonths.All(month =>
+                month.TransactionCount > 0 && month.Income > 0) &&
+            recentMonths[0].Income > recentMonths[1].Income &&
+            recentMonths[1].Income > recentMonths[2].Income;
 
         if (transactions.Count == 0)
         {
@@ -127,13 +148,47 @@ public sealed class FinancialInsightsService
                 "information",
                 "No transactions are recorded for this six-month period. Add income and expense records to see cash-flow trends and spending patterns."));
         }
-        else if (current.NetCashFlow < 0)
+        else if (current.TransactionCount > 0 && current.NetCashFlow < 0)
         {
             var shortfall = Math.Abs(current.NetCashFlow)
                 .ToString("N2", CultureInfo.GetCultureInfo("en-ZA"));
             warnings.Add(new FinancialWarningDto(
                 "warning",
                 $"For {current.Month}, recorded expenses exceeded recorded income by R{shortfall}. This describes recorded transactions only; it is not a forecast."));
+            recommendations.Add(new FinancialRecommendationDto(
+                "Recorded expenses exceed income this month. Prioritise essential spending and plan your cash flow."));
+        }
+
+        if (expensesAreRising)
+        {
+            warnings.Add(new FinancialWarningDto(
+                "warning",
+                "Recorded expenses have increased over three consecutive months."));
+            recommendations.Add(new FinancialRecommendationDto(
+                "Recorded expenses have risen for three consecutive months. Review your largest expense categories."));
+        }
+
+        if (incomeIsDeclining)
+        {
+            warnings.Add(new FinancialWarningDto(
+                "warning",
+                "Recorded income has declined over three consecutive months."));
+            recommendations.Add(new FinancialRecommendationDto(
+                "Recorded income has declined for three consecutive months. Review sales trends and customer activity."));
+        }
+
+        if (hasInsufficientHistory || hasHistoryGap)
+        {
+            if (transactions.Count > 0)
+            {
+                warnings.Add(new FinancialWarningDto(
+                    "information",
+                    hasHistoryGap
+                        ? "Recorded transactions are missing from one or more months in this six-month period."
+                        : "Fewer than three months in this period have recorded transactions, so trend insights are limited."));
+            }
+            recommendations.Add(new FinancialRecommendationDto(
+                "Transaction history is incomplete or inconsistent. Record income and expenses regularly before relying on forecasts."));
         }
 
         if (previousMonthToDateExpenses > 0 &&
@@ -155,7 +210,8 @@ public sealed class FinancialInsightsService
             Basis = "These summaries use transactions recorded in BizBridge for the last six calendar months, including the current month to date. Missing or unrecorded transactions are not included. Warnings describe historical records and are not guaranteed predictions or financial advice.",
             CashFlowByMonth = cashFlowByMonth,
             SpendingByCategory = spendingByCategory,
-            Warnings = warnings
+            Warnings = warnings,
+            Recommendations = recommendations
         };
     }
 }

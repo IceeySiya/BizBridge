@@ -9,6 +9,7 @@ public sealed class FinancialInsightsDto
     public IReadOnlyList<MonthlyCashFlowDto> CashFlowByMonth { get; init; } = [];
     public IReadOnlyList<SpendingPatternDto> SpendingByCategory { get; init; } = [];
     public IReadOnlyList<FinancialWarningDto> Warnings { get; init; } = [];
+    public IReadOnlyList<FinancialRecommendationDto> Recommendations { get; init; } = [];
 }
 
 public sealed record MonthlyCashFlowDto(
@@ -25,4 +26,7 @@ public sealed record SpendingPatternDto(
 
 public sealed record FinancialWarningDto(
     string Level,
+    string Message);
+
+public sealed record FinancialRecommendationDto(
     string Message);
