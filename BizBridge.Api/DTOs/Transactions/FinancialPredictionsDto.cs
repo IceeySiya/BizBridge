@@ -10,4 +10,6 @@ public sealed class FinancialPredictionsDto
     public FinancialForecastDto Forecast { get; init; } = new();
 
     public IReadOnlyList<FinancialWarningDto> PredictionWarnings { get; init; } = [];
+
+    public IReadOnlyList<CashFlowChartPointDto> CashFlowChart { get; init; } = [];
 }

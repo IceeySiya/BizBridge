@@ -371,6 +371,139 @@ document.addEventListener("DOMContentLoaded", () => {
         ]);
     }
 
+
+let predictionsChartInstance = null;
+
+const predictionCurrencyFormatter = new Intl.NumberFormat("en-ZA", {
+  style: "currency",
+  currency: "ZAR",
+  maximumFractionDigits: 0
+});
+
+function renderPredictionsChart(chartPoints) {
+  const canvas = document.getElementById("predictionsChart");
+  const message = document.getElementById("predictionsChartMessage");
+
+  if (!canvas || !message) return;
+
+  // Destroy the previous chart before drawing another one.
+  if (predictionsChartInstance) {
+    predictionsChartInstance.destroy();
+    predictionsChartInstance = null;
+  }
+
+  if (!Array.isArray(chartPoints) || chartPoints.length === 0) {
+    message.textContent = "There is not enough forecast data to display the chart yet.";
+    return;
+  }
+
+  const labels = chartPoints.map(point => point.month);
+
+  const actualValues = chartPoints.map(point =>
+    point.actualNetCashFlow == null
+      ? null
+      : Number(point.actualNetCashFlow)
+  );
+
+  // Start the forecast line at the last actual value so the
+  // transition from historical results to the prediction is visible.
+  const lastActualIndex = actualValues.reduce(
+    (lastIndex, value, index) => value !== null ? index : lastIndex,
+    -1
+  );
+
+  const predictedValues = chartPoints.map(() => null);
+
+  if (lastActualIndex >= 0) {
+    predictedValues[lastActualIndex] = actualValues[lastActualIndex];
+  }
+
+  chartPoints.forEach((point, index) => {
+    if (point.predictedNetCashFlow != null) {
+      predictedValues[index] = Number(point.predictedNetCashFlow);
+    }
+  });
+
+  predictionsChartInstance = new Chart(canvas, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Actual net cash flow",
+          data: actualValues,
+          borderColor: "#198754",
+          backgroundColor: "rgba(25, 135, 84, 0.12)",
+          pointBackgroundColor: "#198754",
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          borderWidth: 3,
+          tension: 0.25,
+          spanGaps: false
+        },
+        {
+          label: "Predicted net cash flow",
+          data: predictedValues,
+          borderColor: "#fd7e14",
+          backgroundColor: "rgba(253, 126, 20, 0.10)",
+          pointBackgroundColor: "#fd7e14",
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          borderWidth: 3,
+          borderDash: [7, 5],
+          tension: 0.25,
+          spanGaps: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        intersect: false,
+        mode: "index"
+      },
+      plugins: {
+        legend: {
+          position: "bottom"
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              return `${context.dataset.label}: ${
+                predictionCurrencyFormatter.format(context.parsed.y)
+              }`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          title: {
+            display: true,
+            text: "Net cash flow (ZAR)"
+          },
+          ticks: {
+            callback(value) {
+              return predictionCurrencyFormatter.format(value);
+            }
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: "Month"
+          }
+        }
+      }
+    }
+  });
+
+  message.textContent =
+    "Actual values come from recorded transactions. The dashed line represents the forecast, not a guaranteed result.";
+}
+
+
     async function loadFinancialSummary() {
         if (!businessId || isLoadingSummary) return;
 
@@ -527,206 +660,203 @@ document.addEventListener("DOMContentLoaded", () => {
             ?.classList.remove("d-none");
     }
 
-    function renderPredictions(data) {
-        const forecast =
-            getProperty(data, "forecast", "Forecast") ?? data;
+    
+function renderPredictions(data) {
+    const forecast =
+        getProperty(data, "forecast", "Forecast") ?? data;
 
-        const available = getProperty(
-            forecast,
-            "isForecastAvailable",
-            "IsForecastAvailable"
+    const chartPoints =
+        getProperty(data, "cashFlowChart", "CashFlowChart") || [];
+
+    const available = getProperty(
+        forecast, "isForecastAvailable", "IsForecastAvailable"
+    );
+
+    const periodStart = getProperty(
+        forecast, "forecastPeriodStart", "ForecastPeriodStart"
+    );
+
+    const periodEnd = getProperty(
+        forecast, "forecastPeriodEnd", "ForecastPeriodEnd"
+    );
+
+    function formatDate(value) {
+        if (!value) return null;
+
+        const date = new Date(value);
+
+        return Number.isNaN(date.getTime())
+            ? null
+            : date.toLocaleDateString("en-ZA");
+    }
+
+    const start = formatDate(periodStart);
+    const end = formatDate(periodEnd);
+
+    setText(
+        "forecastPeriod",
+        start && end ? `${start} – ${end}` : "Next-month estimate"
+    );
+
+    if (available === false) {
+        resetPredictions(
+            "Not enough recorded financial history is available to produce a forecast yet."
         );
-
-        const periodStart = getProperty(
-            forecast,
-            "forecastPeriodStart",
-            "ForecastPeriodStart"
-        );
-
-        const periodEnd = getProperty(
-            forecast,
-            "forecastPeriodEnd",
-            "ForecastPeriodEnd"
-        );
-
-        function formatDate(value) {
-            if (!value) return null;
-
-            const date = new Date(value);
-
-            return Number.isNaN(date.getTime())
-                ? null
-                : date.toLocaleDateString("en-ZA");
-        }
-
-        const start = formatDate(periodStart);
-        const end = formatDate(periodEnd);
 
         setText(
             "forecastPeriod",
-            start && end ? `${start} – ${end}` : "Next-month estimate"
+            start && end
+                ? `${start} – ${end}`
+                : "Forecast unavailable"
         );
-
-        if (available === false) {
-            resetPredictions(
-                "Not enough recorded financial history is available to produce a forecast yet."
-            );
-
-            setText(
-                "forecastPeriod",
-                start && end
-                    ? `${start} – ${end}`
-                    : "Forecast unavailable"
-            );
-
-            setText(
-                "forecastBasis",
-                getProperty(forecast, "basis", "Basis"),
-                "Add and maintain transactions to build a useful forecast."
-            );
-
-            return;
-        }
-
-        const metrics = [
-            ["forecastIncome", "forecastIncome", "ForecastIncome"],
-            ["forecastExpenses", "forecastExpenses", "ForecastExpenses"],
-            ["forecastNetCashFlow", "forecastNetCashFlow", "ForecastNetCashFlow"],
-            ["projectedClosingBalance", "projectedClosingBalance", "ProjectedClosingBalance"]
-        ];
-
-        for (const [elementId, camel, pascal] of metrics) {
-            const value = getProperty(forecast, camel, pascal);
-
-            setText(
-                elementId,
-                value === null || value === undefined
-                    ? "—"
-                    : formatCurrency(value)
-            );
-        }
-
-        const net = Number(
-            getProperty(
-                forecast,
-                "forecastNetCashFlow",
-                "ForecastNetCashFlow"
-            )
-        );
-
-        const netElement =
-            document.getElementById("forecastNetCashFlow");
-
-        if (netElement && Number.isFinite(net)) {
-            netElement.classList.remove(
-                "text-success",
-                "text-danger"
-            );
-
-            netElement.classList.add(
-                net >= 0 ? "text-success" : "text-danger"
-            );
-        }
-
-        const closing = Number(
-            getProperty(
-                forecast,
-                "projectedClosingBalance",
-                "ProjectedClosingBalance"
-            )
-        );
-
-        const closingElement =
-            document.getElementById("projectedClosingBalance");
-
-        if (closingElement && Number.isFinite(closing)) {
-            closingElement.classList.remove(
-                "text-success",
-                "text-danger"
-            );
-
-            closingElement.classList.add(
-                closing >= 0 ? "text-success" : "text-danger"
-            );
-        }
-
-        const historicalMonths = getProperty(
-            forecast,
-            "historicalMonthsUsed",
-            "HistoricalMonthsUsed"
-        );
-
-        const basis = getProperty(forecast, "basis", "Basis");
-
-        const historyNote =
-            historicalMonths !== null &&
-            historicalMonths !== undefined &&
-            Number.isFinite(Number(historicalMonths))
-                ? `Based on ${historicalMonths} month(s) of recorded history.`
-                : null;
 
         setText(
             "forecastBasis",
-            [basis, historyNote].filter(Boolean).join(" "),
-            "Estimates use recorded business transactions and are not guarantees."
+            getProperty(forecast, "basis", "Basis"),
+            "Add and maintain transactions to build a useful forecast."
         );
 
-        const warningContainer =
-            document.getElementById("predictionWarnings");
-
-        if (warningContainer) {
-            warningContainer.replaceChildren();
-        }
-
-        const predictionWarnings =
-            getProperty(data, "predictionWarnings", "PredictionWarnings") || [];
-
-        const forecastWarnings =
-            getProperty(forecast, "warnings", "Warnings") || [];
-
-        const warnings = [
-            ...(Array.isArray(predictionWarnings) ? predictionWarnings : []),
-            ...(Array.isArray(forecastWarnings) ? forecastWarnings : [])
-        ];
-
-        const uniqueWarnings = [
-            ...new Set(
-                warnings.map(item => {
-                    if (typeof item === "string") return item;
-
-                    return (
-                        getProperty(item, "message", "Message") ||
-                        getProperty(item, "description", "Description") ||
-                        getProperty(item, "warning", "Warning") ||
-                        "Review your financial forecast."
-                    );
-                })
-            )
-        ];
-
-        for (const warning of uniqueWarnings) {
-            const item = document.createElement("li");
-            item.textContent = warning;
-            warningContainer?.append(item);
-        }
-
-        if (uniqueWarnings.length === 0 && warningContainer) {
-            const item = document.createElement("li");
-
-            item.textContent =
-                "No forecast warnings were returned. Continue recording transactions regularly.";
-
-            warningContainer.append(item);
-        }
-
-        if (predictionsMessage) {
-            predictionsMessage.textContent =
-                "Forecasts are estimates based on available records; actual results may differ.";
-        }
-
+        // Show historical chart data even without a forecast.
         document.getElementById("predictionsSection")
             ?.classList.remove("d-none");
+
+        renderPredictionsChart(chartPoints);
+        return;
     }
+
+    const metrics = [
+        ["forecastIncome", "forecastIncome", "ForecastIncome"],
+        ["forecastExpenses", "forecastExpenses", "ForecastExpenses"],
+        ["forecastNetCashFlow", "forecastNetCashFlow", "ForecastNetCashFlow"],
+        ["projectedClosingBalance", "projectedClosingBalance", "ProjectedClosingBalance"]
+    ];
+
+    for (const [elementId, camel, pascal] of metrics) {
+        const value = getProperty(forecast, camel, pascal);
+
+        setText(
+            elementId,
+            value === null || value === undefined
+                ? "—"
+                : formatCurrency(value)
+        );
+    }
+
+    const net = Number(
+        getProperty(
+            forecast,
+            "forecastNetCashFlow",
+            "ForecastNetCashFlow"
+        )
+    );
+
+    const netElement =
+        document.getElementById("forecastNetCashFlow");
+
+    if (netElement && Number.isFinite(net)) {
+        netElement.classList.remove("text-success", "text-danger");
+        netElement.classList.add(
+            net >= 0 ? "text-success" : "text-danger"
+        );
+    }
+
+    const closing = Number(
+        getProperty(
+            forecast,
+            "projectedClosingBalance",
+            "ProjectedClosingBalance"
+        )
+    );
+
+    const closingElement =
+        document.getElementById("projectedClosingBalance");
+
+    if (closingElement && Number.isFinite(closing)) {
+        closingElement.classList.remove("text-success", "text-danger");
+        closingElement.classList.add(
+            closing >= 0 ? "text-success" : "text-danger"
+        );
+    }
+
+    const historicalMonths = getProperty(
+        forecast, "historicalMonthsUsed", "HistoricalMonthsUsed"
+    );
+
+    const basis = getProperty(forecast, "basis", "Basis");
+
+    const historyNote =
+        historicalMonths !== null &&
+        historicalMonths !== undefined &&
+        Number.isFinite(Number(historicalMonths))
+            ? `Based on ${historicalMonths} month(s) of recorded history.`
+            : null;
+
+    setText(
+        "forecastBasis",
+        [basis, historyNote].filter(Boolean).join(" "),
+        "Estimates use recorded business transactions and are not guarantees."
+    );
+
+    const warningContainer =
+        document.getElementById("predictionWarnings");
+
+    if (warningContainer) {
+        warningContainer.replaceChildren();
+    }
+
+    const predictionWarnings =
+        getProperty(data, "predictionWarnings", "PredictionWarnings") || [];
+
+    const forecastWarnings =
+        getProperty(forecast, "warnings", "Warnings") || [];
+
+    const warnings = [
+        ...(Array.isArray(predictionWarnings) ? predictionWarnings : []),
+        ...(Array.isArray(forecastWarnings) ? forecastWarnings : [])
+    ];
+
+    const uniqueWarnings = [
+        ...new Set(
+            warnings.map(item => {
+                if (typeof item === "string") return item;
+
+                return (
+                    getProperty(item, "message", "Message") ||
+                    getProperty(item, "description", "Description") ||
+                    getProperty(item, "warning", "Warning") ||
+                    "Review your financial forecast."
+                );
+            })
+        )
+    ];
+
+    for (const warning of uniqueWarnings) {
+        const item = document.createElement("li");
+        item.textContent = warning;
+        warningContainer?.append(item);
+    }
+
+    if (uniqueWarnings.length === 0 && warningContainer) {
+        const item = document.createElement("li");
+
+        item.textContent =
+            "No forecast warnings were returned. Continue recording transactions regularly.";
+
+        warningContainer.append(item);
+    }
+
+    if (predictionsMessage) {
+        predictionsMessage.textContent =
+            "Forecasts are estimates based on available records; actual results may differ.";
+    }
+
+    // Make the section visible before Chart.js measures its canvas.
+    document.getElementById("predictionsSection")
+        ?.classList.remove("d-none");
+
+    renderPredictionsChart(chartPoints);
+}
+
 
     async function loadPredictions() {
         if (!businessId || isLoadingPredictions) return;
