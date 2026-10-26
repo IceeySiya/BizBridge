@@ -54,17 +54,37 @@ public class TransactionService
                 null);
         }
 
+        var paymentReference = dto.PaymentReference?.Trim();
         var transaction = new Transaction
         {
             BusinessID = businessId,
             CategoryID = category.CategoryID,
             Amount = dto.Amount,
             Description = dto.Description?.Trim(),
-            PaymentReference = dto.PaymentReference?.Trim(),
+            PaymentReference = paymentReference,
             TransactionDate = dto.TransactionDate
         };
 
         _context.Transactions.Add(transaction);
+
+        if (!string.IsNullOrWhiteSpace(paymentReference) &&
+            await _context.Transactions.AnyAsync(existing =>
+                existing.BusinessID == businessId &&
+                existing.PaymentReference != null &&
+                existing.PaymentReference.ToUpper() ==
+                    paymentReference.ToUpper()))
+        {
+            _context.PaymentAlerts.Add(new PaymentAlert
+            {
+                Transaction = transaction,
+                AlertType = "DuplicatePaymentReference",
+                Message =
+                    "This payment reference matches an earlier transaction. Review both records; this may be a duplicate entry and does not confirm fraud.",
+                Status = "Open",
+                CreatedAt = DateTimeOffset.UtcNow
+            });
+        }
+
         await _context.SaveChangesAsync();
 
         // Return the saved transaction with its category.

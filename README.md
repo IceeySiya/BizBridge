@@ -9,8 +9,7 @@ From the `BizBridge` solution folder, run:
 dotnet test .\BizBridge.sln
 ```
 
-<<<<<<< Updated upstream
-The API integration tests use an isolated in-memory SQLite database and test-only JWT settings, so they do not require the development PostgreSQL database or Docker. They cover authentication, business profiles, transactions, monthly totals, readiness progress, duplicate-reference alerts, and published opportunities.
+The API integration tests use an isolated in-memory SQLite database and test-only JWT settings, so they do not require the development PostgreSQL database or Docker. They cover registration and login, authentication, business profile creation and updates, validation, duplicate profiles, owner-only access, transactions, monthly totals, readiness progress, duplicate-reference alerts, published opportunities, and Explore workflows.
 
 ## Business dashboard
 
@@ -28,9 +27,6 @@ If the dashboard reports HTTP 404 for the finance, readiness, alert, or opportun
 - `GET /api/opportunities` shows published opportunities whose deadline has not passed. The list is empty until opportunity managers publish records.
 
 All finance, readiness, alert, and opportunity endpoints require the user's bearer token. The API resolves the business from the authenticated user's identity rather than accepting a business or user ID from the browser.
-=======
-The API integration tests use an isolated in-memory SQLite database and test-only JWT settings, so they do not require the development PostgreSQL database or Docker. They cover registration and login, authentication, business profile creation and updates, validation, duplicate profiles, and owner-only access.
->>>>>>> Stashed changes
 
 
 

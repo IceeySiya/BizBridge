@@ -117,12 +117,15 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+builder.Services.AddProblemDetails();
 
 // --------------------------------------------------
 // Build application
 // --------------------------------------------------
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 // --------------------------------------------------
 // HTTP request pipeline

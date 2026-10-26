@@ -135,38 +135,37 @@ public sealed class FinanceFlowTests : ApiTestBase
     {
         var token = await RegisterAndLoginAsync();
         await CreateBusinessAsync(token);
+        var businessId = await GetBusinessIdAsync(token);
+        var categoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Sales",
+            "Income");
         var transaction = new
         {
-            transactionType = "Income",
-            category = "Sales",
+            categoryID = categoryId,
             amount = 500m,
             paymentReference = "ABC-123"
         };
 
         using var firstResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             transaction);
         using var duplicateResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             new
             {
-                transactionType = "Income",
-                category = "Sales",
+                categoryID = categoryId,
                 amount = 900m,
                 paymentReference = "abc-123"
             });
 
         Assert.Equal(HttpStatusCode.Created, firstResponse.StatusCode);
         Assert.Equal(HttpStatusCode.Created, duplicateResponse.StatusCode);
-        using var duplicateJson = await JsonDocument.ParseAsync(
-            await duplicateResponse.Content.ReadAsStreamAsync());
-        Assert.True(
-            duplicateJson.RootElement
-                .GetProperty("paymentReviewRequired").GetBoolean());
 
         using var alertsResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
@@ -189,21 +188,26 @@ public sealed class FinanceFlowTests : ApiTestBase
     {
         var ownerToken = await RegisterAndLoginAsync();
         await CreateBusinessAsync(ownerToken);
+        var ownerBusinessId = await GetBusinessIdAsync(ownerToken);
+        var ownerCategoryId = await CreateCategoryAsync(
+            ownerToken,
+            ownerBusinessId,
+            "Sales",
+            "Income");
         var transaction = new
         {
-            transactionType = "Income",
-            category = "Sales",
+            categoryID = ownerCategoryId,
             amount = 250m,
             paymentReference = "PRIVATE-REF"
         };
         using var firstTransaction = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{ownerBusinessId}/transactions",
             ownerToken,
             transaction);
         using var duplicateTransaction = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{ownerBusinessId}/transactions",
             ownerToken,
             transaction);
         Assert.Equal(HttpStatusCode.Created, firstTransaction.StatusCode);
@@ -212,14 +216,15 @@ public sealed class FinanceFlowTests : ApiTestBase
         var otherFounderToken = await RegisterAndLoginAsync(
             fullName: "Another Founder");
         await CreateBusinessAsync(otherFounderToken, "Another Business");
+        var otherBusinessId = await GetBusinessIdAsync(otherFounderToken);
 
         using var summaryResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
-            "/api/transactions/summary",
+            $"/api/businesses/{otherBusinessId}/financial-summary",
             otherFounderToken);
         using var transactionsResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
-            "/api/transactions",
+            $"/api/businesses/{otherBusinessId}/transactions",
             otherFounderToken);
         using var alertsResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Get,
@@ -232,7 +237,9 @@ public sealed class FinanceFlowTests : ApiTestBase
         using var alertsJson = await JsonDocument.ParseAsync(
             await alertsResponse.Content.ReadAsStreamAsync());
 
-        Assert.Equal(0m, summaryJson.RootElement.GetProperty("income").GetDecimal());
+        Assert.Equal(
+            0m,
+            summaryJson.RootElement.GetProperty("totalIncome").GetDecimal());
         Assert.Equal(0, transactionsJson.RootElement.GetArrayLength());
         Assert.Equal(0, alertsJson.RootElement.GetArrayLength());
     }
@@ -240,14 +247,13 @@ public sealed class FinanceFlowTests : ApiTestBase
     [Fact]
     public async Task Transaction_endpoints_require_authentication()
     {
-        using var summaryResponse =
-            await Client.GetAsync("/api/transactions/summary");
+        using var summaryResponse = await Client.GetAsync(
+            "/api/businesses/1/financial-summary");
         using var createResponse = await Client.PostAsJsonAsync(
-            "/api/transactions",
+            "/api/businesses/1/transactions",
             new
             {
-                transactionType = "Income",
-                category = "Sales",
+                categoryID = 1,
                 amount = 100m
             });
 
@@ -256,29 +262,33 @@ public sealed class FinanceFlowTests : ApiTestBase
     }
 
     [Fact]
-    public async Task Transaction_rejects_invalid_type_and_non_positive_amount()
+    public async Task Transaction_rejects_invalid_category_and_non_positive_amount()
     {
         var token = await RegisterAndLoginAsync();
         await CreateBusinessAsync(token);
+        var businessId = await GetBusinessIdAsync(token);
+        var categoryId = await CreateCategoryAsync(
+            token,
+            businessId,
+            "Sales",
+            "Income");
 
         using var invalidTypeResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             new
             {
-                transactionType = "Transfer",
-                category = "Sales",
+                categoryID = int.MaxValue,
                 amount = 100m
             });
         using var invalidAmountResponse = await SendAuthorizedJsonAsync(
             HttpMethod.Post,
-            "/api/transactions",
+            $"/api/businesses/{businessId}/transactions",
             token,
             new
             {
-                transactionType = "Income",
-                category = "Sales",
+                categoryID = categoryId,
                 amount = 0m
             });
 
