@@ -1,28 +1,54 @@
-using BizBridge.Api.Data;
-using Microsoft.EntityFrameworkCore;
 
-using BizBridge.Api.Services.Auth;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
+
+using BizBridge.Api.Data;
+using BizBridge.Api.Services.Auth;
+using BizBridge.Api.Services.Business;
+using BizBridge.Api.Services.Categories;
+using BizBridge.Api.Services.Images;
+using BizBridge.Api.Services.Transactions;
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// --------------------------------------------------
+// Services
+// --------------------------------------------------
+
 builder.Services.AddOpenApi();
+
 builder.Services.AddDbContext<BizBridgeDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Authentication services
 builder.Services.AddScoped<PasswordService>();
 builder.Services.AddScoped<JwtService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Business.BusinessService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Images.CloudinaryImageService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Categories.CategoryService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Transactions.TransactionService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Transactions.FinancialSummaryService>();
-builder.Services.AddScoped<BizBridge.Api.Services.Transactions.FinancialInsightsService>();
+
+// Business and image services
+builder.Services.AddScoped<BusinessService>();
+builder.Services.AddScoped<CloudinaryImageService>();
+
+// Category and transaction services
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<TransactionService>();
+
+// Financial summary and insights
+builder.Services.AddScoped<FinancialSummaryService>();
+builder.Services.AddScoped<FinancialInsightsService>();
+
+// Financial predictions
+builder.Services.AddScoped<FinancialForecastService>();
+builder.Services.AddScoped<FinancialPredictionWarningService>();
+builder.Services.AddScoped<FinancialPredictionService>();
+
+// --------------------------------------------------
+// JWT Authentication
+// --------------------------------------------------
 
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException(
@@ -40,27 +66,31 @@ builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = jwtIssuer,
+        options.TokenValidationParameters =
+            new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidIssuer = jwtIssuer,
 
-            ValidateAudience = true,
-            ValidAudience = jwtAudience,
+                ValidateAudience = true,
+                ValidAudience = jwtAudience,
 
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtKey)),
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(
+                    Encoding.UTF8.GetBytes(jwtKey)),
 
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
 
-            NameClaimType = ClaimTypes.Name,
-            RoleClaimType = ClaimTypes.Role
-        };
+                NameClaimType = ClaimTypes.Name,
+                RoleClaimType = ClaimTypes.Role
+            };
     });
 
- // Allow local development and the deployed Netlify frontend.
+// --------------------------------------------------
+// CORS
+// --------------------------------------------------
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("BizBridgeFrontend", policy =>
@@ -77,12 +107,23 @@ builder.Services.AddCors(options =>
     });
 });
 
+// --------------------------------------------------
+// Authorization and controllers
+// --------------------------------------------------
+
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
+// --------------------------------------------------
+// Build application
+// --------------------------------------------------
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// --------------------------------------------------
+// HTTP request pipeline
+// --------------------------------------------------
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -92,7 +133,6 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-// Handle browser CORS preflight requests.
 app.UseCors("BizBridgeFrontend");
 
 app.UseAuthentication();
@@ -100,30 +140,53 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// --------------------------------------------------
+// Default WeatherForecast endpoint
+// --------------------------------------------------
+
 var summaries = new[]
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    "Freezing",
+    "Bracing",
+    "Chilly",
+    "Cool",
+    "Mild",
+    "Warm",
+    "Balmy",
+    "Hot",
+    "Sweltering",
+    "Scorching"
 };
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
+    var forecast = Enumerable.Range(1, 5)
+        .Select(index =>
+            new WeatherForecast(
+                DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                Random.Shared.Next(-20, 55),
+                summaries[Random.Shared.Next(summaries.Length)]
+            ))
         .ToArray();
+
     return forecast;
 })
 .WithName("GetWeatherForecast");
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+// --------------------------------------------------
+// Supporting model
+// --------------------------------------------------
+
+record WeatherForecast(
+    DateOnly Date,
+    int TemperatureC,
+    string? Summary)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    public int TemperatureF =>
+        32 + (int)(TemperatureC / 0.5556);
 }
 
+// Required for integration testing
 public partial class Program { }

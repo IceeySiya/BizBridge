@@ -1,486 +1,974 @@
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\testhost.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.deps.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.runtimeconfig.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\appsettings.Development.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\appsettings.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.staticwebassets.endpoints.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.exe
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\testhost.exe
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\MvcTestingAppManifest.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.testadapter.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.runner.utility.netcoreapp10.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.Tests.deps.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.Tests.runtimeconfig.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.Tests.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.Tests.pdb
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Antiforgery.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.BearerToken.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authorization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Endpoints.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Forms.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Server.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Web.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cors.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Diagnostics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.HostFiltering.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Hosting.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Connections.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Features.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Results.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.HttpLogging.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Identity.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Localization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Metadata.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.OutputCaching.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.RateLimiting.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Razor.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.RequestDecompression.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Rewrite.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Routing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.IIS.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Session.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.StaticAssets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.StaticFiles.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.WebSockets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.AspNetCore.WebUtilities.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.CSharp.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Ini.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Features.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Hosting.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Http.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Localization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Configuration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Console.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Debug.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.EventLog.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.EventSource.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.ObjectPool.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Extensions.WebEncoders.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.JSInterop.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Net.Http.Headers.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.VisualBasic.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.VisualBasic.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Win32.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\Microsoft.Win32.Registry.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\mscorlib.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\netstandard.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.AppContext.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Buffers.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Collections.Concurrent.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Collections.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Collections.Immutable.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Collections.NonGeneric.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Collections.Specialized.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.Annotations.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.DataAnnotations.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.EventBasedAsync.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ComponentModel.TypeConverter.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Configuration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Console.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Data.Common.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Data.DataSetExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Data.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.Contracts.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.Debug.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.EventLog.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.FileVersionInfo.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.Process.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.StackTrace.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.TextWriterTraceListener.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.Tools.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.TraceSource.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Diagnostics.Tracing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Drawing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Drawing.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Dynamic.Runtime.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Formats.Asn1.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Formats.Tar.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Globalization.Calendars.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Globalization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Globalization.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Compression.Brotli.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Compression.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Compression.FileSystem.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Compression.ZipFile.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.AccessControl.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.DriveInfo.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.Watcher.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.IsolatedStorage.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.MemoryMappedFiles.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Pipelines.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Pipes.AccessControl.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.Pipes.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.IO.UnmanagedMemoryStream.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Linq.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Linq.Expressions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Linq.Parallel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Linq.Queryable.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Memory.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Http.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Http.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.HttpListener.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Mail.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.NameResolution.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.NetworkInformation.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Ping.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Quic.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Requests.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Security.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.ServicePoint.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.Sockets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.WebClient.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.WebHeaderCollection.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.WebProxy.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.WebSockets.Client.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Net.WebSockets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Numerics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Numerics.Vectors.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ObjectModel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.DispatchProxy.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Emit.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Emit.ILGeneration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Emit.Lightweight.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Metadata.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Reflection.TypeExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Resources.Reader.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Resources.ResourceManager.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Resources.Writer.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.CompilerServices.VisualC.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Handles.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.InteropServices.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.InteropServices.JavaScript.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Intrinsics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Loader.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Numerics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Serialization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Serialization.Formatters.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Serialization.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Serialization.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Runtime.Serialization.Xml.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.AccessControl.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Claims.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Algorithms.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Cng.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Csp.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Encoding.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.OpenSsl.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Cryptography.Xml.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Principal.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.Principal.Windows.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Security.SecureString.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ServiceModel.Web.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ServiceProcess.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.Encoding.CodePages.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.Encoding.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.Encoding.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.Encodings.Web.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Text.RegularExpressions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Channels.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Overlapped.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.RateLimiting.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Tasks.Dataflow.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Tasks.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Tasks.Extensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Tasks.Parallel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Thread.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.ThreadPool.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Threading.Timer.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Transactions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Transactions.Local.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.ValueTuple.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Web.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Web.HttpUtility.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Windows.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.Linq.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.ReaderWriter.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.Serialization.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.XDocument.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.XmlDocument.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.XmlSerializer.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.XPath.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\System.Xml.XPath.XDocument.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\refs\WindowsBase.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Testing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.TestHost.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Data.Sqlite.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.CommandLine.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.UserSecrets.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Hosting.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Hosting.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.Configuration.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.Console.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.Debug.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.EventLog.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.EventSource.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.OpenApi.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.CoreUtilities.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.PlatformAbstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.CommunicationUtilities.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.CrossPlatEngine.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.Utilities.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Newtonsoft.Json.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Npgsql.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\NuGet.Frameworks.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\SQLitePCLRaw.batteries_v2.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\SQLitePCLRaw.core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\SQLitePCLRaw.provider.e_sqlite3.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.abstractions.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.assert.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.core.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\xunit.execution.dotnet.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-arm\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-arm64\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-armel\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-mips64\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-s390x\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-x64\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\linux-x86\native\libe_sqlite3.so
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\osx-x64\native\libe_sqlite3.dylib
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\win-arm64\native\e_sqlite3.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\bin\Debug\net9.0\BizBridge.Api.pdb
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.csproj.AssemblyReference.cache
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\MvcTestingAppManifest.json
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.AssemblyInfoInputs.cache
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.AssemblyInfo.cs
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.csproj.CoreCompileInputs.cache
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridg.97264026.Up2Date
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\refint\BizBridge.Api.Tests.dll
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.pdb
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\BizBridge.Api.Tests.genruntimeconfig.cache
-C:\Users\Siyanda Mokoena\BizBridge\BizBridge.Api.Tests\obj\Debug\net9.0\ref\BizBridge.Api.Tests.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/testhost.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.deps.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.runtimeconfig.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/appsettings.Development.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/appsettings.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.staticwebassets.endpoints.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.exe
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/testhost.exe
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/MvcTestingAppManifest.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.visualstudio.testadapter.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.reporters.netcoreapp10.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.utility.netcoreapp10.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.deps.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.runtimeconfig.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.pdb
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Antiforgery.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.BearerToken.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Cookies.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.OAuth.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authorization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authorization.Policy.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Authorization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Endpoints.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Forms.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Server.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Web.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Connections.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.CookiePolicy.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cors.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cryptography.Internal.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HostFiltering.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Html.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Connections.Common.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Connections.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Features.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Results.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpLogging.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpOverrides.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpsPolicy.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Identity.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Localization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Localization.Routing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Metadata.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Cors.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Localization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Razor.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.OutputCaching.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.RateLimiting.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Razor.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Razor.Runtime.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.RequestDecompression.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCaching.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCompression.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Rewrite.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Routing.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Routing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.HttpSys.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.IIS.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.IISIntegration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Session.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Common.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.StaticAssets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.StaticFiles.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.WebSockets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.WebUtilities.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.CSharp.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Caching.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Caching.Memory.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Binder.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.CommandLine.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.FileExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Ini.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.KeyPerFile.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.UserSecrets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Xml.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.DependencyInjection.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Features.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Composite.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Embedded.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Physical.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileSystemGlobbing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Hosting.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Hosting.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Http.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Identity.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Identity.Stores.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Localization.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Localization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Configuration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Console.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Debug.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.EventLog.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.EventSource.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.TraceSource.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.ObjectPool.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.DataAnnotations.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.WebEncoders.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.JSInterop.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Net.Http.Headers.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.VisualBasic.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.VisualBasic.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Win32.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Win32.Registry.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/mscorlib.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/netstandard.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.AppContext.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Buffers.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Concurrent.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Immutable.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.NonGeneric.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Specialized.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.Annotations.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.DataAnnotations.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.EventBasedAsync.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.TypeConverter.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Configuration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Console.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.Common.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.DataSetExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Contracts.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Debug.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.DiagnosticSource.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.EventLog.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.FileVersionInfo.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Process.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.StackTrace.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.TextWriterTraceListener.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Tools.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.TraceSource.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Tracing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Drawing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Drawing.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Dynamic.Runtime.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Formats.Asn1.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Formats.Tar.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.Calendars.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.Brotli.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.FileSystem.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.ZipFile.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.AccessControl.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.DriveInfo.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.Watcher.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.IsolatedStorage.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.MemoryMappedFiles.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipelines.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipes.AccessControl.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipes.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.UnmanagedMemoryStream.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Expressions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Parallel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Queryable.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Memory.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Http.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Http.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.HttpListener.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Mail.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.NameResolution.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.NetworkInformation.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Ping.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Quic.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Requests.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Security.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.ServicePoint.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Sockets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebClient.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebHeaderCollection.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebProxy.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebSockets.Client.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebSockets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Numerics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Numerics.Vectors.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ObjectModel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.DispatchProxy.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.ILGeneration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.Lightweight.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Metadata.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.TypeExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.Reader.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.ResourceManager.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.Writer.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.CompilerServices.Unsafe.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.CompilerServices.VisualC.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Handles.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.JavaScript.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.RuntimeInformation.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Intrinsics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Loader.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Numerics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Formatters.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Xml.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.AccessControl.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Claims.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Algorithms.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Cng.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Csp.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Encoding.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.OpenSsl.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.X509Certificates.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Xml.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Principal.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Principal.Windows.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.SecureString.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ServiceModel.Web.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ServiceProcess.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.CodePages.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encodings.Web.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.RegularExpressions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Channels.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Overlapped.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.RateLimiting.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Dataflow.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Extensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Parallel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Thread.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.ThreadPool.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Timer.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Transactions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Transactions.Local.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ValueTuple.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Web.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Web.HttpUtility.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Windows.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.Linq.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.ReaderWriter.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.Serialization.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XDocument.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XmlDocument.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XmlSerializer.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XPath.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XPath.XDocument.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/WindowsBase.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.Mvc.Testing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.TestHost.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Data.Sqlite.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Sqlite.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Binder.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.CommandLine.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.UserSecrets.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileProviders.Physical.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileSystemGlobbing.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Hosting.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Configuration.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Console.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Debug.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.EventLog.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.EventSource.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.OpenApi.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CoreUtilities.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.Utilities.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Newtonsoft.Json.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Npgsql.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/NuGet.Frameworks.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.provider.e_sqlite3.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.abstractions.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.assert.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.core.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.execution.dotnet.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-arm/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-arm64/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-armel/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-mips64/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-s390x/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-ppc64le/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-s390x/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-x64/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-x86/native/libe_sqlite3.so
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/osx-arm64/native/libe_sqlite3.dylib
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/osx-x64/native/libe_sqlite3.dylib
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-arm/native/e_sqlite3.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.pdb
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.csproj.AssemblyReference.cache
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/MvcTestingAppManifest.json
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.AssemblyInfoInputs.cache
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.AssemblyInfo.cs
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.csproj.CoreCompileInputs.cache
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridg.97264026.Up2Date
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/refint/BizBridge.Api.Tests.dll
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.pdb
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.genruntimeconfig.cache
+C:/Users/Siyanda Mokoena/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/ref/BizBridge.Api.Tests.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/appsettings.Development.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.visualstudio.testadapter.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.reporters.netcoreapp10.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.runner.utility.netcoreapp10.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.deps.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.runtimeconfig.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/appsettings.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.staticwebassets.endpoints.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/MvcTestingAppManifest.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.deps.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.runtimeconfig.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.Tests.pdb
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Antiforgery.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.BearerToken.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Cookies.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authentication.OAuth.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authorization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Authorization.Policy.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Authorization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Endpoints.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Forms.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Server.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Components.Web.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Connections.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.CookiePolicy.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cors.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.DataProtection.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HostFiltering.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Html.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Connections.Common.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Connections.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Features.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Http.Results.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpLogging.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpOverrides.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.HttpsPolicy.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Identity.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Localization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Localization.Routing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Metadata.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Cors.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Localization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.Razor.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.RazorPages.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.TagHelpers.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.OutputCaching.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.RateLimiting.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Razor.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Razor.Runtime.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.RequestDecompression.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCaching.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.ResponseCompression.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Rewrite.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Routing.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Routing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.HttpSys.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.IIS.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.IISIntegration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.Session.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Common.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.StaticAssets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.StaticFiles.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.WebSockets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.AspNetCore.WebUtilities.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.CSharp.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Caching.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Caching.Memory.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Binder.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.CommandLine.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.FileExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Ini.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.KeyPerFile.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.UserSecrets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Configuration.Xml.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.DependencyInjection.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Features.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Composite.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Embedded.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileProviders.Physical.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.FileSystemGlobbing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Hosting.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Http.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Identity.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Identity.Stores.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Localization.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Localization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Configuration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Console.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.Debug.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.EventLog.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.EventSource.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Logging.TraceSource.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.ObjectPool.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.DataAnnotations.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Options.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Extensions.WebEncoders.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.JSInterop.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Net.Http.Headers.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.VisualBasic.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.VisualBasic.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Win32.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/Microsoft.Win32.Registry.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/mscorlib.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/netstandard.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.AppContext.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Buffers.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Concurrent.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Immutable.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.NonGeneric.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Collections.Specialized.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.Annotations.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.DataAnnotations.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.EventBasedAsync.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ComponentModel.TypeConverter.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Configuration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Console.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.Common.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.DataSetExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Data.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Contracts.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Debug.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.DiagnosticSource.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.EventLog.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.FileVersionInfo.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Process.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.StackTrace.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.TextWriterTraceListener.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Tools.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.TraceSource.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Diagnostics.Tracing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Drawing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Drawing.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Dynamic.Runtime.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Formats.Asn1.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Formats.Tar.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.Calendars.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Globalization.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.Brotli.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.FileSystem.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Compression.ZipFile.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.AccessControl.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.DriveInfo.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.FileSystem.Watcher.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.IsolatedStorage.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.MemoryMappedFiles.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipelines.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipes.AccessControl.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.Pipes.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.IO.UnmanagedMemoryStream.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Expressions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Parallel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Linq.Queryable.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Memory.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Http.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Http.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.HttpListener.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Mail.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.NameResolution.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.NetworkInformation.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Ping.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Quic.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Requests.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Security.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.ServicePoint.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.Sockets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebClient.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebHeaderCollection.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebProxy.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebSockets.Client.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Net.WebSockets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Numerics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Numerics.Vectors.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ObjectModel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.DispatchProxy.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.ILGeneration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Emit.Lightweight.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Metadata.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Reflection.TypeExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.Reader.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.ResourceManager.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Resources.Writer.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.CompilerServices.Unsafe.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.CompilerServices.VisualC.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Handles.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.JavaScript.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.InteropServices.RuntimeInformation.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Intrinsics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Loader.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Numerics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Formatters.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Runtime.Serialization.Xml.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.AccessControl.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Claims.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Algorithms.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Cng.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Csp.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Encoding.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.OpenSsl.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.X509Certificates.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Cryptography.Xml.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Principal.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.Principal.Windows.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Security.SecureString.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ServiceModel.Web.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ServiceProcess.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.CodePages.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encoding.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Encodings.Web.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Text.RegularExpressions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Channels.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Overlapped.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.RateLimiting.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Dataflow.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Extensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Tasks.Parallel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Thread.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.ThreadPool.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Threading.Timer.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Transactions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Transactions.Local.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.ValueTuple.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Web.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Web.HttpUtility.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Windows.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.Linq.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.ReaderWriter.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.Serialization.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XDocument.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XmlDocument.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XmlSerializer.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XPath.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/System.Xml.XPath.XDocument.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/refs/WindowsBase.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/CloudinaryDotNet.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.Mvc.Testing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.TestHost.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Data.Sqlite.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Sqlite.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Binder.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.CommandLine.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Configuration.UserSecrets.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileProviders.Physical.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Hosting.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Configuration.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Console.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Debug.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.EventLog.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.EventSource.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CoreUtilities.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.TestPlatform.Utilities.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/testhost.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Newtonsoft.Json.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Npgsql.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/NuGet.Frameworks.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/SQLitePCLRaw.provider.e_sqlite3.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.abstractions.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.assert.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.core.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/xunit.execution.dotnet.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-arm/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-arm64/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-armel/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-mips64/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-s390x/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-ppc64le/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-s390x/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-x64/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/linux-x86/native/libe_sqlite3.so
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/osx-arm64/native/libe_sqlite3.dylib
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/osx-x64/native/libe_sqlite3.dylib
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-arm/native/e_sqlite3.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/bin/Debug/net9.0/BizBridge.Api.pdb
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.csproj.AssemblyReference.cache
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/MvcTestingAppManifest.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.AssemblyInfoInputs.cache
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.AssemblyInfo.cs
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.csproj.CoreCompileInputs.cache
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.sourcelink.json
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridg.97264026.Up2Date
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/refint/BizBridge.Api.Tests.dll
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.pdb
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/BizBridge.Api.Tests.genruntimeconfig.cache
+/home/wtc/mySideProjects/BizBridge/BizBridge.Api.Tests/obj/Debug/net9.0/ref/BizBridge.Api.Tests.dll

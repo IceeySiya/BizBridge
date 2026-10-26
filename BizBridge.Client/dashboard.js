@@ -1,3 +1,4 @@
+
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,10 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const businessSection = document.getElementById("businessSection");
     const financialSummaryMessage =
         document.getElementById("financialSummaryMessage");
+    const predictionsMessage = document.getElementById("predictionsMessage");
 
     let businessId = null;
     let isLoadingDashboard = false;
     let isLoadingSummary = false;
+    let isLoadingPredictions = false;
     let refreshAfterPageShow = false;
 
     function showMessage(message, type = "danger") {
@@ -47,11 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getErrorMessage(data, status) {
         if (typeof data === "object" && data !== null) {
-            return data.message ||
+            return (
+                data.message ||
                 data.title ||
                 data.detail ||
                 data.error ||
-                `The API request failed (${status}).`;
+                `The API request failed (${status}).`
+            );
         }
 
         return typeof data === "string" && data.trim()
@@ -60,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function apiRequest(path, method = "GET", body = null) {
-        const currentToken = localStorage.getItem("token");
+        const token = localStorage.getItem("token");
 
-        if (!currentToken) {
+        if (!token) {
             logout();
             throw new Error("Your session has expired. Please log in again.");
         }
@@ -71,10 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
             method,
             headers: {
                 Accept: "application/json",
-                ...(body === null ? {} : {
-                    "Content-Type": "application/json"
-                }),
-                Authorization: `Bearer ${currentToken}`
+                ...(body === null
+                    ? {}
+                    : { "Content-Type": "application/json" }),
+                Authorization: `Bearer ${token}`
             },
             body: body === null ? undefined : JSON.stringify(body)
         });
@@ -125,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setText(id, value, fallback = "—") {
         const element = document.getElementById(id);
+
         if (element) {
             element.textContent =
                 value === null || value === undefined || value === ""
@@ -134,96 +140,86 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function resetFinancialSummary(message) {
-        const currentBalanceElement =
-            document.getElementById("currentBalance");
-        const totalIncomeElement =
-            document.getElementById("totalIncome");
-        const totalExpensesElement =
-            document.getElementById("totalExpenses");
-        const netCashFlowElement =
-            document.getElementById("netCashFlow");
-        const transactionCountElement =
-            document.getElementById("transactionCount");
+        const ids = [
+            "currentBalance",
+            "totalIncome",
+            "totalExpenses",
+            "netCashFlow",
+            "transactionCount"
+        ];
 
-        if (currentBalanceElement) {
-            currentBalanceElement.textContent = "—";
-            currentBalanceElement.classList.remove(
-                "text-success", "text-danger"
+        ids.forEach(id => setText(id, "—"));
+
+        ["currentBalance", "netCashFlow"].forEach(id => {
+            document.getElementById(id)?.classList.remove(
+                "text-success",
+                "text-danger"
             );
-        }
-
-        if (totalIncomeElement) totalIncomeElement.textContent = "—";
-        if (totalExpensesElement) totalExpensesElement.textContent = "—";
-
-        if (netCashFlowElement) {
-            netCashFlowElement.textContent = "—";
-            netCashFlowElement.classList.remove(
-                "text-success", "text-danger"
-            );
-        }
-
-        if (transactionCountElement) {
-            transactionCountElement.textContent = "—";
-        }
+        });
 
         if (financialSummaryMessage) {
-            financialSummaryMessage.textContent = message;
+            financialSummaryMessage.textContent = message || "";
         }
     }
 
     function showNoBusiness() {
-    if (businessSection) businessSection.classList.add("d-none");
+        if (businessSection) {
+            businessSection.classList.add("d-none");
+        }
 
-    if (noBusinessSection) {
-        noBusinessSection.classList.remove("d-none");
+        if (noBusinessSection) {
+            noBusinessSection.classList.remove("d-none");
+            noBusinessSection.innerHTML = `
+                <div class="alert alert-warning mb-0" role="alert">
+                    <h5 class="alert-heading">Set up your business</h5>
+                    <p>
+                        Create your business profile to unlock financial
+                        tracking and business readiness guidance.
+                    </p>
+                    <a href="business-profile.html" class="btn btn-warning">
+                        Create Business Profile
+                    </a>
+                </div>
+            `;
+        }
 
-        noBusinessSection.innerHTML = `
-            <div class="alert alert-warning mb-0" role="alert">
-                <h5 class="alert-heading">Set up your business</h5>
-                <p>
-                    Create your business profile to unlock financial
-                    tracking, readiness insights and business guidance.
-                </p>
-                <a href="business-profile.html" class="btn btn-warning">
-                    Create Business Profile
-                </a>
-            </div>
-        `;
-    }
+        businessId = null;
 
-    businessId = null;
-
-    resetFinancialSummary(
-        "Create a business profile to view your financial summary."
-    );
-
-    document.getElementById("readinessSection")?.classList.add("d-none");
-    document.getElementById("insightsSection")?.classList.add("d-none");
-}
-
-    function displayBusiness(business) {
-        const imageUrl = getProperty(
-        business,
-        "imageUrl",
-        "ImageUrl"
+        resetFinancialSummary(
+            "Create a business profile to view your financial summary."
         );
 
-        displayBusinessImage(imageUrl);
+        resetPredictions(
+            "Create a business profile to view financial predictions."
+        );
+
+        document.getElementById("readinessSection")?.classList.add("d-none");
+        document.getElementById("businessGuideEntry")?.classList.add("d-none");
+    }
+
+    function displayBusiness(business) {
+        displayBusinessImage(
+            getProperty(business, "imageUrl", "ImageUrl")
+        );
+
         setText(
             "businessName",
             getProperty(business, "businessName", "BusinessName"),
             "Unnamed Business"
         );
+
         setText(
             "businessIndustry",
             getProperty(business, "industry", "Industry"),
             "Industry not specified"
         );
+
         setText(
             "businessLocation",
             getProperty(business, "location", "Location"),
             "Location not specified"
         );
+
         setText(
             "businessDescription",
             getProperty(business, "description", "Description"),
@@ -231,85 +227,78 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const established = getProperty(
-            business, "established", "Established"
+            business,
+            "established",
+            "Established"
         );
+
         const establishedElement =
             document.getElementById("businessEstablished");
 
         if (establishedElement) {
-            if (established) {
-                const date = new Date(established);
-                establishedElement.textContent =
-                    Number.isNaN(date.getTime())
-                        ? "Not specified"
-                        : date.toLocaleDateString("en-ZA");
-            } else {
-                establishedElement.textContent = "Not specified";
-            }
+            const date = established ? new Date(established) : null;
+
+            establishedElement.textContent =
+                date && !Number.isNaN(date.getTime())
+                    ? date.toLocaleDateString("en-ZA")
+                    : "Not specified";
         }
-        // Display optional business contact details only when they have values.
-const hasEmail = displayContactField(
-    "businessEmailRow",
-    "businessEmail",
-    getProperty(business, "businessEmail", "BusinessEmail"),
-    "email"
-);
 
-const hasPhone = displayContactField(
-    "businessPhoneRow",
-    "businessPhone",
-    getProperty(business, "businessPhone", "BusinessPhone"),
-    "phone"
-);
+        const hasEmail = displayContactField(
+            "businessEmailRow",
+            "businessEmail",
+            getProperty(business, "businessEmail", "BusinessEmail"),
+            "email"
+        );
 
-const hasWebsite = displayContactField(
-    "websiteUrlRow",
-    "websiteUrl",
-    getProperty(business, "websiteUrl", "WebsiteUrl"),
-    "website"
-);
+        const hasPhone = displayContactField(
+            "businessPhoneRow",
+            "businessPhone",
+            getProperty(business, "businessPhone", "BusinessPhone"),
+            "phone"
+        );
 
-document.getElementById("businessContactSection")?.classList.toggle(
-    "d-none",
-    !hasEmail && !hasPhone && !hasWebsite
-);
+        const hasWebsite = displayContactField(
+            "websiteUrlRow",
+            "websiteUrl",
+            getProperty(business, "websiteUrl", "WebsiteUrl"),
+            "website"
+        );
 
-        
+        document.getElementById("businessContactSection")
+            ?.classList.toggle(
+                "d-none",
+                !hasEmail && !hasPhone && !hasWebsite
+            );
+
         businessSection?.classList.remove("d-none");
 
         showBusinessGuideEntry();
     }
 
-    
-function showBusinessGuideEntry() {
-    if (!noBusinessSection) {
-        console.error("noBusinessSection element was not found.");
-        return;
+    function showBusinessGuideEntry() {
+        const guideEntry = document.getElementById("businessGuideEntry");
+        if (!guideEntry) return;
+
+        guideEntry.innerHTML = `
+            <div class="alert alert-info mb-0" role="region"
+                 aria-labelledby="businessGuideTitle">
+                <h5 class="alert-heading" id="businessGuideTitle">
+                    <i class="bi bi-compass me-2"></i>
+                    BizBridge Business Guide
+                </h5>
+                <p>
+                    Explore practical tips and recommended next steps
+                    based on your business progress.
+                </p>
+                <a href="business-guide.html" class="btn btn-primary">
+                    Open Business Guide
+                </a>
+            </div>
+        `;
+
+        guideEntry.classList.remove("d-none");
     }
-
-    noBusinessSection.innerHTML = `
-        <div class="alert alert-info mb-0" role="region"
-             aria-labelledby="businessGuideTitle">
-            <h5 class="alert-heading" id="businessGuideTitle">
-                <i class="bi bi-compass me-2"></i>
-                BizBridge Business Guide
-            </h5>
-
-            <p>
-                Your business profile is ready! Explore practical tips
-                and recommended next steps based on your business
-                progress.
-            </p>
-
-            <a href="business-guide.html" class="btn btn-primary">
-                Open Business Guide
-            </a>
-        </div>
-    `;
-
-    noBusinessSection.classList.remove("d-none");
-}
-
 
     async function loadAccount() {
         const { data } = await apiRequest("/auth/me");
@@ -342,47 +331,45 @@ function showBusinessGuideEntry() {
         );
     }
 
-   async function loadBusiness() {
-    let result;
+    async function loadBusiness() {
+        let result;
 
-    try {
-        result = await apiRequest("/businesses/mine");
-    } catch (error) {
-        if (error.status === 404) {
-            businessId = null;
+        try {
+            result = await apiRequest("/businesses/mine");
+        } catch (error) {
+            if (error.status === 404) {
+                showNoBusiness();
+                return;
+            }
+
+            throw error;
+        }
+
+        const { response, data } = result;
+
+        if (response.status === 204 || !data) {
             showNoBusiness();
             return;
         }
 
-        throw error;
+        const business = data?.business ?? data?.data ?? data;
+        const id = getProperty(business, "businessID", "BusinessID");
+
+        if (id === null || id === undefined || id === "") {
+            throw new Error(
+                "The business response did not include a business ID."
+            );
+        }
+
+        businessId = id;
+        displayBusiness(business);
+
+        await Promise.all([
+            loadFinancialSummary(),
+            loadReadiness(),
+            loadPredictions()
+        ]);
     }
-
-    const { response, data } = result;
-
-    if (response.status === 204 || !data) {
-        businessId = null;
-        showNoBusiness();
-        return;
-    }
-
-    const business = data?.business ?? data?.data ?? data;
-    const id = getProperty(business, "businessID", "BusinessID");
-
-    if (id === null || id === undefined || id === "") {
-        throw new Error(
-            "The business response did not include a business ID."
-        );
-    }
-
-    businessId = id;
-    displayBusiness(business);
-
-    await Promise.all([
-        loadFinancialSummary(),
-        loadReadiness(),
-        loadFinancialInsights()
-    ]);
-}
 
     async function loadFinancialSummary() {
         if (!businessId || isLoadingSummary) return;
@@ -421,16 +408,20 @@ function showBusinessGuideEntry() {
             const currentBalance = Number(
                 getProperty(data, "currentBalance", "CurrentBalance")
             );
+
             const totalIncome = Number(
                 getProperty(data, "totalIncome", "TotalIncome") ?? 0
             );
+
             const totalExpenses = Number(
                 getProperty(data, "totalExpenses", "TotalExpenses") ?? 0
             );
+
             const netCashFlow = Number(
                 getProperty(data, "netCashFlow", "NetCashFlow") ??
                 (totalIncome - totalExpenses)
             );
+
             const transactionCount = Number(
                 getProperty(data, "transactionCount", "TransactionCount") ?? 0
             );
@@ -451,10 +442,12 @@ function showBusinessGuideEntry() {
 
             const balanceElement =
                 document.getElementById("currentBalance");
+
             if (balanceElement) {
                 balanceElement.textContent = formatCurrency(currentBalance);
                 balanceElement.classList.remove(
-                    "text-success", "text-danger"
+                    "text-success",
+                    "text-danger"
                 );
                 balanceElement.classList.add(
                     currentBalance >= 0 ? "text-success" : "text-danger"
@@ -465,10 +458,12 @@ function showBusinessGuideEntry() {
             setText("totalExpenses", formatCurrency(totalExpenses));
 
             const netElement = document.getElementById("netCashFlow");
+
             if (netElement) {
                 netElement.textContent = formatCurrency(netCashFlow);
                 netElement.classList.remove(
-                    "text-success", "text-danger"
+                    "text-success",
+                    "text-danger"
                 );
                 netElement.classList.add(
                     netCashFlow >= 0 ? "text-success" : "text-danger"
@@ -484,6 +479,7 @@ function showBusinessGuideEntry() {
             }
         } catch (error) {
             console.error("Financial summary error:", error);
+
             resetFinancialSummary(
                 `Unable to load financial summary: ${error.message}`
             );
@@ -492,14 +488,292 @@ function showBusinessGuideEntry() {
         }
     }
 
+    // ---------------- FINANCIAL PREDICTIONS ----------------
+
+    function resetPredictions(message) {
+        [
+            "forecastIncome",
+            "forecastExpenses",
+            "forecastNetCashFlow",
+            "projectedClosingBalance"
+        ].forEach(id => {
+            setText(id, "—");
+            document.getElementById(id)?.classList.remove(
+                "text-success",
+                "text-danger"
+            );
+        });
+
+        setText(
+            "forecastPeriod",
+            "Forecast for next month",
+            "Forecast for next month"
+        );
+
+        setText("forecastBasis", "", "");
+
+        const warningContainer =
+            document.getElementById("predictionWarnings");
+
+        if (warningContainer) {
+            warningContainer.replaceChildren();
+        }
+
+        if (predictionsMessage) {
+            predictionsMessage.textContent = message || "";
+        }
+
+        document.getElementById("predictionsSection")
+            ?.classList.remove("d-none");
+    }
+
+    function renderPredictions(data) {
+        const forecast =
+            getProperty(data, "forecast", "Forecast") ?? data;
+
+        const available = getProperty(
+            forecast,
+            "isForecastAvailable",
+            "IsForecastAvailable"
+        );
+
+        const periodStart = getProperty(
+            forecast,
+            "forecastPeriodStart",
+            "ForecastPeriodStart"
+        );
+
+        const periodEnd = getProperty(
+            forecast,
+            "forecastPeriodEnd",
+            "ForecastPeriodEnd"
+        );
+
+        function formatDate(value) {
+            if (!value) return null;
+
+            const date = new Date(value);
+
+            return Number.isNaN(date.getTime())
+                ? null
+                : date.toLocaleDateString("en-ZA");
+        }
+
+        const start = formatDate(periodStart);
+        const end = formatDate(periodEnd);
+
+        setText(
+            "forecastPeriod",
+            start && end ? `${start} – ${end}` : "Next-month estimate"
+        );
+
+        if (available === false) {
+            resetPredictions(
+                "Not enough recorded financial history is available to produce a forecast yet."
+            );
+
+            setText(
+                "forecastPeriod",
+                start && end
+                    ? `${start} – ${end}`
+                    : "Forecast unavailable"
+            );
+
+            setText(
+                "forecastBasis",
+                getProperty(forecast, "basis", "Basis"),
+                "Add and maintain transactions to build a useful forecast."
+            );
+
+            return;
+        }
+
+        const metrics = [
+            ["forecastIncome", "forecastIncome", "ForecastIncome"],
+            ["forecastExpenses", "forecastExpenses", "ForecastExpenses"],
+            ["forecastNetCashFlow", "forecastNetCashFlow", "ForecastNetCashFlow"],
+            ["projectedClosingBalance", "projectedClosingBalance", "ProjectedClosingBalance"]
+        ];
+
+        for (const [elementId, camel, pascal] of metrics) {
+            const value = getProperty(forecast, camel, pascal);
+
+            setText(
+                elementId,
+                value === null || value === undefined
+                    ? "—"
+                    : formatCurrency(value)
+            );
+        }
+
+        const net = Number(
+            getProperty(
+                forecast,
+                "forecastNetCashFlow",
+                "ForecastNetCashFlow"
+            )
+        );
+
+        const netElement =
+            document.getElementById("forecastNetCashFlow");
+
+        if (netElement && Number.isFinite(net)) {
+            netElement.classList.remove(
+                "text-success",
+                "text-danger"
+            );
+
+            netElement.classList.add(
+                net >= 0 ? "text-success" : "text-danger"
+            );
+        }
+
+        const closing = Number(
+            getProperty(
+                forecast,
+                "projectedClosingBalance",
+                "ProjectedClosingBalance"
+            )
+        );
+
+        const closingElement =
+            document.getElementById("projectedClosingBalance");
+
+        if (closingElement && Number.isFinite(closing)) {
+            closingElement.classList.remove(
+                "text-success",
+                "text-danger"
+            );
+
+            closingElement.classList.add(
+                closing >= 0 ? "text-success" : "text-danger"
+            );
+        }
+
+        const historicalMonths = getProperty(
+            forecast,
+            "historicalMonthsUsed",
+            "HistoricalMonthsUsed"
+        );
+
+        const basis = getProperty(forecast, "basis", "Basis");
+
+        const historyNote =
+            historicalMonths !== null &&
+            historicalMonths !== undefined &&
+            Number.isFinite(Number(historicalMonths))
+                ? `Based on ${historicalMonths} month(s) of recorded history.`
+                : null;
+
+        setText(
+            "forecastBasis",
+            [basis, historyNote].filter(Boolean).join(" "),
+            "Estimates use recorded business transactions and are not guarantees."
+        );
+
+        const warningContainer =
+            document.getElementById("predictionWarnings");
+
+        if (warningContainer) {
+            warningContainer.replaceChildren();
+        }
+
+        const predictionWarnings =
+            getProperty(data, "predictionWarnings", "PredictionWarnings") || [];
+
+        const forecastWarnings =
+            getProperty(forecast, "warnings", "Warnings") || [];
+
+        const warnings = [
+            ...(Array.isArray(predictionWarnings) ? predictionWarnings : []),
+            ...(Array.isArray(forecastWarnings) ? forecastWarnings : [])
+        ];
+
+        const uniqueWarnings = [
+            ...new Set(
+                warnings.map(item => {
+                    if (typeof item === "string") return item;
+
+                    return (
+                        getProperty(item, "message", "Message") ||
+                        getProperty(item, "description", "Description") ||
+                        getProperty(item, "warning", "Warning") ||
+                        "Review your financial forecast."
+                    );
+                })
+            )
+        ];
+
+        for (const warning of uniqueWarnings) {
+            const item = document.createElement("li");
+            item.textContent = warning;
+            warningContainer?.append(item);
+        }
+
+        if (uniqueWarnings.length === 0 && warningContainer) {
+            const item = document.createElement("li");
+
+            item.textContent =
+                "No forecast warnings were returned. Continue recording transactions regularly.";
+
+            warningContainer.append(item);
+        }
+
+        if (predictionsMessage) {
+            predictionsMessage.textContent =
+                "Forecasts are estimates based on available records; actual results may differ.";
+        }
+
+        document.getElementById("predictionsSection")
+            ?.classList.remove("d-none");
+    }
+
+    async function loadPredictions() {
+        if (!businessId || isLoadingPredictions) return;
+
+        isLoadingPredictions = true;
+
+        if (predictionsMessage) {
+            predictionsMessage.textContent =
+                "Loading next-month predictions...";
+        }
+
+        try {
+            const { data } = await apiRequest(
+                `/businesses/${businessId}/predictions`
+            );
+
+            if (!data || typeof data !== "object") {
+                throw new Error(
+                    "The API returned no prediction data."
+                );
+            }
+
+            renderPredictions(data);
+        } catch (error) {
+            console.error("Financial predictions error:", error);
+
+            resetPredictions(
+                `Unable to load predictions: ${error.message}`
+            );
+        } finally {
+            isLoadingPredictions = false;
+        }
+    }
+
+    // ---------------- BUSINESS READINESS ----------------
+
     function renderReadiness(data) {
         const checks = getProperty(data, "checks", "Checks");
+
         const completedCount = Number(
             getProperty(data, "completedCount", "CompletedCount")
         );
+
         const totalCount = Number(
             getProperty(data, "totalCount", "TotalCount")
         );
+
         const progressPercent = Number(
             getProperty(data, "progressPercent", "ProgressPercent")
         );
@@ -510,29 +784,51 @@ function showBusinessGuideEntry() {
             !Number.isFinite(totalCount) ||
             !Number.isFinite(progressPercent)
         ) {
-            throw new Error("The readiness response is incomplete.");
+            throw new Error(
+                "The readiness response is incomplete."
+            );
         }
 
-        const safePercent = Math.max(0, Math.min(100, progressPercent));
+        const safePercent = Math.max(
+            0,
+            Math.min(100, progressPercent)
+        );
 
         setText("readinessPercent", `${safePercent}%`);
+
         setText(
             "readinessSummary",
             `${completedCount} of ${totalCount} readiness steps complete.`
         );
 
         const progress = document.getElementById("readinessProgress");
+
         if (progress) {
-            progress.setAttribute("aria-valuenow", String(safePercent));
+            progress.setAttribute(
+                "aria-valuenow",
+                String(safePercent)
+            );
         }
 
-        const progressBar = document.getElementById("readinessProgressBar");
-        if (progressBar) progressBar.style.width = `${safePercent}%`;
+        const progressBar =
+            document.getElementById("readinessProgressBar");
 
-        setText("readinessBasis", getProperty(data, "basis", "Basis"), "");
+        if (progressBar) {
+            progressBar.style.width = `${safePercent}%`;
+        }
 
-        const checksElement = document.getElementById("readinessChecks");
-        if (checksElement) checksElement.replaceChildren();
+        setText(
+            "readinessBasis",
+            getProperty(data, "basis", "Basis"),
+            ""
+        );
+
+        const checksElement =
+            document.getElementById("readinessChecks");
+
+        if (checksElement) {
+            checksElement.replaceChildren();
+        }
 
         for (const check of checks) {
             const wrapper = document.createElement("div");
@@ -543,32 +839,41 @@ function showBusinessGuideEntry() {
             const canEdit = Boolean(
                 getProperty(check, "canEdit", "CanEdit")
             );
+
             const key = getProperty(check, "id", "Id") ?? checkId;
 
             checkbox.type = "checkbox";
             checkbox.className = "form-check-input";
             checkbox.id = `readiness-${key}`;
+
             checkbox.checked = Boolean(
                 getProperty(check, "isCompleted", "IsCompleted")
             );
+
             checkbox.disabled = !canEdit || checkId == null;
 
             const label = document.createElement("label");
             label.className = "form-check-label fw-semibold";
             label.htmlFor = checkbox.id;
+
             label.textContent =
-                getProperty(check, "title", "Title") || "Readiness item";
+                getProperty(check, "title", "Title") ||
+                "Readiness item";
 
             const description = document.createElement("p");
             description.className = "text-secondary small mb-0";
+
             description.textContent = [
                 getProperty(check, "description", "Description"),
-                canEdit ? "Self-reported" : "Based on BizBridge records"
+                canEdit
+                    ? "Self-reported"
+                    : "Based on BizBridge records"
             ].filter(Boolean).join(" · ");
 
             checkbox.addEventListener("change", async () => {
-                const previousValue = !checkbox.checked;
+                const newValue = checkbox.checked;
                 checkbox.disabled = true;
+
                 setText(
                     "readinessMessage",
                     "Saving checklist progress...",
@@ -579,19 +884,25 @@ function showBusinessGuideEntry() {
                     const { data: updated } = await apiRequest(
                         `/readiness/mine/${checkId}`,
                         "PUT",
-                        { isCompleted: checkbox.checked }
+                        { isCompleted: newValue }
                     );
 
                     renderReadiness(updated);
+
                     setText(
                         "readinessMessage",
                         "Checklist progress saved.",
                         ""
                     );
                 } catch (error) {
-                    console.error("Readiness update error:", error);
-                    checkbox.checked = previousValue;
+                    console.error(
+                        "Readiness update error:",
+                        error
+                    );
+
+                    checkbox.checked = !newValue;
                     checkbox.disabled = false;
+
                     setText(
                         "readinessMessage",
                         `Unable to save checklist progress: ${error.message}`,
@@ -606,29 +917,41 @@ function showBusinessGuideEntry() {
 
         const nextStepsElement =
             document.getElementById("readinessNextSteps");
-        if (nextStepsElement) nextStepsElement.replaceChildren();
+
+        if (nextStepsElement) {
+            nextStepsElement.replaceChildren();
+        }
 
         const nextSteps = getProperty(
-            data, "recommendedNextSteps", "RecommendedNextSteps"
+            data,
+            "recommendedNextSteps",
+            "RecommendedNextSteps"
         ) || [];
 
         if (nextStepsElement && nextSteps.length === 0) {
             const item = document.createElement("li");
+
             item.textContent =
                 "All listed readiness steps are complete. Keep your records up to date.";
+
             nextStepsElement.append(item);
         } else if (nextStepsElement) {
             for (const step of nextSteps) {
                 const item = document.createElement("li");
                 item.className = "mb-1";
-                item.append(document.createTextNode(
-                    getProperty(step, "nextStep", "NextStep") ||
-                    getProperty(step, "title", "Title") ||
-                    "Review this readiness item."
-                ));
+
+                item.append(
+                    document.createTextNode(
+                        getProperty(step, "nextStep", "NextStep") ||
+                        getProperty(step, "title", "Title") ||
+                        "Review this readiness item."
+                    )
+                );
 
                 const actionUrl = getProperty(
-                    step, "actionUrl", "ActionUrl"
+                    step,
+                    "actionUrl",
+                    "ActionUrl"
                 );
 
                 if (actionUrl) {
@@ -643,221 +966,31 @@ function showBusinessGuideEntry() {
             }
         }
 
-        document.getElementById("readinessSection")?.classList.remove("d-none");
+        document.getElementById("readinessSection")
+            ?.classList.remove("d-none");
     }
 
     async function loadReadiness() {
         try {
             const { data } = await apiRequest("/readiness/mine");
+
             renderReadiness(data);
             setText("readinessMessage", "", "");
         } catch (error) {
             console.error("Readiness loading error:", error);
+
             setText(
                 "readinessMessage",
                 `Unable to load readiness checklist: ${error.message}`,
                 ""
             );
+
             document.getElementById("readinessSection")
                 ?.classList.remove("d-none");
         }
     }
 
-    function renderFinancialInsights(data) {
-        const cashFlow = getProperty(
-            data, "cashFlowByMonth", "CashFlowByMonth"
-        );
-        const spending = getProperty(
-            data, "spendingByCategory", "SpendingByCategory"
-        );
-        const warnings = getProperty(data, "warnings", "Warnings");
-
-        if (
-            !Array.isArray(cashFlow) ||
-            !Array.isArray(spending) ||
-            !Array.isArray(warnings)
-        ) {
-            throw new Error("The financial insights response is incomplete.");
-        }
-
-        const periodStart = getProperty(data, "periodStart", "PeriodStart");
-        const periodEnd = getProperty(data, "periodEnd", "PeriodEnd");
-
-        const formatDate = value => {
-            if (!value) return "Unknown";
-            const date = new Date(value);
-            return Number.isNaN(date.getTime())
-                ? "Unknown"
-                : date.toLocaleDateString("en-ZA");
-        };
-
-        setText(
-            "insightsPeriod",
-            `Recorded activity: ${formatDate(periodStart)} – ${formatDate(periodEnd)}`,
-            ""
-        );
-        setText("insightsBasis", getProperty(data, "basis", "Basis"), "");
-
-        const warningContainer =
-            document.getElementById("financialWarnings");
-        if (warningContainer) warningContainer.replaceChildren();
-
-        for (const warning of warnings) {
-            const alert = document.createElement("div");
-            const level = getProperty(warning, "level", "Level");
-            alert.className = level === "warning"
-                ? "alert alert-warning py-2 mb-2"
-                : "alert alert-info py-2 mb-2";
-            alert.textContent =
-                getProperty(warning, "message", "Message") || "";
-            warningContainer?.append(alert);
-        }
-
-        const cashValues = cashFlow.map(point => Number(
-            getProperty(point, "netCashFlow", "NetCashFlow")
-        )).filter(Number.isFinite);
-
-        const maxCashFlow = Math.max(
-            1,
-            ...cashValues.map(Math.abs)
-        );
-
-        const trendContainer = document.getElementById("cashFlowTrend");
-        if (trendContainer) trendContainer.replaceChildren();
-
-        for (const point of cashFlow) {
-            const monthValue = getProperty(point, "month", "Month");
-            const net = Number(
-                getProperty(point, "netCashFlow", "NetCashFlow")
-            );
-
-            if (!Number.isFinite(net)) continue;
-
-            const row = document.createElement("div");
-            row.className = "cash-flow-row";
-
-            const month = document.createElement("span");
-            month.className = "small text-secondary";
-            const monthDate = new Date(`${monthValue}-01T00:00:00`);
-            month.textContent = Number.isNaN(monthDate.getTime())
-                ? String(monthValue ?? "Unknown")
-                : monthDate.toLocaleDateString("en-ZA", {
-                    month: "short",
-                    year: "2-digit"
-                });
-
-            const track = document.createElement("div");
-            track.className = "cash-flow-track";
-
-            const fill = document.createElement("div");
-            fill.className = net >= 0
-                ? "cash-flow-fill cash-flow-positive"
-                : "cash-flow-fill cash-flow-negative";
-            fill.style.width =
-                `${Math.max(2, Math.abs(net) / maxCashFlow * 100)}%`;
-            fill.setAttribute("aria-hidden", "true");
-            track.append(fill);
-
-            const value = document.createElement("span");
-            value.className = `small fw-semibold ${
-                net < 0 ? "text-danger" : "text-success"
-            }`;
-            value.textContent = formatCurrency(net);
-            value.setAttribute(
-                "aria-label",
-                `${monthValue} net cash flow ${value.textContent}`
-            );
-
-            row.append(month, track, value);
-            trendContainer?.append(row);
-        }
-
-        const spendingContainer =
-            document.getElementById("spendingPatterns");
-        if (spendingContainer) spendingContainer.replaceChildren();
-
-        if (spendingContainer && spending.length === 0) {
-            const empty = document.createElement("p");
-            empty.className = "text-secondary small";
-            empty.textContent =
-                "No expense transactions are recorded for this period.";
-            spendingContainer.append(empty);
-        } else if (spendingContainer) {
-            for (const pattern of spending) {
-                const wrapper = document.createElement("div");
-                wrapper.className = "spending-pattern mb-3";
-
-                const heading = document.createElement("div");
-                heading.className =
-                    "d-flex justify-content-between gap-2 small mb-1";
-
-                const category = document.createElement("span");
-                category.textContent =
-                    getProperty(pattern, "category", "Category") ??
-                    getProperty(pattern, "name", "Name") ??
-                    "Uncategorised";
-
-                const total = Number(
-                    getProperty(pattern, "total", "Total")
-                );
-                const share = Number(
-                    getProperty(pattern, "sharePercent", "SharePercent") ??
-                    getProperty(pattern, "percentage", "Percentage")
-                );
-
-                const amount = document.createElement("span");
-                amount.className = "fw-semibold text-nowrap";
-                amount.textContent =
-                    `${formatCurrency(total)} · ${
-                        Number.isFinite(share) ? share : 0
-                    }%`;
-
-                heading.append(category, amount);
-
-                const progress = document.createElement("div");
-                progress.className = "progress";
-                progress.setAttribute(
-                    "aria-label",
-                    `${category.textContent} share of recorded expenses`
-                );
-
-                const bar = document.createElement("div");
-                bar.className = "progress-bar bg-success";
-                bar.style.width = `${
-                    Number.isFinite(share)
-                        ? Math.max(0, Math.min(100, share))
-                        : 0
-                }%`;
-                progress.append(bar);
-
-                wrapper.append(heading, progress);
-                spendingContainer.append(wrapper);
-            }
-        }
-
-        document.getElementById("insightsSection")?.classList.remove("d-none");
-        setText("insightsMessage", "", "");
-    }
-
-    async function loadFinancialInsights() {
-        if (!businessId) return;
-
-        try {
-            const { data } = await apiRequest(
-                `/businesses/${businessId}/financial-insights`
-            );
-            renderFinancialInsights(data);
-        } catch (error) {
-            console.error("Financial insights error:", error);
-            setText(
-                "insightsMessage",
-                `Unable to load financial insights: ${error.message}`,
-                ""
-            );
-            document.getElementById("insightsSection")
-                ?.classList.remove("d-none");
-        }
-    }
+    // ---------------- DASHBOARD INITIALISATION ----------------
 
     async function loadDashboard() {
         if (isLoadingDashboard) {
@@ -882,6 +1015,7 @@ function showBusinessGuideEntry() {
                 await loadAccount();
             } catch (error) {
                 console.error("Account loading error:", error);
+
                 if (localStorage.getItem("token")) {
                     showMessage(
                         `Could not load account details: ${error.message}`
@@ -895,6 +1029,7 @@ function showBusinessGuideEntry() {
                 await loadBusiness();
             } catch (error) {
                 console.error("Business loading error:", error);
+
                 if (localStorage.getItem("token")) {
                     showMessage(
                         `Could not load your business: ${error.message}`
@@ -916,10 +1051,9 @@ function showBusinessGuideEntry() {
 
         loadFinancialSummary();
         loadReadiness();
-        loadFinancialInsights();
+        loadPredictions();
     }
 
-    // Avoid duplicate requests during the initial page load.
     window.addEventListener("pageshow", event => {
         if (event.persisted) {
             refreshDashboardData();
@@ -927,66 +1061,70 @@ function showBusinessGuideEntry() {
     });
 
     function displayBusinessImage(imageUrl) {
-    const image = document.getElementById("businessImage");
-    const placeholder = document.getElementById(
-        "businessImagePlaceholder"
-    );
+        const image = document.getElementById("businessImage");
 
-    if (!image || !placeholder) return;
+        const placeholder = document.getElementById(
+            "businessImagePlaceholder"
+        );
 
-    if (!imageUrl) {
-        image.removeAttribute("src");
-        image.classList.add("d-none");
-        placeholder.classList.remove("d-none");
-        return;
+        if (!image || !placeholder) return;
+
+        if (!imageUrl) {
+            image.removeAttribute("src");
+            image.classList.add("d-none");
+            placeholder.classList.remove("d-none");
+            return;
+        }
+
+        image.onerror = () => {
+            image.classList.add("d-none");
+            placeholder.classList.remove("d-none");
+        };
+
+        image.onload = () => {
+            image.classList.remove("d-none");
+            placeholder.classList.add("d-none");
+        };
+
+        image.src = imageUrl;
     }
 
-    image.onerror = () => {
-        image.classList.add("d-none");
-        placeholder.classList.remove("d-none");
-    };
+    function displayContactField(rowId, linkId, value, type) {
+        const row = document.getElementById(rowId);
+        const link = document.getElementById(linkId);
 
-    image.onload = () => {
-        image.classList.remove("d-none");
-        placeholder.classList.add("d-none");
-    };
+        if (!row || !link) {
+            console.warn(
+                `Missing contact field elements: ${rowId}, ${linkId}`
+            );
+            return false;
+        }
 
-    image.src = imageUrl;
-}
+        const cleanValue =
+            typeof value === "string" ? value.trim() : "";
 
-function displayContactField(rowId, linkId, value, type) {
-    const row = document.getElementById(rowId);
-    const link = document.getElementById(linkId);
+        if (!cleanValue) {
+            row.classList.add("d-none");
+            link.removeAttribute("href");
+            link.textContent = "";
+            return false;
+        }
 
-    if (!row || !link) {
-        console.warn(`Missing contact field elements: ${rowId}, ${linkId}`);
-        return false;
+        link.textContent = cleanValue;
+
+        if (type === "email") {
+            link.href = `mailto:${cleanValue}`;
+        } else if (type === "phone") {
+            link.href = `tel:${cleanValue}`;
+        } else if (type === "website") {
+            link.href = /^https?:\/\//i.test(cleanValue)
+                ? cleanValue
+                : `https://${cleanValue}`;
+        }
+
+        row.classList.remove("d-none");
+        return true;
     }
 
-    const cleanValue =
-        typeof value === "string" ? value.trim() : "";
-
-    if (!cleanValue) {
-        row.classList.add("d-none");
-        link.removeAttribute("href");
-        link.textContent = "";
-        return false;
-    }
-
-    link.textContent = cleanValue;
-
-    if (type === "email") {
-        link.href = `mailto:${cleanValue}`;
-    } else if (type === "phone") {
-        link.href = `tel:${cleanValue}`;
-    } else if (type === "website") {
-        link.href = /^https?:\/\//i.test(cleanValue)
-            ? cleanValue
-            : `https://${cleanValue}`;
-    }
-
-    row.classList.remove("d-none");
-    return true;
-}
     loadDashboard();
 });
